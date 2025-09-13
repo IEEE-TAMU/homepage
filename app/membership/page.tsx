@@ -4,8 +4,12 @@ import { Badge } from '@/components/ui/badge';
 import {
   CheckCircleIcon,
   ArrowTopRightOnSquareIcon,
+  UserGroupIcon,
+  UserIcon,
   UsersIcon,
   GlobeAltIcon,
+  BookOpenIcon,
+  MagnifyingGlassCircleIcon,
 } from '@heroicons/react/24/outline';
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 import { MainSection } from '@/components/main-section';
@@ -14,7 +18,7 @@ export default function MembershipPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Membership Benefits */}
-      <section className="py-16">
+      <MainSection>
         <div className="container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1">
           <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-balance">
@@ -63,7 +67,7 @@ export default function MembershipPage() {
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  {/* <BookOpen className="h-4 w-4 text-primary" /> */}
+                  <BookOpenIcon className="h-4 w-4 text-primary" />
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">
@@ -90,7 +94,7 @@ export default function MembershipPage() {
               </div>
               <div className="flex items-start space-x-4">
                 <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  {/* <Target className="h-4 w-4 text-primary" /> */}
+                  <UserIcon className="h-4 w-4 text-primary" />
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">
@@ -104,7 +108,7 @@ export default function MembershipPage() {
               </div>
               <div className="flex items-start space-x-4">
                 <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <UsersIcon className="h-4 w-4 text-primary" />
+                  <UserGroupIcon className="h-4 w-4 text-primary" />
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">Local Community</h3>
@@ -138,10 +142,10 @@ export default function MembershipPage() {
             </div>
           </div>
         </div>
-      </section>
+      </MainSection>
 
       {/* Membership Tiers */}
-      <section className="py-16 bg-card">
+      <MainSection className="bg-card">
         <div className="container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Membership Options</h2>
@@ -181,7 +185,7 @@ export default function MembershipPage() {
                   ))}
                 </div>
                 <Button className="w-full bg-primary hover:bg-primary/90 mt-auto">
-                  {/* <ExternalLink className="mr-2 h-4 w-4" /> */}
+                  <ArrowTopRightOnSquareIcon className="mr-2 h-4 w-4" />
                   Join IEEE Global
                 </Button>
               </CardContent>
@@ -222,7 +226,7 @@ export default function MembershipPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </MainSection>
 
       {/* How to Join */}
       <MainSection className="bg-background">
@@ -234,37 +238,38 @@ export default function MembershipPage() {
               to become a member.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">1</span>
+              {[
+                {
+                  number: 1,
+                  title: 'Choose Your Level',
+                  description:
+                    'Decide between local chapter membership (free) or full IEEE global membership ($32/year).',
+                },
+                {
+                  number: 2,
+                  title: 'Complete Registration',
+                  description:
+                    'Fill out the membership form with your Texas A&M student information.',
+                },
+                {
+                  number: 3,
+                  title: 'Start Participating',
+                  description:
+                    'Join our Discord, attend events, and start building your professional network.',
+                },
+              ].map((step) => (
+                <div className="text-center" key={step.number}>
+                  <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-primary">
+                      {step.number}
+                    </span>
+                  </div>
+                  <h3 className="font-semibold mb-3">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground">
+                    {step.description}
+                  </p>
                 </div>
-                <h3 className="font-semibold mb-3">Choose Your Level</h3>
-                <p className="text-sm text-muted-foreground">
-                  Decide between local chapter membership (free) or full IEEE
-                  global membership ($32/year).
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">2</span>
-                </div>
-                <h3 className="font-semibold mb-3">Complete Registration</h3>
-                <p className="text-sm text-muted-foreground">
-                  Fill out the membership form with your{' '}
-                  <span className="text-primary">Texas A&M</span> student
-                  information.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">3</span>
-                </div>
-                <h3 className="font-semibold mb-3">Start Participating</h3>
-                <p className="text-sm text-muted-foreground">
-                  Join our Discord, attend events, and start building your
-                  professional network.
-                </p>
-              </div>
+              ))}
             </div>
             <div className="mt-12">
               <Button

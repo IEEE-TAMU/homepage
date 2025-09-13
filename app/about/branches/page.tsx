@@ -39,6 +39,13 @@ export default function BranchesPage() {
       href: '/about/branches/tec',
       color: 'bg-secondary/10',
     },
+    {
+      name: 'Public Relations',
+      description:
+        'Branding, marketing, communications, and social media for IEEE TAMU.',
+      href: '/about/branches/public-relations',
+      color: 'bg-accent/10',
+    },
   ];
 
   return (
