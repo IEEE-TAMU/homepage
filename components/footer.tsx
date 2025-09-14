@@ -56,12 +56,12 @@ export function Footer() {
             <FooterColumn
               title="Resources"
               links={[
-                { href: '/faq', label: 'FAQ' },
                 { href: EXTERNAL_LINKS.IEEE_GLOBAL, label: 'IEEE Global' },
                 {
                   href: EXTERNAL_LINKS.IEEE_PORTAL,
                   label: 'Student Portal',
                 },
+                { href: '/faq', label: 'FAQ' },
               ]}
             />
             <FooterColumn
