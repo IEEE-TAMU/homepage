@@ -9,7 +9,7 @@ import {
   UsersIcon,
   GlobeAltIcon,
   BookOpenIcon,
-  MagnifyingGlassCircleIcon,
+  // MagnifyingGlassCircleIcon,
 } from '@heroicons/react/24/outline';
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 import { MainSection } from '@/components/main-section';

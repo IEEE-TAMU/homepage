@@ -1,17 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { BranchOpener, BranchOfficersCard } from '@/components/branches';
+import { Branches } from '@/lib/branches';
 
 export default function PublicRelationsPage() {
+  const branch = Branches['public-relations'];
   return (
     <div className="min-h-screen bg-background">
       <section className="py-16">
         <div className="container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">Public Relations Branch</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Branding, marketing, communications, and social media for IEEE
-              TAMU.
-            </p>
-          </div>
+          <BranchOpener branch={branch} />
 
           <div className="max-w-4xl mx-auto space-y-8">
             <Card>
@@ -127,28 +124,7 @@ export default function PublicRelationsPage() {
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl">Get Involved</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  If you enjoy storytelling, design, or building a brand voice,
-                  PR offers great opportunities to hone creative and strategic
-                  skills.
-                </p>
-                <div className="bg-accent/5 p-4 rounded-lg">
-                  <h4 className="font-semibold mb-2">Skills You’ll Develop</h4>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Content strategy and copywriting</li>
-                    <li>• Visual design and brand systems</li>
-                    <li>• Analytics and data-driven iteration</li>
-                    <li>• Cross-team collaboration</li>
-                    <li>• Project and campaign management</li>
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
+            <BranchOfficersCard branch={branch} />
           </div>
         </div>
       </section>

@@ -49,8 +49,8 @@ export function Footer() {
               title="About Us"
               links={[
                 { href: '/about/history', label: 'History' },
-                { href: '/about/officers', label: 'Officers' },
                 { href: '/about/branches', label: 'Branches' },
+                { href: '/about/officers', label: 'Officers' },
               ]}
             />
             <FooterColumn
@@ -59,7 +59,7 @@ export function Footer() {
                 { href: EXTERNAL_LINKS.IEEE_GLOBAL, label: 'IEEE Global' },
                 {
                   href: EXTERNAL_LINKS.IEEE_PORTAL,
-                  label: 'Student Portal',
+                  label: 'Member Portal',
                 },
                 { href: '/faq', label: 'FAQ' },
               ]}

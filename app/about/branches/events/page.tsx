@@ -1,16 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { BranchOpener, BranchOfficersCard } from '@/components/branches';
+import { Branches } from '@/lib/branches';
 
 export default function EventsPage() {
+  const branch = Branches['events'];
   return (
     <div className="min-h-screen bg-background">
       <section className="py-16">
         <div className="container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">Events Branch</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Technical workshops, conferences, and educational programming.
-            </p>
-          </div>
+          <BranchOpener branch={branch} />
 
           <div className="max-w-4xl mx-auto space-y-8">
             <Card>
@@ -153,28 +151,7 @@ export default function EventsPage() {
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl">Join Events Branch</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Passionate about education and technical learning? The Events
-                  Branch offers opportunities to develop event planning skills
-                  while contributing to the educational mission of IEEE TAMU.
-                </p>
-                <div className="bg-primary/5 p-4 rounded-lg">
-                  <h4 className="font-semibold mb-2">What You&apos;ll Learn</h4>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Technical content development</li>
-                    <li>• Speaker and vendor relations</li>
-                    <li>• Event logistics and management</li>
-                    <li>• Educational program design</li>
-                    <li>• Technical presentation skills</li>
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
+            <BranchOfficersCard branch={branch} />
           </div>
         </div>
       </section>

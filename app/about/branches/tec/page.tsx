@@ -1,19 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { BranchOpener, BranchOfficersCard } from '@/components/branches';
+import { Branches } from '@/lib/branches';
 
 export default function TecPage() {
+  const branch = Branches['tec'];
   return (
     <div className="min-h-screen bg-background">
       <section className="py-16">
         <div className="container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">
-              Technical Education Committee (TEC)
-            </h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Educational resources, tutoring programs, and technical skill
-              development.
-            </p>
-          </div>
+          <BranchOpener branch={branch} />
 
           <div className="max-w-4xl mx-auto space-y-8">
             <Card>
@@ -154,44 +149,7 @@ export default function TecPage() {
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl">How to Get Involved</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold mb-3">
-                      For Students Seeking Help
-                    </h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• Check our tutoring schedule</li>
-                      <li>• Join study groups</li>
-                      <li>• Attend workshops</li>
-                      <li>• Access online resources</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-3">
-                      For Tutors and Mentors
-                    </h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• Apply to become a tutor</li>
-                      <li>• Lead study sessions</li>
-                      <li>• Develop educational content</li>
-                      <li>• Share your expertise</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="mt-6 bg-secondary/5 p-4 rounded-lg">
-                  <h4 className="font-semibold mb-2">Contact TEC</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Email: tec@ieeetamu.org | Visit our office hours for
-                    immediate assistance
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+            <BranchOfficersCard branch={branch} />
           </div>
         </div>
       </section>

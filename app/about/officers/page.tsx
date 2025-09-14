@@ -1,6 +1,51 @@
+import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Branches, officerId } from '@/lib/branches';
+import type { Officer } from '@/lib/branches';
+
+const Officers = Object.fromEntries(
+  Object.entries(Branches).map(([key, branch]) => [key, branch.officers])
+);
+
+function OfficerCard({ officer }: { officer: Officer }) {
+  return (
+    <Card id={officerId(officer)} className="scroll-mt-36">
+      <CardHeader className="text-center">
+        {officer.photo ? (
+          <Image
+            width={96}
+            height={96}
+            src={officer.photo}
+            alt={officer.name}
+            className="h-24 w-24 rounded-full object-cover mx-auto mb-4"
+          />
+        ) : (
+          <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <span className="text-2xl font-semibold">
+              {officer.name?.[0] ?? '?'}
+            </span>
+          </div>
+        )}
+        <CardTitle className="text-lg">{officer.position}</CardTitle>
+      </CardHeader>
+      <CardContent className="text-center">
+        <p className="text-muted-foreground mb-2">{officer.name}</p>
+        {officer.description && (
+          <p className="text-sm text-muted-foreground">{officer.description}</p>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function OfficersPage() {
+  const sectionTitles: Record<string, string> = {
+    'e-board': 'Executive Board',
+  };
+
+  const titleize = (key: string) =>
+    key.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+
   return (
     <div className="min-h-screen bg-background">
       <section className="py-16">
@@ -14,100 +59,21 @@ export default function OfficersPage() {
           </div>
 
           <div className="max-w-6xl mx-auto">
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-6">Executive Board</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <Card>
-                  <CardHeader className="text-center">
-                    <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      {/* Placeholder for officer photo */}
-                    </div>
-                    <CardTitle className="text-lg">President</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-muted-foreground mb-2">[Officer Name]</p>
-                    <p className="text-sm text-muted-foreground">
-                      Leads the overall direction and vision of IEEE TAMU
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader className="text-center">
-                    <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      {/* Placeholder for officer photo */}
-                    </div>
-                    <CardTitle className="text-lg">Vice President</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-muted-foreground mb-2">[Officer Name]</p>
-                    <p className="text-sm text-muted-foreground">
-                      Supports the president and oversees operations
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader className="text-center">
-                    <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      {/* Placeholder for officer photo */}
-                    </div>
-                    <CardTitle className="text-lg">Secretary</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-muted-foreground mb-2">[Officer Name]</p>
-                    <p className="text-sm text-muted-foreground">
-                      Manages communications and documentation
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader className="text-center">
-                    <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      {/* Placeholder for officer photo */}
-                    </div>
-                    <CardTitle className="text-lg">Treasurer</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-muted-foreground mb-2">[Officer Name]</p>
-                    <p className="text-sm text-muted-foreground">
-                      Manages finances and sponsorships
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader className="text-center">
-                    <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      {/* Placeholder for officer photo */}
-                    </div>
-                    <CardTitle className="text-lg">Webmaster</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-muted-foreground mb-2">[Officer Name]</p>
-                    <p className="text-sm text-muted-foreground">
-                      Maintains our website and digital presence
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader className="text-center">
-                    <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      {/* Placeholder for officer photo */}
-                    </div>
-                    <CardTitle className="text-lg">Social Chair</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-muted-foreground mb-2">[Officer Name]</p>
-                    <p className="text-sm text-muted-foreground">
-                      Organizes social events and community building
-                    </p>
-                  </CardContent>
-                </Card>
+            {Object.entries(Officers).map(([key, officers]) => (
+              <div className="mb-12" key={key}>
+                <h2 className="text-2xl font-bold mb-6">
+                  {sectionTitles[key] ?? titleize(key)}
+                </h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {officers.map((officer) => (
+                    <OfficerCard
+                      key={`${officer.name}-${officer.position}`}
+                      officer={officer}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
 
             <div className="bg-card p-8 rounded-lg">
               <h2 className="text-2xl font-bold mb-4">Contact Our Officers</h2>

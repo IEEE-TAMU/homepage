@@ -11,8 +11,8 @@ export const EXTERNAL_LINKS = {
   DISCORD: 'https://link.ieeetamu.org/discord',
 
   // Calendar links
-  IEEE_CALENDAR_ICS:
-    'https://calendar.google.com/calendar/ical/ieeetamu.officers%40gmail.com/public/basic.ics',
+  IEEE_CALENDAR_ICS: 'https://link.ieeetamu.org/ical',
+  IEEE_CALENDAR_GOOGLE: 'https://link.ieeetamu.org/calendar',
 } as const;
 
 // Type for external links
