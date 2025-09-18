@@ -83,7 +83,7 @@ export function Footer() {
       </footer>
       <div className="border-t mt-4 py-4 text-center text-sm text-muted-foreground">
         <p>
-          &copy; 2024 IEEE Texas A&M University Student Branch. All rights
+          &copy; 2025 IEEE Texas A&M University Student Branch. All rights
           reserved.{' '}
           <a
             href="mailto:webmaster@ieeetamu.org?subject=Website%20Feedback"

@@ -30,7 +30,7 @@ export function ContactForm() {
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch('/api/connect', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ export function ContactForm() {
         )}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="text-sm font-medium mb-2 block">Name</label>
+            <label className="text-sm font-medium mb-2 block">Name
             <input
               type="text"
               name="name"
@@ -103,21 +103,23 @@ export function ContactForm() {
               placeholder="Your full name"
               required
             />
+            </label>
           </div>
           <div>
-            <label className="text-sm font-medium mb-2 block">Email</label>
+            <label className="text-sm font-medium mb-2 block">Email
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               className="w-full px-3 py-2 border border-input rounded-md bg-background"
-              placeholder="your.email@tamu.edu"
+              placeholder="your.email@company.org"
               required
             />
+            </label>
           </div>
           <div>
-            <label className="text-sm font-medium mb-2 block">Subject</label>
+            <label className="text-sm font-medium mb-2 block">Subject
             <select
               name="subject"
               value={formData.subject}
@@ -130,9 +132,10 @@ export function ContactForm() {
               <option>Event Information</option>
               <option>Other</option>
             </select>
+            </label>
           </div>
           <div>
-            <label className="text-sm font-medium mb-2 block">Message</label>
+            <label className="text-sm font-medium mb-2 block">Message
             <textarea
               name="message"
               value={formData.message}
@@ -141,6 +144,7 @@ export function ContactForm() {
               placeholder="Tell us how we can help..."
               required
             />
+            </label>
           </div>
           <Button
             type="submit"

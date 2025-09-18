@@ -4,11 +4,13 @@ import { Button } from '@/components/ui/button';
 import { BoltIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import type { KeyboardEvent as ReactKeyboardEvent } from 'react';
 
 export function Navigation() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
   // Close menu on Escape key
   useEffect(() => {
@@ -29,6 +31,46 @@ export function Navigation() {
     { href: '/sponsorship', label: 'Sponsorship' },
     { href: '/connect', label: 'Connect' },
   ];
+
+  // Focus the active or first item when the mobile menu opens
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const refs = itemRefs.current.filter(Boolean) as HTMLAnchorElement[];
+    if (refs.length === 0) return;
+    const activeIdx = navItems.findIndex((i) => i.href === pathname);
+    const target = refs[activeIdx >= 0 ? activeIdx : 0];
+    const id = window.setTimeout(() => target?.focus(), 0);
+    return () => window.clearTimeout(id);
+  }, [isMenuOpen, pathname]);
+
+  // Handle ArrowUp/ArrowDown/Home/End within the mobile menu
+  function handleMenuKeyDown(e: ReactKeyboardEvent) {
+    if (!isMenuOpen) return;
+    const refs = itemRefs.current.filter(Boolean) as HTMLAnchorElement[];
+    if (refs.length === 0) return;
+
+    const activeEl = document.activeElement as Element | null;
+    const currentIndex = refs.findIndex((el) => el === activeEl);
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      const next = currentIndex >= 0 ? (currentIndex + 1) % refs.length : 0;
+      refs[next]?.focus();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      const prev =
+        currentIndex >= 0
+          ? (currentIndex - 1 + refs.length) % refs.length
+          : refs.length - 1;
+      refs[prev]?.focus();
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      refs[0]?.focus();
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      refs[refs.length - 1]?.focus();
+    }
+  }
 
   return (
     <>
@@ -66,6 +108,9 @@ export function Navigation() {
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="flex lg:hidden p-0 size-8"
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {isMenuOpen ? (
                 <XMarkIcon className="size-8" />
@@ -94,13 +139,28 @@ export function Navigation() {
 
       {isMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm">
-          <div className="fixed top-16 left-0 right-0 bottom-0 bg-background border-t shadow-lg">
-            <nav className="flex flex-col py-8 px-6">
-              {navItems.map((item) => (
+          <div
+            className="fixed top-16 left-0 right-0 bottom-0 bg-background border-t shadow-lg"
+            role="dialog"
+            aria-modal="true"
+          >
+            <nav
+              id="mobile-menu"
+              className="flex flex-col py-8 px-6"
+              role="menu"
+              aria-label="Mobile Navigation"
+              onKeyDown={handleMenuKeyDown}
+            >
+              {navItems.map((item, i) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block text-right text-lg font-medium transition-colors py-4 px-4 rounded-lg hover:bg-muted 
+                  ref={(el) => {
+                    itemRefs.current[i] = el;
+                  }}
+                  role="menuitem"
+                  aria-current={pathname === item.href ? 'page' : undefined}
+                  className={`block text-right text-lg font-medium transition-colors py-4 px-4 rounded-lg hover:bg-muted border border-transparent focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-background
                     ${
                       pathname === item.href
                         ? 'text-primary bg-primary/10'

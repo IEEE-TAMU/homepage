@@ -293,9 +293,9 @@ export default function ConnectPage() {
                   <Button variant="outline" size="sm">
                     Discord
                   </Button>
-                  <Button variant="outline" size="sm">
+                  {/* <Button variant="outline" size="sm">
                     Website
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
 
