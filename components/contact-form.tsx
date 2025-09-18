@@ -93,57 +93,61 @@ export function ContactForm() {
         )}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="text-sm font-medium mb-2 block">Name
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-input rounded-md bg-background"
-              placeholder="Your full name"
-              required
-            />
+            <label className="text-sm font-medium mb-2 block">
+              Name
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                placeholder="Your full name"
+                required
+              />
             </label>
           </div>
           <div>
-            <label className="text-sm font-medium mb-2 block">Email
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-input rounded-md bg-background"
-              placeholder="your.email@company.org"
-              required
-            />
+            <label className="text-sm font-medium mb-2 block">
+              Email
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                placeholder="your.email@company.org"
+                required
+              />
             </label>
           </div>
           <div>
-            <label className="text-sm font-medium mb-2 block">Subject
-            <select
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-input rounded-md bg-background"
-            >
-              <option>General Inquiry</option>
-              <option>Membership Question</option>
-              <option>Sponsorship Interest</option>
-              <option>Event Information</option>
-              <option>Other</option>
-            </select>
+            <label className="text-sm font-medium mb-2 block">
+              Subject
+              <select
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-input rounded-md bg-background"
+              >
+                <option>General Inquiry</option>
+                <option>Membership Question</option>
+                <option>Sponsorship Interest</option>
+                <option>Event Information</option>
+                <option>Other</option>
+              </select>
             </label>
           </div>
           <div>
-            <label className="text-sm font-medium mb-2 block">Message
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-input rounded-md bg-background h-24"
-              placeholder="Tell us how we can help..."
-              required
-            />
+            <label className="text-sm font-medium mb-2 block">
+              Message
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-input rounded-md bg-background h-24"
+                placeholder="Tell us how we can help..."
+                required
+              />
             </label>
           </div>
           <Button

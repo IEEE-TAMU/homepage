@@ -40,7 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-
 # nix stuff
 .envrc
 .direnv/
+
+# vscode
+.vscode/

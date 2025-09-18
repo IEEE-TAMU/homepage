@@ -2,6 +2,8 @@ import { ContactForm } from '@/components/contact-form';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MainSection } from '@/components/main-section';
+import { EXTERNAL_LINKS } from '@/lib/external-links';
+import Link from 'next/link';
 
 function CommunityCard({
   iconBg,
@@ -55,23 +57,30 @@ export default function ConnectPage() {
               description:
                 'Join our active Discord server for real-time discussions, study groups, project collaboration, and community support.',
               button: (
-                <Button className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                  Join Discord
+                <Button
+                  variant="outline"
+                  className="w-full mt-auto bg-transparent"
+                  asChild
+                >
+                  <Link href={EXTERNAL_LINKS.DISCORD}>Join Discord</Link>
                 </Button>
               ),
             },
             {
               iconBg: 'bg-secondary/10',
               // icon: <Calendar className="h-8 w-8 text-secondary" />,
-              title: 'Google Calendar',
+              title: 'Calendar',
               description:
                 'Subscribe to our Google Calendar to never miss an event. Get automatic notifications for workshops, meetings, and socials.',
               button: (
                 <Button
                   variant="outline"
                   className="w-full mt-auto bg-transparent"
+                  asChild
                 >
-                  Subscribe to Calendar
+                  <Link href={EXTERNAL_LINKS.IEEE_CALENDAR_GOOGLE}>
+                    Subscribe to Calendar
+                  </Link>
                 </Button>
               ),
             },
@@ -85,8 +94,9 @@ export default function ConnectPage() {
                 <Button
                   variant="outline"
                   className="w-full mt-auto bg-transparent"
+                  asChild
                 >
-                  Follow @ieee_tamu
+                  <Link href={EXTERNAL_LINKS.INSTAGRAM}>Follow @ieee_tamu</Link>
                 </Button>
               ),
             },
@@ -241,7 +251,7 @@ export default function ConnectPage() {
       </MainSection> */}
 
       {/* Send Us a Message Section */}
-      <MainSection className="bg-card mb-4 md:mb-6">
+      <MainSection id="send-message" className="bg-card mb-4 md:mb-6">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold mb-4">Send Us a Message</h2>
           <p className="text-muted-foreground">

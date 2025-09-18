@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Branches, officerId } from '@/lib/branches';
 import type { Officer } from '@/lib/branches';
+import { MainSection } from '@/components/main-section';
 
 const Officers = Object.fromEntries(
   Object.entries(Branches).map(([key, branch]) => [key, branch.officers])
@@ -48,57 +49,55 @@ export default function OfficersPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="py-16">
-        <div className="container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">Our Officers</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Meet the dedicated team leading IEEE TAMU and driving our mission
-              forward.
-            </p>
-          </div>
+      <MainSection>
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">Our Officers</h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Meet the dedicated team leading IEEE TAMU and driving our mission
+            forward.
+          </p>
+        </div>
 
-          <div className="max-w-6xl mx-auto">
-            {Object.entries(Officers).map(([key, officers]) => (
-              <div className="mb-12" key={key}>
-                <h2 className="text-2xl font-bold mb-6">
-                  {sectionTitles[key] ?? titleize(key)}
-                </h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {officers.map((officer) => (
-                    <OfficerCard
-                      key={`${officer.name}-${officer.position}`}
-                      officer={officer}
-                    />
-                  ))}
-                </div>
+        <div className="max-w-6xl mx-auto">
+          {Object.entries(Officers).map(([key, officers]) => (
+            <div className="mb-12" key={key}>
+              <h2 className="text-2xl font-bold mb-6">
+                {sectionTitles[key] ?? titleize(key)}
+              </h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {officers.map((officer) => (
+                  <OfficerCard
+                    key={`${officer.name}-${officer.position}`}
+                    officer={officer}
+                  />
+                ))}
               </div>
-            ))}
+            </div>
+          ))}
 
-            <div className="bg-card p-8 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4">Contact Our Officers</h2>
-              <p className="text-muted-foreground mb-4">
-                Want to get involved or have questions about IEEE TAMU? Reach
-                out to our officers!
-              </p>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <h3 className="font-semibold mb-2">General Inquiries</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Email: president@ieeetamu.org
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-2">Officer Applications</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Check our membership page for upcoming opportunities
-                  </p>
-                </div>
+          <div className="bg-card p-8 rounded-lg">
+            <h2 className="text-2xl font-bold mb-4">Contact Our Officers</h2>
+            <p className="text-muted-foreground mb-4">
+              Want to get involved or have questions about IEEE TAMU? Reach out
+              to our officers!
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <h3 className="font-semibold mb-2">General Inquiries</h3>
+                <p className="text-sm text-muted-foreground">
+                  Email: president@ieeetamu.org
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">Officer Applications</h3>
+                <p className="text-sm text-muted-foreground">
+                  Check our membership page for upcoming opportunities
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </MainSection>
     </div>
   );
 }

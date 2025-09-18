@@ -7,6 +7,14 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import type { KeyboardEvent as ReactKeyboardEvent } from 'react';
 
+const navItems = [
+  { href: '/about', label: 'About' },
+  { href: '/events', label: 'Events' },
+  { href: '/membership', label: 'Membership' },
+  { href: '/sponsorship', label: 'Sponsorship' },
+  { href: '/connect', label: 'Connect' },
+];
+
 export function Navigation() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,14 +31,6 @@ export function Navigation() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isMenuOpen]);
-
-  const navItems = [
-    { href: '/about', label: 'About' },
-    { href: '/events', label: 'Events' },
-    { href: '/membership', label: 'Membership' },
-    { href: '/sponsorship', label: 'Sponsorship' },
-    { href: '/connect', label: 'Connect' },
-  ];
 
   // Focus the active or first item when the mobile menu opens
   useEffect(() => {
@@ -126,8 +126,8 @@ export function Navigation() {
                   ? { href: '/sponsorship', label: 'Sponsor Us' }
                   : { href: '/membership', label: 'Join Now' };
               return (
-                <Link href={href}>
-                  <Button className="hidden lg:block bg-accent hover:bg-accent/90 w-32 text-sm">
+                <Link href={href} className="hidden lg:block">
+                  <Button className="bg-accent hover:bg-accent/90 w-32 text-sm">
                     {label}
                   </Button>
                 </Link>

@@ -1,11 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { MainSection } from '@/components/main-section';
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="py-10 lg:pt-16">
-        <div className="container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1">
+        <MainSection>
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-balance">
               About IEEE <span className="text-primary">TAMU</span>
@@ -17,12 +18,12 @@ export default function AboutPage() {
               excellence, and community engagement among engineers.
             </p>
           </div>
-        </div>
+        </MainSection>
       </section>
 
       {/* What We Do Section */}
-      <section className="py-8 bg-card">
-        <div className="container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1">
+      <section className="bg-card">
+        <MainSection>
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">What We Do</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -80,102 +81,90 @@ export default function AboutPage() {
               </CardContent>
             </Card>
           </div>
-        </div>
+        </MainSection>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-              <p className="text-muted-foreground mb-6">
-                To advance technology for humanity by providing opportunities
-                for professional development, technical education, and community
-                engagement for engineering students at{' '}
-                <span className="text-primary">Texas A&M University</span>.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    {/* <BookOpen className="h-4 w-4 text-primary" /> */}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">
-                      Educational Excellence
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      Supplementing academic learning with practical workshops
-                      and industry insights.
-                    </p>
-                  </div>
+      <MainSection>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
+            <p className="text-muted-foreground mb-6">
+              To advance technology for humanity by providing opportunities for
+              professional development, technical education, and community
+              engagement for engineering students at{' '}
+              <span className="text-primary">Texas A&M University</span>.
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-4">
+                <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  {/* <BookOpen className="h-4 w-4 text-primary" /> */}
                 </div>
-                <div className="flex items-start space-x-4">
-                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    {/* <Network className="h-4 w-4 text-primary" /> */}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">Professional Growth</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Building connections and skills that last throughout your
-                      engineering career.
-                    </p>
-                  </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Educational Excellence</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Supplementing academic learning with practical workshops and
+                    industry insights.
+                  </p>
                 </div>
-                <div className="flex items-start space-x-4">
-                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    {/* <Target className="h-4 w-4 text-primary" /> */}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">Community Impact</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Using technology and engineering knowledge to benefit our
-                      local and global communities.
-                    </p>
-                  </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  {/* <Network className="h-4 w-4 text-primary" /> */}
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Professional Growth</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Building connections and skills that last throughout your
+                    engineering career.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  {/* <Target className="h-4 w-4 text-primary" /> */}
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Community Impact</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Using technology and engineering knowledge to benefit our
+                    local and global communities.
+                  </p>
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-lg">
-              <h3 className="text-xl font-semibold mb-6">By the Numbers</h3>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">
-                    500+
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Active Members
-                  </div>
+          </div>
+          <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-lg">
+            <h3 className="text-xl font-semibold mb-6">By the Numbers</h3>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary mb-2">500+</div>
+                <div className="text-sm text-muted-foreground">
+                  Active Members
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">
-                    50+
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Events Per Year
-                  </div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary mb-2">50+</div>
+                <div className="text-sm text-muted-foreground">
+                  Events Per Year
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">
-                    20+
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Industry Partners
-                  </div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary mb-2">20+</div>
+                <div className="text-sm text-muted-foreground">
+                  Industry Partners
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">
-                    15+
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Years Active
-                  </div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary mb-2">15+</div>
+                <div className="text-sm text-muted-foreground">
+                  Years Active
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </MainSection>
     </div>
   );
 }
