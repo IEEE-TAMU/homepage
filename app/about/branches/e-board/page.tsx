@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BranchOpener, BranchOfficersCard } from '@/components/branches';
-import { MainSection } from '@/components/main-section';
+import { MainSection } from '@/components/sections';
 import { Branches } from '@/lib/branches';
 
 export default function EBoardPage() {

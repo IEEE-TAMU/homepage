@@ -1,7 +1,7 @@
 import { ContactForm } from '@/components/contact-form';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { MainSection } from '@/components/main-section';
+import { MainSection } from '@/components/sections';
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 import Link from 'next/link';
 

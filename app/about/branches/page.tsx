@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { MainSection } from '@/components/main-section';
+import { MainSection } from '@/components/sections';
 import { Branches } from '@/lib/branches';
 
 export default function BranchesPage() {

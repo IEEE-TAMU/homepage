@@ -6,7 +6,7 @@ import {
   CheckCircleIcon,
   BuildingOffice2Icon,
 } from '@heroicons/react/24/outline';
-import { MainSection } from '@/components/main-section';
+import { MainSection } from '@/components/sections';
 
 export default function SponsorshipPage() {
   return (
@@ -14,9 +14,6 @@ export default function SponsorshipPage() {
       {/* Why Partner With Us */}
       <MainSection>
         <div className="text-center mb-12">
-          <Badge className="mb-6 bg-accent text-accent-foreground border-accent">
-            Corporate Partnership Opportunities
-          </Badge>
           <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-balance">
             Partner With IEEE <span className="text-primary">TAMU</span>
           </h1>

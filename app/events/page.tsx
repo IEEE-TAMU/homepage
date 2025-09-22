@@ -1,6 +1,6 @@
 import { CalendarDaysIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { MainSection } from '@/components/main-section';
+import { MainSection } from '@/components/sections';
 import { EventsSection } from '@/components/events-section';
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 

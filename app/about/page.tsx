@@ -1,11 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { MainSection } from '@/components/main-section';
+import { MainSection } from '@/components/sections';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <>
       {/* Hero Section */}
-      <section className="py-10 lg:pt-16">
         <MainSection>
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-balance">
@@ -19,11 +18,9 @@ export default function AboutPage() {
             </p>
           </div>
         </MainSection>
-      </section>
 
       {/* What We Do Section */}
-      <section className="bg-card">
-        <MainSection>
+        <MainSection className="bg-card">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">What We Do</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -82,7 +79,6 @@ export default function AboutPage() {
             </Card>
           </div>
         </MainSection>
-      </section>
 
       {/* Mission & Vision */}
       <MainSection>
@@ -154,6 +150,6 @@ export default function AboutPage() {
           </div>
         </div>
       </MainSection>
-    </div>
+    </>
   );
 }

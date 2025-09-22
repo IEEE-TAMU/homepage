@@ -1,4 +1,4 @@
-import { MainSection } from '@/components/main-section';
+import { MainSection } from '@/components/sections';
 
 export default function HistoryPage() {
   return (

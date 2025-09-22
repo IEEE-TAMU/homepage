@@ -12,7 +12,7 @@ import {
   // MagnifyingGlassCircleIcon,
 } from '@heroicons/react/24/outline';
 import { EXTERNAL_LINKS } from '@/lib/external-links';
-import { MainSection } from '@/components/main-section';
+import { MainSection } from '@/components/sections';
 
 export default function MembershipPage() {
   return (

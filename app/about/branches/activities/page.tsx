@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BranchOpener, BranchOfficersCard } from '@/components/branches';
 import { Branches } from '@/lib/branches';
-import { MainSection } from '@/components/main-section';
+import { MainSection } from '@/components/sections';
 
 export default function ActivitiesPage() {
   const branch = Branches['activities'];

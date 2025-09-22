@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { MainSection } from '@/components/main-section';
+import { MainSection } from '@/components/sections';
 import type { CalendarEvent } from '@/app/api/events/route';
 
 export function EventsSection() {

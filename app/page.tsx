@@ -11,8 +11,8 @@ import {
   CpuChipIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { MainSection } from '@/components/main-section';
-import { HeroSection } from '@/components/hero-section';
+import { MainSection } from '@/components/sections';
+import { HeroSection } from '@/components/sections';
 
 export default function Homepage() {
   return (
