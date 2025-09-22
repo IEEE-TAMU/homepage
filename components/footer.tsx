@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BoltIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 
 function FooterColumn({
@@ -35,8 +35,14 @@ export function Footer() {
           <div className="grid grid-cols-3 md:grid-cols-4 gap-4 text-center md:text-left">
             <div className="hidden md:block">
               <div className="flex items-center space-x-2 mb-2">
-                <div className="h-8 w-8 rounded bg-primary flex items-center justify-center">
-                  <BoltIcon className="h-5 w-5 text-primary-foreground" />
+                <div className="flex items-center h-full">
+                  <Image
+                    src="/icon.svg"
+                    alt="IEEE Logo"
+                    width={32}
+                    height={32}
+                    className="h-full w-auto text-primary-foreground"
+                  />
                 </div>
                 <span className="text-lg font-bold">IEEE TAMU</span>
               </div>

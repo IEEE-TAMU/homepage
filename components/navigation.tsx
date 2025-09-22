@@ -1,11 +1,12 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { BoltIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import type { KeyboardEvent as ReactKeyboardEvent } from 'react';
+import Image from 'next/image';
 
 const navItems = [
   { href: '/about', label: 'About' },
@@ -77,9 +78,15 @@ export function Navigation() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         {/* Logo */}
         <div className="h-16 flex items-center justify-between">
-          <div className="flex items-center space-x-2 ml-2">
-            <div className="h-8 w-8 rounded bg-primary flex items-center justify-center">
-              <BoltIcon className="h-5 w-5 text-primary-foreground" />
+          <div className="flex items-center space-x-2 ml-2 h-full">
+            <div className="flex items-center h-full">
+              <Image
+                src="/icon.svg"
+                alt="IEEE Logo"
+                width={32}
+                height={32}
+                className="h-full w-auto text-primary-foreground"
+              />
             </div>
             <Link href="/" className="text-xl font-bold">
               IEEE TAMU
