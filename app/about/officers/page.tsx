@@ -23,7 +23,11 @@ function OfficerCard({ officer }: { officer: Officer }) {
         ) : (
           <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl font-semibold">
-              {officer.name?.[0] ?? '?'}
+              {officer.name
+                .split(' ')
+                .map((n) => n[0])
+                .join('')
+                .toUpperCase()}
             </span>
           </div>
         )}
@@ -42,6 +46,7 @@ function OfficerCard({ officer }: { officer: Officer }) {
 export default function OfficersPage() {
   const sectionTitles: Record<string, string> = {
     'e-board': 'Executive Board',
+    tec: 'Technical Education Committee',
   };
 
   const titleize = (key: string) =>
@@ -85,7 +90,7 @@ export default function OfficersPage() {
               <div>
                 <h3 className="font-semibold mb-2">General Inquiries</h3>
                 <p className="text-sm text-muted-foreground">
-                  Email: president@ieeetamu.org
+                  Email: contact@ieeetamu.org
                 </p>
               </div>
               <div>

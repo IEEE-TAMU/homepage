@@ -18,41 +18,35 @@ const Branches: Record<string, Branch> = {
       'The Executive Board oversees the overall direction and operations of IEEE TAMU.',
     officers: [
       {
-        name: 'Oliver Smith',
+        name: 'Oliver Jansen',
         position: 'President',
-        photo: '/images/officers/oliver_smith.jpg',
-        description: 'Leads the organization and oversees all operations.',
       },
       {
-        name: 'Ava Johnson',
+        name: 'Seth Mayhue',
         position: 'Vice President',
-        photo: '/images/officers/ava_johnson.jpg',
-        description:
-          'Supports the president and coordinates chapter operations.',
       },
       {
-        name: 'Liam Martinez',
+        name: 'Arju Kafle',
         position: 'Secretary',
-        photo: '/images/officers/liam_martinez.jpg',
-        description: 'Manages communications, records, and meeting notes.',
       },
       {
-        name: 'Sophia Davis',
+        name: 'Nafi Baksh',
         position: 'Treasurer',
-        photo: '/images/officers/sophia_davis.jpg',
-        description: 'Oversees finances, budgeting, and reimbursements.',
       },
+    ],
+  },
+  undersecretary: {
+    name: 'Undersecretary Team',
+    description:
+      'The Undersecretary Team manages internal affairs, member engagement, and chapter administration.',
+    officers: [
       {
-        name: 'Noah Lee',
+        name: 'Caleb Norton',
         position: 'Webmaster',
-        photo: '/images/officers/noah_lee.jpg',
-        description: 'Maintains the website and digital tools.',
       },
       {
-        name: 'Mia Patel',
-        position: 'Social Chair',
-        photo: '/images/officers/mia_patel.jpg',
-        description: 'Plans socials and community-building events.',
+        name: 'Githin Johny',
+        position: 'Historian',
       },
     ],
   },
@@ -62,16 +56,20 @@ const Branches: Record<string, Branch> = {
       'The Activities Committee organizes hands-on workshops and technical activities for members.',
     officers: [
       {
-        name: 'Ethan Walker',
-        position: 'Activities Chair',
-        photo: '/images/officers/ethan_walker.jpg',
-        description: 'Leads hands-on workshops and technical activities.',
+        name: 'Josh Rayo',
+        position: 'Activities Co-Chair',
       },
       {
-        name: 'Grace Kim',
-        position: 'Activities Coordinator',
-        photo: '/images/officers/grace_kim.jpg',
-        description: 'Assists with scheduling and logistics.',
+        name: 'Andy Luu',
+        position: 'Activities Co-Chair',
+      },
+      {
+        name: 'Parth Nagesh',
+        position: 'Activities Officer',
+      },
+      {
+        name: 'Tony Doan',
+        position: 'Activities Officer',
       },
     ],
   },
@@ -81,16 +79,20 @@ const Branches: Record<string, Branch> = {
       'The Corporate Relations Committee manages partnerships and outreach to industry sponsors.',
     officers: [
       {
-        name: 'Daniel Chen',
+        name: 'Anushka Kulkar',
         position: 'Corporate Chair',
-        photo: '/images/officers/daniel_chen.jpg',
-        description: 'Manages corporate outreach and partnerships.',
       },
       {
-        name: 'Zoe Nguyen',
-        position: 'Corporate Coordinator',
-        photo: '/images/officers/zoe_nguyen.jpg',
-        description: 'Coordinates info sessions and networking events.',
+        name: 'Emaad Karim',
+        position: 'Corporate Officer',
+      },
+      {
+        name: 'Karla Sanchez',
+        position: 'Corporate Officer',
+      },
+      {
+        name: 'Riya Shah',
+        position: 'Corporate Officer',
       },
     ],
   },
@@ -100,16 +102,20 @@ const Branches: Record<string, Branch> = {
       'The Events Committee plans and executes major events such as career fairs and guest lectures.',
     officers: [
       {
-        name: 'James Rivera',
+        name: 'Alan Jaf',
         position: 'Events Chair',
-        photo: '/images/officers/james_rivera.jpg',
-        description: 'Organizes flagship events and logistics.',
       },
       {
-        name: 'Emily Carter',
-        position: 'Events Coordinator',
-        photo: '/images/officers/emily_carter.jpg',
-        description: 'Supports event planning and execution.',
+        name: 'Jadon Lee',
+        position: 'Events Officer',
+      },
+      {
+        name: 'Tanmai Buyyanapragada',
+        position: 'Events Officer',
+      },
+      {
+        name: 'Pallavi Gokul',
+        position: 'Events Officer',
       },
     ],
   },
@@ -119,16 +125,20 @@ const Branches: Record<string, Branch> = {
       'The Public Relations Committee handles marketing, branding, and communications for the chapter.',
     officers: [
       {
-        name: 'Lucas Brown',
+        name: 'Annie Li',
         position: 'PR Chair',
-        photo: '/images/officers/lucas_brown.jpg',
-        description: 'Leads marketing, branding, and communications.',
       },
       {
-        name: 'Avery Wilson',
-        position: 'PR Coordinator',
-        photo: '/images/officers/avery_wilson.jpg',
-        description: 'Manages social media and content.',
+        name: "Caden D'Souza",
+        position: 'PR Officer',
+      },
+      {
+        name: 'Adhithi Venkatraghavan',
+        position: 'PR Officer',
+      },
+      {
+        name: 'Xinyan Su',
+        position: 'PR Officer',
       },
     ],
   },
@@ -138,17 +148,20 @@ const Branches: Record<string, Branch> = {
       'The Technical Education Committee develops educational content, tutorials, and resources for members.',
     officers: [
       {
-        name: 'Harper Thompson',
+        name: 'Jyoti Verma',
         position: 'TEC Chair',
-        photo: '/images/officers/harper_thompson.jpg',
-        description:
-          'Oversees Technical Education Committee (TEC) initiatives.',
       },
       {
-        name: 'Benjamin Scott',
-        position: 'TEC Coordinator',
-        photo: '/images/officers/benjamin_scott.jpg',
-        description: 'Develops curriculum and tutorial materials.',
+        name: 'Catherine Boyle',
+        position: 'TEC Officer',
+      },
+      {
+        name: 'Abhitej Devireddy',
+        position: 'TEC Officer',
+      },
+      {
+        name: 'Branden Zhu',
+        position: 'TEC Officer',
       },
     ],
   },

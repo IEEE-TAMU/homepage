@@ -5,11 +5,13 @@ import { MainSection } from '@/components/main-section';
 import { Branches } from '@/lib/branches';
 
 export default function BranchesPage() {
-  const entries = Object.entries(Branches).map(([slug, branch]) => ({
-    slug,
-    name: branch.name,
-    description: branch.description,
-  }));
+  const entries = Object.entries(Branches)
+    .map(([slug, branch]) => ({
+      slug,
+      name: branch.name,
+      description: branch.description,
+    }))
+    .filter((branch) => branch.slug !== 'undersecretary'); // exclude undersecretary branch
 
   return (
     <MainSection className="py-16">

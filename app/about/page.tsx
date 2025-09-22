@@ -137,30 +137,19 @@ export default function AboutPage() {
           <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-lg">
             <h3 className="text-xl font-semibold mb-6">By the Numbers</h3>
             <div className="grid grid-cols-2 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                <div className="text-sm text-muted-foreground">
-                  Active Members
+              {[
+                { value: '500+', label: 'Active Members' },
+                { value: '50+', label: 'Events Per Year' },
+                // { value: '20+', label: 'Industry Partners' }, // replace with something else
+                { value: '115+', label: 'Years Active' },
+              ].map(({ value, label }) => (
+                <div className="text-center" key={label}>
+                  <div className="text-3xl font-bold text-primary mb-2">
+                    {value}
+                  </div>
+                  <div className="text-sm text-muted-foreground">{label}</div>
                 </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">50+</div>
-                <div className="text-sm text-muted-foreground">
-                  Events Per Year
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">20+</div>
-                <div className="text-sm text-muted-foreground">
-                  Industry Partners
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">15+</div>
-                <div className="text-sm text-muted-foreground">
-                  Years Active
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
