@@ -3,6 +3,7 @@ import * as ical from 'node-ical';
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 
 interface CalendarEvent {
+  uid: string;
   title: string;
   description: string;
   start: Date;
@@ -20,6 +21,7 @@ export async function GET() {
     const events: CalendarEvent[] = Object.values(parsed)
       .filter((item): item is ical.VEvent => item.type === 'VEVENT')
       .map((event) => ({
+        uid: event.uid,
         title: event.summary || '',
         description: event.description || 'No description available',
         start: event.start,

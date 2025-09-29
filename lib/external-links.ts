@@ -4,6 +4,7 @@ export const EXTERNAL_LINKS = {
   IEEE_GLOBAL: 'https://ieee.org',
   IEEE_PORTAL: 'https://portal.ieeetamu.org',
   IEEE_MEMBERSHIP_REGISTER: 'https://portal.ieeetamu.org/members/register',
+  IEEE_RSVP: 'https://portal.ieeetamu.org/members/registration?rsvp=',
 
   // Social media links
   LINKEDIN: 'https://link.ieeetamu.org/linkedin',
@@ -11,7 +12,7 @@ export const EXTERNAL_LINKS = {
   DISCORD: 'https://link.ieeetamu.org/discord',
 
   // Calendar links
-  IEEE_CALENDAR_ICS: 'https://link.ieeetamu.org/ical',
+  IEEE_CALENDAR_ICS: 'https://portal.ieeetamu.org/api/v1/calendar',
   IEEE_CALENDAR_GOOGLE: 'https://link.ieeetamu.org/calendar',
 } as const;
 

@@ -10,6 +10,8 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { MainSection } from '@/components/sections';
+import { Button } from '@/components/ui/button';
+import { EXTERNAL_LINKS } from '@/lib/external-links';
 import type { CalendarEvent } from '@/app/api/events/route';
 
 export function EventsSection() {
@@ -75,6 +77,12 @@ export function EventsSection() {
       default:
         return 'secondary';
     }
+  };
+
+  const isEventWithinOneWeek = (eventDate: Date) => {
+    const now = new Date();
+    const oneWeekFromNow = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+    return eventDate <= oneWeekFromNow;
   };
 
   const Header = () => {
@@ -169,9 +177,21 @@ export function EventsSection() {
                     <span>{formatTime(event.start)}</span>
                   </div>
                 </div>
-                {/* <Button className="w-full" size="sm">
-            RSVP Now
-          </Button> */}
+                {isEventWithinOneWeek(event.start) && (
+                  <Button
+                    className="w-full mt-2"
+                    size="sm"
+                    asChild
+                  >
+                    <a
+                      href={`${EXTERNAL_LINKS.IEEE_RSVP}${event.uid}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      RSVP Now
+                    </a>
+                  </Button>
+                )}
               </CardContent>
             </Card>
           ))
