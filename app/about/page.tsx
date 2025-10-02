@@ -15,7 +15,7 @@ export default function AboutPage() {
           <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-balance">
             About IEEE <span className="text-primary">TAMU</span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 text-pretty max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto">
             We are the{' '}
             <span className="text-primary">Texas A&M University</span> student
             branch of IEEE, fostering professional development, technical

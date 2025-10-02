@@ -22,7 +22,7 @@ export default function EventsPage() {
           <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-balance">
             IEEE TAMU Events
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 text-pretty max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto mb-3">
             Join us for workshops, networking events, competitions, and social
             gatherings. All events are automatically synced from our official
             calendar.

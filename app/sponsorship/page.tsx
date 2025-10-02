@@ -20,7 +20,7 @@ export default function SponsorshipPage() {
           <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-balance">
             Partner With IEEE <span className="text-primary">TAMU</span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 text-pretty max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto mb-3">
             Connect with the next generation of engineers and support technical
             education at{' '}
             <span className="text-primary">Texas A&M University</span>. Join

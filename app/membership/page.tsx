@@ -23,7 +23,7 @@ export default function MembershipPage() {
           <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-balance">
             Join IEEE <span className="text-primary">TAMU</span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 text-pretty max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto mb-3">
             Become part of the world&apos;s largest technical professional
             organization and unlock opportunities for professional growth,
             networking, and technical excellence.
