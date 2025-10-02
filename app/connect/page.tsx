@@ -49,7 +49,9 @@ export default function ConnectPage() {
       {/* Join Our Community Section */}
       <MainSection>
         <div className="text-center mb-4 md:mb-6">
-          <h2 className="text-3xl font-bold mb-4">Join Our Community</h2>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-balance">
+            Join Our Community
+          </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Connect with fellow engineers, stay updated on events, and be part
             of our growing community.
