@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { EXTERNAL_LINKS } from '@/lib/external-links';
+import { BrandMark } from '@/components/brandmark';
 
 function FooterColumn({
   title,
@@ -34,18 +34,7 @@ export function Footer() {
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-3 md:grid-cols-4 gap-4 text-center md:text-left">
             <div className="hidden md:block">
-              <div className="flex items-center space-x-2 mb-2">
-                <div className="flex items-center h-full">
-                  <Image
-                    src="/icon.svg"
-                    alt="IEEE Logo"
-                    width={32}
-                    height={32}
-                    className="h-full w-auto text-primary-foreground"
-                  />
-                </div>
-                <span className="text-lg font-bold">IEEE TAMU</span>
-              </div>
+              <BrandMark size="md" linkToHome={false} className="mb-2" />
               <p className="text-sm text-muted-foreground">
                 Advancing technology for humanity through professional
                 development and community engagement.

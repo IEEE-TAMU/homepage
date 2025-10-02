@@ -5,80 +5,80 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-        <MainSection>
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-balance">
-              About IEEE <span className="text-primary">TAMU</span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 text-pretty max-w-2xl mx-auto">
-              We are the{' '}
-              <span className="text-primary">Texas A&M University</span> student
-              branch of IEEE, fostering professional development, technical
-              excellence, and community engagement among engineers.
-            </p>
-          </div>
-        </MainSection>
+      <MainSection>
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-balance">
+            About IEEE <span className="text-primary">TAMU</span>
+          </h1>
+          <p className="text-xl text-muted-foreground mb-8 text-pretty max-w-2xl mx-auto">
+            We are the{' '}
+            <span className="text-primary">Texas A&M University</span> student
+            branch of IEEE, fostering professional development, technical
+            excellence, and community engagement among engineers.
+          </p>
+        </div>
+      </MainSection>
 
       {/* What We Do Section */}
-        <MainSection className="bg-card">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">What We Do</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              We foster professional development, technical excellence, and
-              community engagement through diverse programs and initiatives.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center">
-              <CardHeader>
-                {/* <Network className="h-12 w-12 text-primary mx-auto mb-4" /> */}
-                <CardTitle className="text-lg">Technical Workshops</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Hands-on learning sessions covering cutting-edge technologies
-                  and industry best practices.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardHeader>
-                {/* <Users className="h-12 w-12 text-primary mx-auto mb-4" /> */}
-                <CardTitle className="text-lg">Networking Events</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Connect with industry professionals, alumni, and fellow
-                  students in your field.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardHeader>
-                {/* <Trophy className="h-12 w-12 text-primary mx-auto mb-4" /> */}
-                <CardTitle className="text-lg">Competitions</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Participate in hackathons, design challenges, and technical
-                  competitions.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardHeader>
-                {/* <Handshake className="h-12 w-12 text-primary mx-auto mb-4" /> */}
-                <CardTitle className="text-lg">Community Service</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Give back through STEM outreach programs and community
-                  technology initiatives.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </MainSection>
+      <MainSection className="bg-card">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">What We Do</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            We foster professional development, technical excellence, and
+            community engagement through diverse programs and initiatives.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Card className="text-center">
+            <CardHeader>
+              {/* <Network className="h-12 w-12 text-primary mx-auto mb-4" /> */}
+              <CardTitle className="text-lg">Technical Workshops</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Hands-on learning sessions covering cutting-edge technologies
+                and industry best practices.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="text-center">
+            <CardHeader>
+              {/* <Users className="h-12 w-12 text-primary mx-auto mb-4" /> */}
+              <CardTitle className="text-lg">Networking Events</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Connect with industry professionals, alumni, and fellow students
+                in your field.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="text-center">
+            <CardHeader>
+              {/* <Trophy className="h-12 w-12 text-primary mx-auto mb-4" /> */}
+              <CardTitle className="text-lg">Competitions</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Participate in hackathons, design challenges, and technical
+                competitions.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="text-center">
+            <CardHeader>
+              {/* <Handshake className="h-12 w-12 text-primary mx-auto mb-4" /> */}
+              <CardTitle className="text-lg">Community Service</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Give back through STEM outreach programs and community
+                technology initiatives.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </MainSection>
 
       {/* Mission & Vision */}
       <MainSection>

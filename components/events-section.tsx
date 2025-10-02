@@ -178,11 +178,7 @@ export function EventsSection() {
                   </div>
                 </div>
                 {isEventWithinOneWeek(event.start) && (
-                  <Button
-                    className="w-full mt-2"
-                    size="sm"
-                    asChild
-                  >
+                  <Button className="w-full mt-2" size="sm" asChild>
                     <a
                       href={`${EXTERNAL_LINKS.IEEE_RSVP}${event.uid}`}
                       target="_blank"

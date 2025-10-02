@@ -63,7 +63,6 @@ export const MainSection = ({
   );
 };
 
-
 interface HeroSectionProps {
   className?: string;
   id?: string;
