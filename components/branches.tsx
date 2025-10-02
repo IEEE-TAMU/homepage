@@ -8,15 +8,17 @@ import { officerId } from '@/lib/branches';
 const BranchOpener = ({ branch }: { branch: Branch }) => {
   return (
     <div className="mb-12 max-w-4xl mx-auto">
-      <Button asChild variant="ghost" aria-label="Back to branches">
-        <Link href="/about/branches">
-          <ArrowLeftIcon className="size-4" />
-          <span>Back to branches</span>
-        </Link>
-      </Button>
-
+      <div className="flex items-start justify-between mb-4">
+        <Button asChild variant="ghost" aria-label="Back to branches">
+          <Link href="/about/branches">
+            <ArrowLeftIcon className="size-4" />
+            <span>Back to branches</span>
+          </Link>
+        </Button>
+        <h1 className="text-4xl font-bold flex-1 text-center">{branch.name}</h1>
+        <div className="w-[140px]" aria-hidden="true"></div>
+      </div>
       <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">{branch.name}</h1>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           {branch.description}
         </p>
