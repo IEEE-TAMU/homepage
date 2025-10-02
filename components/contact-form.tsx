@@ -91,7 +91,10 @@ export function ContactForm() {
             </p>
           </div>
         )}
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col h-full space-y-4"
+        >
           <div>
             <label className="text-sm font-medium mb-2 block">
               Name
@@ -137,14 +140,14 @@ export function ContactForm() {
               </select>
             </label>
           </div>
-          <div>
-            <label className="text-sm font-medium mb-2 block">
+          <div className="flex-1 flex flex-col">
+            <label className="text-sm font-medium mb-2 flex-1 flex flex-col">
               Message
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-input rounded-md bg-background h-24"
+                className="w-full px-3 py-2 border border-input rounded-md bg-background flex-1 min-h-24"
                 placeholder="Tell us how we can help..."
                 required
               />
