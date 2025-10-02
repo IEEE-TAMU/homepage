@@ -9,6 +9,7 @@ import {
   HeartIcon,
 } from '@heroicons/react/24/outline';
 import { MainSection } from '@/components/sections';
+import { SponsorsCarousel } from '@/components/sponsors-carousel';
 
 export default function SponsorshipPage() {
   return (
@@ -274,39 +275,12 @@ export default function SponsorshipPage() {
       </MainSection>
 
       {/* Current Sponsors */}
-      <section className="bg-card">
-        <MainSection>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Valued Partners</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Join these leading companies in supporting the next generation of
-              engineers.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-            <div className="h-20 w-32 bg-muted rounded flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">
-                Company Logo
-              </span>
-            </div>
-            <div className="h-20 w-32 bg-muted rounded flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">
-                Company Logo
-              </span>
-            </div>
-            <div className="h-20 w-32 bg-muted rounded flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">
-                Company Logo
-              </span>
-            </div>
-            <div className="h-20 w-32 bg-muted rounded flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">
-                Company Logo
-              </span>
-            </div>
-          </div>
-        </MainSection>
-      </section>
+      <MainSection className="bg-card">
+        <SponsorsCarousel
+          title="Our Valued Partners"
+          description="We're grateful to partner with these organizations who support engineering education at Texas A&M."
+        />
+      </MainSection>
 
       {/* How to Sponsor */}
       <MainSection>

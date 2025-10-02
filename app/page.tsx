@@ -13,6 +13,7 @@ import {
 import Link from 'next/link';
 import { MainSection } from '@/components/sections';
 import { HeroSection } from '@/components/sections';
+import { SponsorsCarousel } from '@/components/sponsors-carousel';
 
 export default function Homepage() {
   return (
@@ -195,6 +196,10 @@ export default function Homepage() {
             </Button>
           </Card>
         </div>
+      </MainSection>
+
+      <MainSection className="bg-card">
+        <SponsorsCarousel />
       </MainSection>
 
       <section className="bg-gradient-to-br from-primary/5 to-accent/5">
