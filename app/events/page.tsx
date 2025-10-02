@@ -18,9 +18,6 @@ export default function EventsPage() {
       {/* Events Section */}
       <MainSection>
         <div className="text-center">
-          {/* <Badge className="mb-6 bg-secondary text-secondary-foreground border-secondary">
-              Live from Google Calendar
-            </Badge> */}
           <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-balance">
             IEEE TAMU Events
           </h1>

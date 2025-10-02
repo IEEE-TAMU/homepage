@@ -13,43 +13,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 
-const tierOrder = ['Platinum', 'Gold', 'Silver', 'Bronze'];
-
-// Sponsor logos data
-const sponsors = [
-  {
-    name: 'Dashiell Corporation',
-    logo: 'dashiell.png',
-    tier: 'Bronze',
-    website: 'https://www.dashiell.com/',
-  },
-  {
-    name: 'Burns & McDonnell',
-    logo: 'burns_mcdonnell.png',
-    tier: 'Platinum',
-    website: 'https://www.burnsmcd.com/',
-  },
-  {
-    name: 'Lockheed Martin',
-    logo: 'lockheed.png',
-    tier: 'Gold',
-    website: 'https://www.lockheedmartin.com/',
-  },
-  {
-    name: 'Sandia National Laboratories',
-    logo: 'sandia.png',
-    tier: 'Gold',
-    website: 'https://www.sandia.gov/',
-  },
-  {
-    name: 'Texas Instruments',
-    logo: 'texas_instruments.png',
-    tier: 'Silver',
-    website: 'https://www.ti.com/',
-  },
-]
-  // force sort sponsors by tier so that higher tier sponsors appear first in the carousel
-  .sort((a, b) => tierOrder.indexOf(a.tier) - tierOrder.indexOf(b.tier));
+import { getAllSponsors } from '@/lib/sponsors';
 
 interface SponsorsCarouselProps {
   title?: string;
@@ -65,6 +29,8 @@ export function SponsorsCarousel({
   const plugin = useRef(
     Autoplay({ delay: autoplayDelay, stopOnInteraction: true })
   );
+
+  const sponsors = getAllSponsors();
 
   return (
     <div className="w-full">

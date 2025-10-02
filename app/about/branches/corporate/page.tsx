@@ -1,8 +1,15 @@
+import Link from 'next/link';
+
 import { BranchOfficersCard, BranchOpener } from '@/components/branches';
 import { MainSection } from '@/components/sections';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 import { Branches } from '@/lib/branches';
+import {
+  type SponsorTier,
+  TIER_ORDER,
+  getSponsorsByTier,
+} from '@/lib/sponsors';
 
 export default function CorporatePage() {
   const branch = Branches['corporate'];
@@ -84,34 +91,32 @@ export default function CorporatePage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-secondary/5 rounded-lg">
-                  <h4 className="font-semibold">Gold Sponsors</h4>
-                  <p className="text-sm text-muted-foreground">
-                    [Company Name]
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    [Company Name]
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-secondary/5 rounded-lg">
-                  <h4 className="font-semibold">Silver Sponsors</h4>
-                  <p className="text-sm text-muted-foreground">
-                    [Company Name]
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    [Company Name]
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-secondary/5 rounded-lg">
-                  <h4 className="font-semibold">Bronze Sponsors</h4>
-                  <p className="text-sm text-muted-foreground">
-                    [Company Name]
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    [Company Name]
-                  </p>
-                </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+                {TIER_ORDER.map((tier) => {
+                  const sponsors = getSponsorsByTier(tier as SponsorTier);
+                  if (sponsors.length === 0) return null;
+                  return (
+                    <div
+                      key={tier}
+                      className="text-center p-4 bg-secondary/5 rounded-lg"
+                    >
+                      <h4 className="font-semibold mb-3">{tier} Sponsors</h4>
+                      <div className="space-y-2">
+                        {sponsors.map((sponsor) => (
+                          <Link
+                            key={sponsor.name}
+                            href={sponsor.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            {sponsor.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </CardContent>
           </Card>
