@@ -97,64 +97,6 @@ export default function EventsPage() {
           </div>
         </div>
       </MainSection>
-
-      {/* How to Stay Updated */}
-      <MainSection>
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Stay Updated</h2>
-          <p className="text-muted-foreground mb-8">
-            Never miss an event! Here&apos;s how to stay in the loop with all
-            IEEE TAMU activities.
-          </p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: 'Discord Server',
-                description:
-                  'Join our Discord for real-time updates, discussions, and event reminders.',
-                link: {
-                  href: '#',
-                  label: 'Join Discord →',
-                },
-              },
-              // {
-              //   title: 'Email Newsletter',
-              //   description:
-              //     'Get weekly updates with upcoming events and important announcements.',
-              //   link: {
-              //     href: '#',
-              //     label: 'Subscribe →',
-              //   },
-              // },
-              {
-                title: 'Social Media',
-                description:
-                  'Follow us on Instagram and LinkedIn for photos and updates.',
-                link: {
-                  href: '#',
-                  label: 'Follow Us →',
-                },
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="p-6 rounded-lg bg-card border flex flex-col h-full"
-              >
-                <h3 className="font-semibold mb-3">{item.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4 flex-1">
-                  {item.description}
-                </p>
-                <Link
-                  href={item.link.href}
-                  className="text-sm text-primary hover:underline mt-auto"
-                >
-                  {item.link.label}
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </MainSection>
     </div>
   );
 }
