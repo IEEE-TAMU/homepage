@@ -12,7 +12,7 @@ import { MainSection } from '@/components/sections';
 
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 
-export default function EventsPage() {
+export default async function EventsPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Events Section */}

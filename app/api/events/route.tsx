@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import * as ical from 'node-ical';
+import { parseICS } from 'node-ical';
+import type { VEvent } from 'node-ical';
 
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 
@@ -13,21 +14,26 @@ interface CalendarEvent {
   type: string;
 }
 
+// Cache the events for 5 minutes (300 seconds)
+export const revalidate = 300;
+
 export async function GET() {
   try {
-    const response = await fetch(EXTERNAL_LINKS.IEEE_CALENDAR_ICS);
+    const response = await fetch(EXTERNAL_LINKS.IEEE_CALENDAR_ICS, {
+      next: { revalidate: 300 }, // Cache for 5 minutes
+    });
     const icalData = await response.text();
 
-    const parsed = ical.parseICS(icalData);
+    const parsed = parseICS(icalData);
     const events: CalendarEvent[] = Object.values(parsed)
-      .filter((item): item is ical.VEvent => item.type === 'VEVENT')
+      .filter((item): item is VEvent => item.type === 'VEVENT')
       .map((event) => ({
         uid: event.uid,
         title: event.summary || '',
         description: event.description || 'No description available',
         start: event.start,
         end: event.end,
-        location: event.location || 'TBD',
+        location: event.location || 'Location TBD',
         type: categorizeEvent(event.summary || ''),
       }));
 
