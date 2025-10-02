@@ -37,7 +37,7 @@ export default function MembershipPage() {
               asChild
             >
               <a
-                href={EXTERNAL_LINKS.IEEE_MEMBERSHIP_REGISTER}
+                href={EXTERNAL_LINKS.IEEE_TAMU_MEMBERSHIP_REGISTER}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -228,7 +228,7 @@ export default function MembershipPage() {
                 asChild
               >
                 <a
-                  href={EXTERNAL_LINKS.IEEE_MEMBERSHIP_REGISTER}
+                  href={EXTERNAL_LINKS.IEEE_TAMU_MEMBERSHIP_REGISTER}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -295,7 +295,7 @@ export default function MembershipPage() {
               asChild
             >
               <a
-                href={EXTERNAL_LINKS.IEEE_MEMBERSHIP_REGISTER}
+                href={EXTERNAL_LINKS.IEEE_TAMU_MEMBERSHIP_REGISTER}
                 target="_blank"
                 rel="noopener noreferrer"
               >

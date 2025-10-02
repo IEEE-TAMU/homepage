@@ -55,7 +55,7 @@ export function Footer() {
               links={[
                 { href: EXTERNAL_LINKS.IEEE_GLOBAL, label: 'IEEE Global' },
                 {
-                  href: EXTERNAL_LINKS.IEEE_PORTAL,
+                  href: EXTERNAL_LINKS.IEEE_TAMU_PORTAL,
                   label: 'Member Portal',
                 },
                 { href: '/faq', label: 'FAQ' },

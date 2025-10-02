@@ -182,7 +182,7 @@ export function EventsSection() {
                 {isEventWithinOneWeek(event.start) && (
                   <Button className="w-full mt-2" size="sm" asChild>
                     <a
-                      href={`${EXTERNAL_LINKS.IEEE_RSVP}${event.uid}`}
+                      href={`${EXTERNAL_LINKS.IEEE_TAMU_RSVP}${event.uid}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
