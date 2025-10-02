@@ -176,7 +176,7 @@ export default function Homepage() {
               className="mt-auto bg-transparent"
               asChild
             >
-              <Link href="/events">
+              <Link href="/events#upcoming-events">
                 View Events <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Link>
             </Button>
