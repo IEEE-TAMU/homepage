@@ -1,7 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { BranchOpener, BranchOfficersCard } from '@/components/branches';
-import { Branches } from '@/lib/branches';
+import { BranchOfficersCard, BranchOpener } from '@/components/branches';
 import { MainSection } from '@/components/sections';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
+import { Branches } from '@/lib/branches';
 
 export default function TecPage() {
   const branch = Branches['tec'];

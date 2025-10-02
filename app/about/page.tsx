@@ -1,10 +1,11 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { MainSection } from '@/components/sections';
 import {
   AcademicCapIcon,
-  UsersIcon,
   GlobeAltIcon,
+  UsersIcon,
 } from '@heroicons/react/24/outline';
+
+import { MainSection } from '@/components/sections';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function AboutPage() {
   return (

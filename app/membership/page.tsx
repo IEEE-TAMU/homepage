@@ -1,18 +1,20 @@
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import {
-  CheckCircleIcon,
   ArrowTopRightOnSquareIcon,
+  BookOpenIcon,
+  // MagnifyingGlassCircleIcon,
+  CheckCircleIcon,
+  GlobeAltIcon,
   UserGroupIcon,
   UserIcon,
   UsersIcon,
-  GlobeAltIcon,
-  BookOpenIcon,
-  // MagnifyingGlassCircleIcon,
 } from '@heroicons/react/24/outline';
-import { EXTERNAL_LINKS } from '@/lib/external-links';
+
 import { MainSection } from '@/components/sections';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
+import { EXTERNAL_LINKS } from '@/lib/external-links';
 
 export default function MembershipPage() {
   return (

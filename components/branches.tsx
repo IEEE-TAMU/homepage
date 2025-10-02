@@ -1,7 +1,9 @@
-import Link from 'next/link';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
 import type { Branch } from '@/lib/branches';
 import { officerId } from '@/lib/branches';
 

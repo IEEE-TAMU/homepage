@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import * as ical from 'node-ical';
+
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 
 interface CalendarEvent {

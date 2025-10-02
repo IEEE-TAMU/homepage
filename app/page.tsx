@@ -1,19 +1,20 @@
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import {
-  CalendarDaysIcon,
-  UsersIcon,
-  BuildingOffice2Icon,
   ArrowRightIcon,
-  TrophyIcon,
-  GlobeAmericasIcon,
+  BuildingOffice2Icon,
+  CalendarDaysIcon,
   CpuChipIcon,
+  GlobeAmericasIcon,
+  TrophyIcon,
+  UsersIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+
 import { MainSection } from '@/components/sections';
 import { HeroSection } from '@/components/sections';
 import { SponsorsCarousel } from '@/components/sponsors-carousel';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function Homepage() {
   return (

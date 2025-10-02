@@ -1,6 +1,10 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+
+import { MainSection } from '@/components/sections';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -8,11 +12,9 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { MainSection } from '@/components/sections';
-import { Button } from '@/components/ui/button';
-import { EXTERNAL_LINKS } from '@/lib/external-links';
+
 import type { CalendarEvent } from '@/app/api/events/route';
+import { EXTERNAL_LINKS } from '@/lib/external-links';
 
 export function EventsSection() {
   const [events, setEvents] = useState<CalendarEvent[]>([]);

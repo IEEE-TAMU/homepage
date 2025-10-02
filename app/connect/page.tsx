@@ -1,16 +1,18 @@
-import { ContactForm } from '@/components/contact-form';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { MainSection } from '@/components/sections';
-import { EXTERNAL_LINKS } from '@/lib/external-links';
-import Link from 'next/link';
 import {
-  ChatBubbleLeftRightIcon,
   CalendarDaysIcon,
   CameraIcon,
+  ChatBubbleLeftRightIcon,
   EnvelopeIcon,
   MapPinIcon,
 } from '@heroicons/react/24/outline';
+import Link from 'next/link';
+
+import { ContactForm } from '@/components/contact-form';
+import { MainSection } from '@/components/sections';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
+import { EXTERNAL_LINKS } from '@/lib/external-links';
 
 function CommunityCard({
   iconBg,

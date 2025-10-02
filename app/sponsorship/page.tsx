@@ -1,15 +1,16 @@
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import Link from 'next/link';
 import {
-  CheckCircleIcon,
   BuildingOffice2Icon,
-  MegaphoneIcon,
+  CheckCircleIcon,
   HeartIcon,
+  MegaphoneIcon,
 } from '@heroicons/react/24/outline';
+import Link from 'next/link';
+
 import { MainSection } from '@/components/sections';
 import { SponsorsCarousel } from '@/components/sponsors-carousel';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function SponsorshipPage() {
   return (

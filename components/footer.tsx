@@ -1,6 +1,8 @@
 import Link from 'next/link';
-import { EXTERNAL_LINKS } from '@/lib/external-links';
+
 import { BrandMark } from '@/components/brandmark';
+
+import { EXTERNAL_LINKS } from '@/lib/external-links';
 
 function FooterColumn({
   title,

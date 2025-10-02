@@ -1,12 +1,13 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { KeyboardEvent as ReactKeyboardEvent } from 'react';
+
 import { BrandMark } from '@/components/brandmark';
+import { Button } from '@/components/ui/button';
 
 const navItems = [
   { href: '/about', label: 'About' },

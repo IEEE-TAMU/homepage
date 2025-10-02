@@ -1,8 +1,10 @@
 import Image from 'next/image';
+
+import { MainSection } from '@/components/sections';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
 import { Branches, officerId } from '@/lib/branches';
 import type { Officer } from '@/lib/branches';
-import { MainSection } from '@/components/sections';
 
 const Officers = Object.fromEntries(
   Object.entries(Branches).map(([key, branch]) => [key, branch.officers])

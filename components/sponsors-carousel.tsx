@@ -1,7 +1,10 @@
 'use client';
 
-import * as React from 'react';
 import Autoplay from 'embla-carousel-autoplay';
+import Image from 'next/image';
+import { useRef } from 'react';
+
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
@@ -9,8 +12,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
-import { Card, CardContent } from '@/components/ui/card';
-import Image from 'next/image';
 
 const tierOrder = ['Platinum', 'Gold', 'Silver', 'Bronze'];
 
@@ -61,7 +62,7 @@ export function SponsorsCarousel({
   description = 'Thank you to our sponsors who make our events and programs possible.',
   autoplayDelay = 2000,
 }: SponsorsCarouselProps) {
-  const plugin = React.useRef(
+  const plugin = useRef(
     Autoplay({ delay: autoplayDelay, stopOnInteraction: true })
   );
 

@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
 import { MainSection } from '@/components/sections';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function FAQPage() {
   return (
