@@ -27,19 +27,14 @@ export default function BranchesPage() {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {entries.map((branch) => (
-            <Card key={branch.slug} className="h-full">
-              <CardHeader>
-                <CardTitle className="text-xl flex flex-row items-end justify-start gap-4">
-                  <div
-                    className={`h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center`}
-                  >
-                    {/* Placeholder for branch icon */}
-                  </div>
+            <Card key={branch.slug} className="h-full flex flex-col">
+              <CardHeader className="flex-shrink-0">
+                <CardTitle className="text-xl min-h-[4rem] flex items-start">
                   {branch.name}
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex-1 flex flex-col">
-                <p className="text-muted-foreground mb-6 flex-1">
+                <p className="text-muted-foreground mb-6">
                   {branch.description}
                 </p>
                 <Button asChild className="w-full mt-auto">
