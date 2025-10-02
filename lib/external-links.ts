@@ -4,6 +4,7 @@ export const EXTERNAL_LINKS = {
   IEEE_GLOBAL: 'https://ieee.org',
   IEEE_PORTAL: 'https://portal.ieeetamu.org',
   IEEE_MEMBERSHIP_REGISTER: 'https://portal.ieeetamu.org/members/register',
+  IEEE_MEMBERSHIP_JOIN: 'https://www.ieee.org/membership/join',
   IEEE_RSVP: 'https://portal.ieeetamu.org/members/registration?rsvp=',
 
   // Social media links

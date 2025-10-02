@@ -150,11 +150,8 @@ export default function MembershipPage() {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <Card className="relative flex flex-col h-full">
             <CardHeader className="text-center">
-              <Badge className="w-fit mx-auto mb-4" variant="secondary">
-                Most Popular
-              </Badge>
               <CardTitle className="text-2xl">IEEE Student Member</CardTitle>
-              <div className="text-3xl font-bold text-primary mt-4">
+              <div className="text-3xl font-bold text-primary mt-4 whitespace-nowrap">
                 $32/year
               </div>
               <p className="text-muted-foreground">
@@ -177,17 +174,31 @@ export default function MembershipPage() {
                   </div>
                 ))}
               </div>
-              <Button className="w-full bg-primary hover:bg-primary/90 mt-auto">
-                <ArrowTopRightOnSquareIcon className="mr-2 h-4 w-4" />
-                Join IEEE Global
+              <Button
+                className="w-full bg-primary hover:bg-primary/90 mt-auto"
+                asChild
+              >
+                <a
+                  href={EXTERNAL_LINKS.IEEE_MEMBERSHIP_JOIN}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ArrowTopRightOnSquareIcon className="mr-2 h-4 w-4" />
+                  Join IEEE Global
+                </a>
               </Button>
             </CardContent>
           </Card>
 
-          <Card className="flex flex-col h-full">
+          <Card className="border-primary relative flex flex-col h-full">
+            <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
+              Most Popular
+            </Badge>
             <CardHeader className="text-center">
               <CardTitle className="text-2xl">Local Chapter Member</CardTitle>
-              <div className="text-3xl font-bold text-accent mt-4">Free</div>
+              <div className="text-3xl font-bold text-accent mt-4 whitespace-nowrap">
+                $15/year
+              </div>
               <p className="text-muted-foreground">
                 Access to <span className="text-primary">TAMU</span>-specific
                 opportunities
@@ -212,8 +223,15 @@ export default function MembershipPage() {
               <Button
                 variant="outline"
                 className="w-full mt-auto bg-transparent"
+                asChild
               >
-                Join IEEE TAMU
+                <a
+                  href={EXTERNAL_LINKS.IEEE_MEMBERSHIP_REGISTER}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Join IEEE TAMU
+                </a>
               </Button>
             </CardContent>
           </Card>
@@ -233,8 +251,14 @@ export default function MembershipPage() {
               {
                 number: 1,
                 title: 'Choose Your Level',
-                description:
-                  'Decide between local chapter membership (free) or full IEEE global membership ($32/year).',
+                description: (
+                  <>
+                    Decide between local chapter membership{' '}
+                    <span className="whitespace-nowrap">($15/year)</span> or
+                    full IEEE global membership{' '}
+                    <span className="whitespace-nowrap">($32/year)</span>.
+                  </>
+                ),
               },
               {
                 number: 2,

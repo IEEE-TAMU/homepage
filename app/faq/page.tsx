@@ -30,9 +30,9 @@ export default function FAQPage() {
               <CardContent>
                 <p className="text-muted-foreground">
                   You can join by visiting our membership page and choosing
-                  between local chapter membership (free) or full IEEE global
-                  membership ($32/year). Both options give you access to our
-                  events and community.
+                  between local chapter membership ($15/year) or full IEEE
+                  global membership ($32/year). Both options give you access to
+                  our events and community.
                 </p>
               </CardContent>
             </Card>
@@ -96,7 +96,7 @@ export default function FAQPage() {
               help!
             </p>
             <Link
-              href="/connect"
+              href="/connect#send-message"
               className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
             >
               Contact Us
