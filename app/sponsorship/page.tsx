@@ -5,6 +5,8 @@ import Link from 'next/link';
 import {
   CheckCircleIcon,
   BuildingOffice2Icon,
+  MegaphoneIcon,
+  HeartIcon,
 } from '@heroicons/react/24/outline';
 import { MainSection } from '@/components/sections';
 
@@ -74,7 +76,7 @@ export default function SponsorshipPage() {
           </Card>
           <Card className="text-center">
             <CardHeader>
-              {/* <Target className="h-12 w-12 text-primary mx-auto mb-4" /> */}
+              <MegaphoneIcon className="h-12 w-12 text-primary mx-auto mb-4" />
               <CardTitle>Brand Visibility</CardTitle>
             </CardHeader>
             <CardContent>
@@ -104,7 +106,7 @@ export default function SponsorshipPage() {
           </Card>
           <Card className="text-center">
             <CardHeader>
-              {/* <Handshake className="h-12 w-12 text-primary mx-auto mb-4" /> */}
+              <HeartIcon className="h-12 w-12 text-primary mx-auto mb-4" />
               <CardTitle>Community Impact</CardTitle>
             </CardHeader>
             <CardContent>

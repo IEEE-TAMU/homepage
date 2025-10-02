@@ -1,5 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MainSection } from '@/components/sections';
+import {
+  AcademicCapIcon,
+  UsersIcon,
+  GlobeAltIcon,
+} from '@heroicons/react/24/outline';
 
 export default function AboutPage() {
   return (
@@ -94,7 +99,7 @@ export default function AboutPage() {
             <div className="space-y-4">
               <div className="flex items-start space-x-4">
                 <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  {/* <BookOpen className="h-4 w-4 text-primary" /> */}
+                  <AcademicCapIcon className="h-4 w-4 text-primary" />
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">Educational Excellence</h3>
@@ -106,7 +111,7 @@ export default function AboutPage() {
               </div>
               <div className="flex items-start space-x-4">
                 <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  {/* <Network className="h-4 w-4 text-primary" /> */}
+                  <UsersIcon className="h-4 w-4 text-primary" />
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">Professional Growth</h3>
@@ -118,7 +123,7 @@ export default function AboutPage() {
               </div>
               <div className="flex items-start space-x-4">
                 <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  {/* <Target className="h-4 w-4 text-primary" /> */}
+                  <GlobeAltIcon className="h-4 w-4 text-primary" />
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">Community Impact</h3>

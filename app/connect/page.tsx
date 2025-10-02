@@ -4,16 +4,23 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MainSection } from '@/components/sections';
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 import Link from 'next/link';
+import {
+  ChatBubbleLeftRightIcon,
+  CalendarDaysIcon,
+  CameraIcon,
+  EnvelopeIcon,
+  MapPinIcon,
+} from '@heroicons/react/24/outline';
 
 function CommunityCard({
   iconBg,
-  // icon,
+  icon,
   title,
   description,
   button,
 }: {
   iconBg: string;
-  // icon?: React.ReactNode;
+  icon?: React.ReactNode;
   title: string;
   description: string;
   button: React.ReactNode;
@@ -24,7 +31,7 @@ function CommunityCard({
         <div
           className={`h-16 w-16 rounded-full ${iconBg} flex items-center justify-center mx-auto mb-4`}
         >
-          {/* {icon} */}
+          {icon}
         </div>
         <CardTitle className="text-xl">{title}</CardTitle>
       </CardHeader>
@@ -51,8 +58,10 @@ export default function ConnectPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
-              iconBg: 'bg-secondary/10',
-              // icon: <MessageCircle className="h-8 w-8 text-secondary" />,
+              iconBg: 'bg-accent/10',
+              icon: (
+                <ChatBubbleLeftRightIcon className="h-8 w-8 text-accent-foreground" />
+              ),
               title: 'Discord Community',
               description:
                 'Join our active Discord server for real-time discussions, study groups, project collaboration, and community support.',
@@ -67,8 +76,10 @@ export default function ConnectPage() {
               ),
             },
             {
-              iconBg: 'bg-secondary/10',
-              // icon: <Calendar className="h-8 w-8 text-secondary" />,
+              iconBg: 'bg-accent/10',
+              icon: (
+                <CalendarDaysIcon className="h-8 w-8 text-accent-foreground" />
+              ),
               title: 'Calendar',
               description:
                 'Subscribe to our Google Calendar to never miss an event. Get automatic notifications for workshops, meetings, and socials.',
@@ -86,7 +97,7 @@ export default function ConnectPage() {
             },
             {
               iconBg: 'bg-accent/10',
-              // icon: <Instagram className="h-8 w-8 text-accent-foreground" />,
+              icon: <CameraIcon className="h-8 w-8 text-accent-foreground" />,
               title: 'Instagram',
               description:
                 'Follow us for behind-the-scenes content, event highlights, member spotlights, and IEEE TAMU updates.',
@@ -270,7 +281,7 @@ export default function ConnectPage() {
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  {/* <Mail className="h-6 w-6 text-primary" /> */}
+                  <EnvelopeIcon className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <h4 className="font-semibold">Email</h4>
@@ -279,7 +290,7 @@ export default function ConnectPage() {
               </div>
               <div className="flex items-center space-x-4">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  {/* <MapPin className="h-6 w-6 text-primary" /> */}
+                  <MapPinIcon className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <h4 className="font-semibold">Location</h4>

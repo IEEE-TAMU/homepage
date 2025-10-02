@@ -1,4 +1,10 @@
-import { CalendarDaysIcon } from '@heroicons/react/24/outline';
+import {
+  CalendarDaysIcon,
+  WrenchScrewdriverIcon,
+  UsersIcon,
+  TrophyIcon,
+  SparklesIcon,
+} from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { MainSection } from '@/components/sections';
 import { EventsSection } from '@/components/events-section';
@@ -52,7 +58,7 @@ export default function EventsPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="text-center p-6 rounded-lg bg-background border flex flex-col h-full">
             <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🔧</span>
+              <WrenchScrewdriverIcon className="h-6 w-6 text-primary" />
             </div>
             <h3 className="font-semibold mb-2">Technical Workshops</h3>
             <p className="text-sm text-muted-foreground">
@@ -62,7 +68,7 @@ export default function EventsPage() {
           </div>
           <div className="text-center p-6 rounded-lg bg-background border flex flex-col h-full">
             <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🤝</span>
+              <UsersIcon className="h-6 w-6 text-primary" />
             </div>
             <h3 className="font-semibold mb-2">Networking Events</h3>
             <p className="text-sm text-muted-foreground">
@@ -72,7 +78,7 @@ export default function EventsPage() {
           </div>
           <div className="text-center p-6 rounded-lg bg-background border flex flex-col h-full">
             <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🏆</span>
+              <TrophyIcon className="h-6 w-6 text-primary" />
             </div>
             <h3 className="font-semibold mb-2">Competitions</h3>
             <p className="text-sm text-muted-foreground">
@@ -82,7 +88,7 @@ export default function EventsPage() {
           </div>
           <div className="text-center p-6 rounded-lg bg-background border flex flex-col h-full">
             <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🎉</span>
+              <SparklesIcon className="h-6 w-6 text-primary" />
             </div>
             <h3 className="font-semibold mb-2">Social Events</h3>
             <p className="text-sm text-muted-foreground">
