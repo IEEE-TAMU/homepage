@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import Link from 'next/link';
 
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = localFont({
+  variable: '--font-inter',
+  src: './Inter.ttf',
+});
 
 export const metadata: Metadata = {
   title: '404 - Page Not Found',
@@ -13,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function GlobalNotFound() {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={inter.variable}>
       <body>
         <h1>404 - Page Not Found</h1>
         <p>This page does not exist.</p>

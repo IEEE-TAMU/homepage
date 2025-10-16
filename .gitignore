@@ -43,6 +43,8 @@ next-env.d.ts
 # nix stuff
 .envrc
 .direnv/
+result
+result-*
 
 # vscode
 .vscode/
