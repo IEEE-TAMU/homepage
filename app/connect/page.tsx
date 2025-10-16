@@ -309,22 +309,40 @@ export default function ConnectPage() {
               <div className="mt-8">
                 <h4 className="font-semibold mb-4">Follow Us</h4>
                 <div className="flex flex-wrap gap-3">
-                  <Button variant="outline" size="sm">
-                    LinkedIn
+                  <Button variant="outline" size="sm" asChild>
+                    <Link
+                      href={EXTERNAL_LINKS.LINKEDIN}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      LinkedIn
+                    </Link>
                   </Button>
-                  <Button variant="outline" size="sm">
-                    Instagram
+                  <Button variant="outline" size="sm" asChild>
+                    <Link
+                      href={EXTERNAL_LINKS.INSTAGRAM}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Instagram
+                    </Link>
                   </Button>
-                  <Button variant="outline" size="sm">
-                    Discord
+                  <Button variant="outline" size="sm" asChild>
+                    <Link
+                      href={EXTERNAL_LINKS.DISCORD}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Discord
+                    </Link>
                   </Button>
                   {/* <Button variant="outline" size="sm">
-                    Website
+                  Website
                   </Button> */}
                 </div>
               </div>
 
-              <div className="mt-8">
+              {/* <div className="mt-8">
                 <h4 className="font-semibold mb-4">Office Hours</h4>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
@@ -344,7 +362,7 @@ export default function ConnectPage() {
                     <span className="text-muted-foreground">Closed</span>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
