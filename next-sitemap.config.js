@@ -1,7 +1,9 @@
 /** @type {import('next-sitemap').IConfig} */
-export default config = {
+const config = {
   siteUrl: process.env.SITE_URL || 'https://ieeetamu.org',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   // ...other options
 };
+
+export default config;
