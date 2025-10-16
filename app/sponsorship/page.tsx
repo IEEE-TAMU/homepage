@@ -353,14 +353,7 @@ export default function SponsorshipPage() {
                 className="text-primary hover:underline"
               >
                 sponsorship@ieeetamu.org
-              </Link>{' '}
-              or call{' '}
-              {/* <Link
-                  href="tel:+19798451234"
-                  className="text-primary hover:underline"
-                >
-                  (979) 845-1234
-                </Link> */}
+              </Link>
             </p>
           </div>
         </MainSection>
