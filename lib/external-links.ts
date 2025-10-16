@@ -7,7 +7,6 @@ export const EXTERNAL_LINKS = {
   // local branch links
   IEEE_TAMU_PORTAL: 'https://portal.ieeetamu.org',
   IEEE_TAMU_MEMBERSHIP_REGISTER: 'https://portal.ieeetamu.org/members/register',
-  IEEE_TAMU_RSVP: 'https://portal.ieeetamu.org/members/registration?rsvp=',
 
   // Social media links
   LINKEDIN: 'https://www.linkedin.com/company/ieee-tamu',
@@ -16,6 +15,7 @@ export const EXTERNAL_LINKS = {
 
   // Calendar links
   IEEE_CALENDAR_ICS: 'https://portal.ieeetamu.org/api/v1/calendar',
+  // IEEE_CALENDAR_ICS: 'http://localhost:4000/api/v1/calendar',
   IEEE_CALENDAR_GOOGLE: 'https://link.ieeetamu.org/calendar',
 } as const;
 

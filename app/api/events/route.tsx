@@ -12,6 +12,7 @@ interface CalendarEvent {
   end: Date;
   location: string;
   type: string;
+  rsvpUrl?: string;
 }
 
 // Cache the events for 5 minutes (300 seconds)
@@ -35,6 +36,9 @@ export async function GET() {
         end: event.end,
         location: event.location || 'Location TBD',
         type: categorizeEvent(event.summary || ''),
+        // rsvpUrl stored in custom field X-RSVP-URL
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        rsvpUrl: (event as any)['RSVP-URL'],
       }));
 
     // Filter for upcoming events only

@@ -14,7 +14,6 @@ import {
 } from '@/components/ui/card';
 
 import type { CalendarEvent } from '@/app/api/events/route';
-import { EXTERNAL_LINKS } from '@/lib/external-links';
 
 export function EventsSection() {
   const [events, setEvents] = useState<CalendarEvent[]>([]);
@@ -163,11 +162,11 @@ export function EventsSection() {
                   </span>
                 </div>
                 <CardTitle className="text-lg">{event.title}</CardTitle>
-                <CardDescription className="line-clamp-2">
+                <CardDescription className={'' /* no line-clamp */}>
                   {event.description}
                 </CardDescription>
               </CardHeader>
-              <div className="flex-1" />
+              <div className="flex-grow" />
               <CardContent>
                 <div className="space-y-2">
                   <div className="flex items-center text-sm text-muted-foreground">
@@ -179,10 +178,10 @@ export function EventsSection() {
                     <span>{formatTime(event.start)}</span>
                   </div>
                 </div>
-                {isEventWithinOneWeek(event.start) && (
+                {event.rsvpUrl && isEventWithinOneWeek(event.start) && (
                   <Button className="w-full mt-2" size="sm" asChild>
                     <a
-                      href={`${EXTERNAL_LINKS.IEEE_TAMU_RSVP}${event.uid}`}
+                      href={`${event.rsvpUrl}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
