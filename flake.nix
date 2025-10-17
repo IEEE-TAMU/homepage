@@ -17,13 +17,21 @@
           packages.default = config.packages.homepage;
           packages.homepage = pkgs.callPackage ./package.nix { };
           packages.docker = pkgs.dockerTools.streamLayeredImage {
-            config = {
-              WorkingDir = "/homepage";
-              Cmd = [
-                "node"
-                "server.js"
-              ];
-            };
+            config =
+              let
+                port = 3000;
+              in
+              {
+                WorkingDir = "/homepage";
+                Cmd = [
+                  "node"
+                  "server.js"
+                ];
+                ExposedPorts = {
+                  "${toString port}/tcp" = { };
+                };
+                Env = [ "PORT=${toString port}" ];
+              };
 
             name = "homepage";
             tag = "latest";
