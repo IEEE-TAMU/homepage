@@ -52,3 +52,8 @@ result-*
 # sitemap and robots
 sitemap.xml
 robots.txt
+
+# local fonts
+*.ttf
+*.woff
+*.woff2

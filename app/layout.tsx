@@ -18,7 +18,7 @@ import './globals.css';
 
 const inter = localFont({
   variable: '--font-inter',
-  src: './Inter.ttf',
+  src: './fonts/Inter.ttf',
 });
 
 export const metadata: Metadata = {

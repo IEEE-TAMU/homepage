@@ -12,9 +12,10 @@ buildNpmPackage {
 
   # install fonts
   preBuild = ''
+    mkdir -p app/fonts
     cp "${
       google-fonts.override { fonts = [ "Inter" ]; }
-    }/share/fonts/truetype/Inter[opsz,wght].ttf" app/Inter.ttf
+    }/share/fonts/truetype/Inter[opsz,wght].ttf" app/fonts/Inter.ttf
   '';
 
   # move exported website to $out
