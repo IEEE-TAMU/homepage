@@ -30,7 +30,10 @@
                 ExposedPorts = {
                   "${toString port}/tcp" = { };
                 };
-                Env = [ "PORT=${toString port}" ];
+                Env = [
+                  "PORT=${toString port}"
+                  "NODE_EXTRA_CA_CERTS=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt" # not sure why this isnt being picked up by default
+                ];
               };
 
             name = "homepage";
@@ -42,7 +45,7 @@
               paths = [
                 pkgs.nodejs-slim
                 config.packages.homepage
-                pkgs.dockerTools.caCertificates
+                # pkgs.dockerTools.caCertificates # not sure why this isnt being picked up by default
               ];
             };
           };
