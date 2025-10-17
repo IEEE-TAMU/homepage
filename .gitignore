@@ -48,3 +48,7 @@ result-*
 
 # vscode
 .vscode/
+
+# sitemap and robots
+sitemap.xml
+robots.txt
