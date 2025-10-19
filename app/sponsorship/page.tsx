@@ -148,130 +148,90 @@ export default function SponsorshipPage() {
             goals and budget.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          <Card className="flex flex-col h-full">
-            <CardHeader className="text-center">
-              <CardTitle className="text-xl">Bronze Sponsor</CardTitle>
-              <div className="text-2xl font-bold text-accent mt-4">$1,000</div>
-              <p className="text-muted-foreground">
-                Essential partnership benefits
-              </p>
-            </CardHeader>
-            <CardContent className="space-y-4 flex-1 flex flex-col">
-              <div className="space-y-3 flex-1">
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Logo on event materials</span>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            {
+              name: 'Bronze Sponsor',
+              price: '$500',
+              description: 'Essential partnership benefits',
+              isPopular: false,
+              buttonVariant: 'outline' as const,
+              benefits: [
+                'Logo on event materials',
+                'Social media recognition',
+                'Newsletter mentions',
+                'Access to resume database',
+              ],
+            },
+            {
+              name: 'Silver Sponsor',
+              price: '$1,000',
+              description: 'Enhanced visibility and engagement',
+              isPopular: true,
+              buttonVariant: 'default' as const,
+              benefits: [
+                'All Bronze benefits',
+                'Workshop co-hosting opportunity',
+                'Recruiting table at career fair',
+                'Company presentation opportunity',
+                'Priority event invitations',
+              ],
+            },
+            {
+              name: 'Gold Sponsor',
+              price: '$3,000',
+              description: 'Premium partnership experience',
+              isPopular: false,
+              buttonVariant: 'outline' as const,
+              benefits: [
+                'All Silver benefits',
+                'Exclusive networking event',
+                'Custom workshop development',
+              ],
+            },
+            {
+              name: 'Platinum Sponsor',
+              price: '$5,000',
+              description: 'Elite partnership with maximum impact',
+              isPopular: false,
+              buttonVariant: 'outline' as const,
+              benefits: [
+                'All Gold benefits',
+                'Custom partnership opportunities',
+                'Maximum brand visibility',
+              ],
+            },
+          ].map((tier) => (
+            <Card
+              key={tier.name}
+              className={`flex flex-col h-full ${tier.isPopular ? 'border-primary relative' : ''}`}
+            >
+              {tier.isPopular && (
+                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
+                  Most Popular
+                </Badge>
+              )}
+              <CardHeader className="text-center">
+                <CardTitle className="text-xl">{tier.name}</CardTitle>
+                <div
+                  className={`text-2xl font-bold mt-4 ${tier.isPopular ? 'text-primary' : 'text-accent'}`}
+                >
+                  {tier.price}
                 </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Social media recognition</span>
+                <p className="text-muted-foreground">{tier.description}</p>
+              </CardHeader>
+              <CardContent className="space-y-4 flex-1 flex flex-col">
+                <div className="space-y-3 flex-1">
+                  {tier.benefits.map((benefit) => (
+                    <div key={benefit} className="flex items-center space-x-3">
+                      <CheckCircleIcon className="h-5 w-5 text-primary" />
+                      <span className="text-sm">{benefit}</span>
+                    </div>
+                  ))}
                 </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Newsletter mentions</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Access to resume database</span>
-                </div>
-              </div>
-              <Button
-                variant="outline"
-                className="w-full mt-auto bg-transparent"
-              >
-                Choose Bronze
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="border-primary relative flex flex-col h-full">
-            <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
-              Most Popular
-            </Badge>
-            <CardHeader className="text-center">
-              <CardTitle className="text-xl">Silver Sponsor</CardTitle>
-              <div className="text-2xl font-bold text-primary mt-4">$2,500</div>
-              <p className="text-muted-foreground">
-                Enhanced visibility and engagement
-              </p>
-            </CardHeader>
-            <CardContent className="space-y-4 flex-1 flex flex-col">
-              <div className="space-y-3 flex-1">
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="h-5 w-5 text-primary" />
-                  <span className="text-sm">All Bronze benefits</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="h-5 w-5 text-primary" />
-                  <span className="text-sm">
-                    Workshop co-hosting opportunity
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="h-5 w-5 text-primary" />
-                  <span className="text-sm">
-                    Recruiting table at career fair
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="h-5 w-5 text-primary" />
-                  <span className="text-sm">
-                    Company presentation opportunity
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Priority event invitations</span>
-                </div>
-              </div>
-              <Button className="w-full mt-auto bg-primary hover:bg-primary/90">
-                Choose Silver
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="flex flex-col h-full">
-            <CardHeader className="text-center">
-              <CardTitle className="text-xl">Gold Sponsor</CardTitle>
-              <div className="text-2xl font-bold text-accent mt-4">$5,000</div>
-              <p className="text-muted-foreground">
-                Premium partnership experience
-              </p>
-            </CardHeader>
-            <CardContent className="space-y-4 flex-1 flex flex-col">
-              <div className="space-y-3 flex-1">
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="h-5 w-5 text-primary" />
-                  <span className="text-sm">All Silver benefits</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Exclusive networking event</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Custom workshop development</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="h-5 w-5 text-primary" />
-                  <span className="text-sm">
-                    Scholarship program partnership
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Quarterly progress reports</span>
-                </div>
-              </div>
-              <Button
-                variant="outline"
-                className="w-full mt-auto bg-transparent"
-              >
-                Choose Gold
-              </Button>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </MainSection>
 
