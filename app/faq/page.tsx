@@ -8,7 +8,7 @@ export default function FAQPage() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <MainSection>
-        <div className="text-center mb-12">
+        <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">
             Frequently Asked Questions
           </h1>
@@ -77,11 +77,17 @@ export default function FAQPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  We offer Bronze ($1,000), Silver ($2,500), and Gold ($5,000)
-                  sponsorship packages. Each tier includes different benefits
-                  like logo placement, recruiting opportunities, and workshop
-                  co-hosting. Contact us at sponsorship@ieeetamu.org for
-                  details.
+                  We offer multiple sponsorship tiers that can be tailored to
+                  suit your company&apos;s needs and goals. Benefits include
+                  logo placement, recruiting opportunities, and workshop
+                  co-hosting.{' '}
+                  <Link
+                    href="/sponsorship"
+                    className="text-primary hover:underline"
+                  >
+                    Learn more about sponsorship opportunities
+                  </Link>
+                  .
                 </p>
               </CardContent>
             </Card>
