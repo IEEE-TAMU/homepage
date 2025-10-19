@@ -299,7 +299,7 @@ export default function ConnectPage() {
                 <div>
                   <h4 className="font-semibold">Location</h4>
                   <p className="text-muted-foreground">
-                    Weisenbaker Engineering Building
+                    Wisenbaker Engineering Building
                     <br />
                     College Station, TX 77843
                   </p>
