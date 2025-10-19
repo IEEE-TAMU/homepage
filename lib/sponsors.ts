@@ -20,19 +20,19 @@ export const Sponsors: Record<string, Sponsor> = {
   'burns-mcdonnell': {
     name: 'Burns & McDonnell',
     logo: 'burns_mcdonnell.png',
-    tier: 'Platinum',
+    tier: 'Silver',
     website: 'https://www.burnsmcd.com/',
   },
   'lockheed-martin': {
     name: 'Lockheed Martin',
     logo: 'lockheed.png',
-    tier: 'Gold',
+    tier: 'Silver',
     website: 'https://www.lockheedmartin.com/',
   },
   sandia: {
     name: 'Sandia National Laboratories',
     logo: 'sandia.png',
-    tier: 'Gold',
+    tier: 'Platinum',
     website: 'https://www.sandia.gov/',
   },
   'texas-instruments': {
@@ -44,7 +44,7 @@ export const Sponsors: Record<string, Sponsor> = {
   dashiell: {
     name: 'Dashiell Corporation',
     logo: 'dashiell.png',
-    tier: 'Bronze',
+    tier: 'Silver',
     website: 'https://www.dashiell.com/',
   },
 };
