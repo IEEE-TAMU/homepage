@@ -151,51 +151,63 @@ export default function Homepage() {
 
       <MainSection>
         <div className="grid md:grid-cols-3 gap-8">
-          <Card className="text-center p-8 hover:shadow-lg transition-shadow flex flex-col h-full">
-            <UsersIcon className="h-16 w-16 text-primary mx-auto mb-6" />
-            <h3 className="text-2xl font-bold mb-4">Join Our Community</h3>
-            <p className="text-muted-foreground mb-6 flex-1">
-              Become part of 500+ engineering students and connect with the
-              global IEEE network.
-            </p>
-            <Button className="bg-primary hover:bg-primary/90 mt-auto" asChild>
-              <Link href="/membership">
-                Join Now <ArrowRightIcon className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </Card>
-
-          <Card className="text-center p-8 hover:shadow-lg transition-shadow flex flex-col h-full">
-            <CalendarDaysIcon className="h-16 w-16 text-primary mx-auto mb-6" />
-            <h3 className="text-2xl font-bold mb-4">Upcoming Events</h3>
-            <p className="text-muted-foreground mb-6 flex-1">
-              Join workshops, networking events, and competitions. All events
-              sync live from our calendar.
-            </p>
-            <Button
-              variant="outline"
-              className="mt-auto bg-transparent"
-              asChild
-            >
-              <Link href="/events#upcoming-events">
-                View Events <ArrowRightIcon className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </Card>
-
-          <Card className="text-center p-8 hover:shadow-lg transition-shadow flex flex-col h-full">
-            <BuildingOffice2Icon className="h-16 w-16 text-primary mx-auto mb-6" />
-            <h3 className="text-2xl font-bold mb-4">Partner With Us</h3>
-            <p className="text-muted-foreground mb-6 flex-1">
-              Connect with top engineering talent and support STEM education at
-              Texas A&M.
-            </p>
-            <Button className="bg-accent hover:bg-accent/90 mt-auto" asChild>
-              <Link href="/sponsorship">
-                Become a Sponsor <ArrowRightIcon className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </Card>
+          {[
+            {
+              icon: UsersIcon,
+              title: 'Join Our Community',
+              description:
+                'Become part of 500+ engineering students and connect with the global IEEE network.',
+              buttonText: 'Join Now',
+              buttonVariant: 'default' as const,
+              href: '/membership',
+            },
+            {
+              icon: CalendarDaysIcon,
+              title: 'Upcoming Events',
+              description:
+                'Join workshops, networking events, and competitions. All events sync live from our calendar.',
+              buttonText: 'View Events',
+              buttonVariant: 'outline' as const,
+              href: '/events#upcoming-events',
+            },
+            {
+              icon: BuildingOffice2Icon,
+              title: 'Partner With Us',
+              description:
+                'Connect with top engineering talent and support STEM education at Texas A&M.',
+              buttonText: 'Become a Sponsor',
+              buttonVariant: 'default' as const,
+              href: '/sponsorship',
+            },
+          ].map((card, index) => {
+            const Icon = card.icon;
+            return (
+              <Card
+                key={index}
+                className="text-center p-8 hover:shadow-lg transition-shadow flex flex-col h-full"
+              >
+                <Icon className="h-16 w-16 text-primary mx-auto mb-6" />
+                <h3 className="text-2xl font-bold mb-4">{card.title}</h3>
+                <p className="text-muted-foreground mb-6 flex-1">
+                  {card.description}
+                </p>
+                <Button
+                  className={
+                    card.buttonVariant === 'default'
+                      ? 'bg-primary hover:bg-primary/90 mt-auto'
+                      : 'mt-auto bg-transparent'
+                  }
+                  variant={card.buttonVariant}
+                  asChild
+                >
+                  <Link href={card.href}>
+                    {card.buttonText}{' '}
+                    <ArrowRightIcon className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </Card>
+            );
+          })}
         </div>
       </MainSection>
 

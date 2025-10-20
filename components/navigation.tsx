@@ -122,9 +122,7 @@ export function Navigation() {
                   : { href: '/membership', label: 'Join Now' };
               return (
                 <Link href={href} className="hidden lg:block">
-                  <Button className="bg-accent hover:bg-accent/90 w-32 text-sm">
-                    {label}
-                  </Button>
+                  <Button>{label}</Button>
                 </Link>
               );
             })()}

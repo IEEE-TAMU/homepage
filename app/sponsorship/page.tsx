@@ -28,7 +28,7 @@ export default function SponsorshipPage() {
             leading companies in shaping the future of technology.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button size="lg" className="bg-accent hover:bg-accent/90">
+            <Button size="lg">
               <BuildingOffice2Icon className="mr-2 h-5 w-5" />
               Become a Sponsor
             </Button>

@@ -90,28 +90,34 @@ export default function ActivitiesPage() {
                 {[
                   {
                     number: 1,
-                    title: "Idea Generation",
-                    description: "Brainstorm event ideas based on member feedback and organizational goals"
+                    title: 'Idea Generation',
+                    description:
+                      'Brainstorm event ideas based on member feedback and organizational goals',
                   },
                   {
                     number: 2,
-                    title: "Planning & Logistics",
-                    description: "Develop detailed plans, secure resources, and coordinate with stakeholders"
+                    title: 'Planning & Logistics',
+                    description:
+                      'Develop detailed plans, secure resources, and coordinate with stakeholders',
                   },
                   {
                     number: 3,
-                    title: "Promotion & Execution",
-                    description: "Market the event and ensure smooth execution on the day of"
+                    title: 'Promotion & Execution',
+                    description:
+                      'Market the event and ensure smooth execution on the day of',
                   },
                   {
                     number: 4,
-                    title: "Follow-up & Evaluation",
-                    description: "Gather feedback and assess the event's success for continuous improvement"
-                  }
+                    title: 'Follow-up & Evaluation',
+                    description:
+                      "Gather feedback and assess the event's success for continuous improvement",
+                  },
                 ].map((step) => (
                   <div key={step.number} className="flex items-start space-x-4">
                     <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <span className="text-sm font-semibold">{step.number}</span>
+                      <span className="text-sm font-semibold">
+                        {step.number}
+                      </span>
                     </div>
                     <div>
                       <h4 className="font-semibold">{step.title}</h4>
