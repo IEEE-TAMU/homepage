@@ -122,7 +122,7 @@ export function Navigation() {
                   : { href: '/membership', label: 'Join Now' };
               return (
                 <Link href={href} className="hidden lg:block">
-                  <Button>{label}</Button>
+                  <Button className="w-[8.5rem]">{label}</Button>
                 </Link>
               );
             })()}
