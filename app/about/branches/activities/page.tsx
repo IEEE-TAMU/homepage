@@ -87,53 +87,40 @@ export default function ActivitiesPage() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-sm font-semibold">1</span>
+                {[
+                  {
+                    number: 1,
+                    title: "Idea Generation",
+                    description: "Brainstorm event ideas based on member feedback and organizational goals"
+                  },
+                  {
+                    number: 2,
+                    title: "Planning & Logistics",
+                    description: "Develop detailed plans, secure resources, and coordinate with stakeholders"
+                  },
+                  {
+                    number: 3,
+                    title: "Promotion & Execution",
+                    description: "Market the event and ensure smooth execution on the day of"
+                  },
+                  {
+                    number: 4,
+                    title: "Follow-up & Evaluation",
+                    description: "Gather feedback and assess the event's success for continuous improvement"
+                  }
+                ].map((step) => (
+                  <div key={step.number} className="flex items-start space-x-4">
+                    <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <span className="text-sm font-semibold">{step.number}</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">{step.title}</h4>
+                      <p className="text-sm text-muted-foreground">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold">Idea Generation</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Brainstorm event ideas based on member feedback and
-                      organizational goals
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-sm font-semibold">2</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Planning & Logistics</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Develop detailed plans, secure resources, and coordinate
-                      with stakeholders
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-sm font-semibold">3</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Promotion & Execution</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Market the event and ensure smooth execution on the day of
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-sm font-semibold">4</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Follow-up & Evaluation</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Gather feedback and assess the event&apos;s success for
-                      continuous improvement
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </CardContent>
           </Card>
