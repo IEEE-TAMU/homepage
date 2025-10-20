@@ -3,7 +3,9 @@ import {
   CameraIcon,
   ChatBubbleLeftRightIcon,
   EnvelopeIcon,
+  InboxStackIcon,
   MapPinIcon,
+  TruckIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
@@ -283,26 +285,68 @@ export default function ConnectPage() {
               here to help.
             </p>
             <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <EnvelopeIcon className="h-6 w-6 text-primary" />
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex items-center space-x-4">
+                  <div className="h-12 w-12 flex-shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
+                    <EnvelopeIcon className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Email</h4>
+                    <p className="text-muted-foreground">
+                      contact@ieeetamu.org
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold">Email</h4>
-                  <p className="text-muted-foreground">contact@ieeetamu.org</p>
+                <div className="flex items-center space-x-4">
+                  <div className="h-12 w-12 flex-shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
+                    <MapPinIcon className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Location</h4>
+                    <p className="text-muted-foreground">
+                      Wisenbaker Engineering Building
+                      <br />
+                      Room 206
+                      <br />
+                      College Station, TX 77843
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <MapPinIcon className="h-6 w-6 text-primary" />
+                <div className="flex items-center space-x-4">
+                  <div className="h-12 w-12 flex-shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
+                    <InboxStackIcon className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Mailing (letters)</h4>
+                    <p className="text-muted-foreground">
+                      Attn: IEEE TAMU
+                      <br />
+                      Texas A&M University
+                      <br />
+                      3128 TAMU
+                      <br />
+                      College Station, TX 77843-3128
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold">Location</h4>
-                  <p className="text-muted-foreground">
-                    Wisenbaker Engineering Building
-                    <br />
-                    College Station, TX 77843
-                  </p>
+                <div className="flex items-center space-x-4">
+                  <div className="h-12 w-12 flex-shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
+                    <TruckIcon className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Mailing (packages)</h4>
+                    <p className="text-muted-foreground">
+                      Attn: IEEE TAMU
+                      <br />
+                      Texas A&M University
+                      <br />
+                      188 Bizzell St
+                      <br />
+                      WEB 076
+                      <br />
+                      College Station, TX 77843
+                    </p>
+                  </div>
                 </div>
               </div>
 
