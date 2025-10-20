@@ -198,7 +198,7 @@ export default function MembershipPage() {
             </Badge>
             <CardHeader className="text-center">
               <CardTitle className="text-2xl">Local Chapter Member</CardTitle>
-              <div className="text-3xl font-bold text-accent mt-4 whitespace-nowrap">
+              <div className="text-3xl font-bold text-accent-foreground mt-4 whitespace-nowrap">
                 $15/year
               </div>
               <p className="text-muted-foreground">

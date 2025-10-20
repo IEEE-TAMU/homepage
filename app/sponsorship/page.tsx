@@ -1,6 +1,7 @@
 import {
   BuildingOffice2Icon,
   CheckCircleIcon,
+  EnvelopeIcon,
   HeartIcon,
   MegaphoneIcon,
 } from '@heroicons/react/24/outline';
@@ -33,7 +34,7 @@ export default function SponsorshipPage() {
               Become a Sponsor
             </Button>
             <Button size="lg" variant="outline">
-              {/* <Mail className="mr-2 h-5 w-5" /> */}
+              <EnvelopeIcon className="mr-2 h-5 w-5" />
               Request Partnership Info
             </Button>
           </div>
@@ -93,7 +94,9 @@ export default function SponsorshipPage() {
                   <CardTitle>{benefit.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground mb-4">{benefit.description}</p>
+                  <p className="text-muted-foreground mb-4">
+                    {benefit.description}
+                  </p>
                   <ul className="text-sm text-left space-y-2">
                     {benefit.items.map((item) => (
                       <li key={item} className="flex items-center space-x-2">
@@ -125,7 +128,6 @@ export default function SponsorshipPage() {
               price: '$500',
               description: 'Essential partnership benefits',
               isPopular: false,
-              buttonVariant: 'outline' as const,
               benefits: [
                 'Logo on event materials',
                 'Social media recognition',
@@ -138,7 +140,6 @@ export default function SponsorshipPage() {
               price: '$1,000',
               description: 'Enhanced visibility and engagement',
               isPopular: true,
-              buttonVariant: 'default' as const,
               benefits: [
                 'All Bronze benefits',
                 'Workshop co-hosting opportunity',
@@ -152,7 +153,6 @@ export default function SponsorshipPage() {
               price: '$3,000',
               description: 'Premium partnership experience',
               isPopular: false,
-              buttonVariant: 'outline' as const,
               benefits: [
                 'All Silver benefits',
                 'Exclusive networking event',
@@ -164,7 +164,6 @@ export default function SponsorshipPage() {
               price: '$5,000',
               description: 'Elite partnership with maximum impact',
               isPopular: false,
-              buttonVariant: 'outline' as const,
               benefits: [
                 'All Gold benefits',
                 'Custom partnership opportunities',
@@ -184,7 +183,7 @@ export default function SponsorshipPage() {
               <CardHeader className="text-center">
                 <CardTitle className="text-xl">{tier.name}</CardTitle>
                 <div
-                  className={`text-2xl font-bold mt-4 ${tier.isPopular ? 'text-primary' : 'text-accent'}`}
+                  className={`text-2xl font-bold mt-4 ${tier.isPopular ? 'text-primary' : 'text-accent-foreground'}`}
                 >
                   {tier.price}
                 </div>
@@ -221,40 +220,40 @@ export default function SponsorshipPage() {
             Starting a partnership with IEEE TAMU is straightforward. Follow
             these steps to begin.
           </p>
-            <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-              step: 1,
-              title: 'Contact Us',
-              description:
-                "Reach out to discuss your company's goals and how we can create a mutually beneficial partnership.",
+                step: 1,
+                title: 'Contact Us',
+                description:
+                  "Reach out to discuss your company's goals and how we can create a mutually beneficial partnership.",
               },
               {
-              step: 2,
-              title: 'Choose Package',
-              description:
-                'Select the sponsorship tier that best aligns with your budget and engagement objectives.',
+                step: 2,
+                title: 'Choose Package',
+                description:
+                  'Select the sponsorship tier that best aligns with your budget and engagement objectives.',
               },
               {
-              step: 3,
-              title: 'Start Partnership',
-              description:
-                'Begin engaging with our community through events, workshops, and recruitment opportunities.',
+                step: 3,
+                title: 'Start Partnership',
+                description:
+                  'Begin engaging with our community through events, workshops, and recruitment opportunities.',
               },
             ].map((item) => (
               <div key={item.step} className="text-center">
-              <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-primary">
-                {item.step}
-                </span>
-              </div>
-              <h3 className="font-semibold mb-3">{item.title}</h3>
-              <p className="text-sm text-muted-foreground">
-                {item.description}
-              </p>
+                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary">
+                    {item.step}
+                  </span>
+                </div>
+                <h3 className="font-semibold mb-3">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
               </div>
             ))}
-            </div>
+          </div>
         </div>
       </MainSection>
 
@@ -268,7 +267,7 @@ export default function SponsorshipPage() {
             <span className="text-primary">Texas A&M University</span>.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-accent hover:bg-accent/90">
+            <Button size="lg" variant="default">
               <BuildingOffice2Icon className="mr-2 h-5 w-5" />
               Become a Sponsor
             </Button>
