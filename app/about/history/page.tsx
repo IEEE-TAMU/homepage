@@ -16,14 +16,19 @@ export default function HistoryPage() {
           <div className="bg-card p-8 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">Foundation</h2>
             <p className="text-muted-foreground mb-4">
-              IEEE TAMU was founded in [YEAR] with the vision of bringing
-              together engineering students at Texas A&M University who are
-              passionate about technology and professional development.
+              IEEE TAMU began in 1909 as the student branch of the American
+              Institute of Electrical Engineers at Texas A&M College.
+            </p>
+            <p className="text-muted-foreground mb-4">
+              In 1948, it became a joint student branch at Texas A&M College for
+              the Institute of Radio Engineers and American Institute of
+              Electrical Engineers.
             </p>
             <p className="text-muted-foreground">
-              Our founding members recognized the need for a community where
-              students could connect, learn, and grow together in the field of
-              electrical and electronics engineering.
+              Finally, in 1963, it evolved into the Institute of Electrical and
+              Electronics Engineers (IEEE) at Texas A&M University, continuing
+              our mission of bringing together engineering students passionate
+              about technology and professional development.
             </p>
           </div>
 
@@ -50,7 +55,7 @@ export default function HistoryPage() {
             <ul className="list-disc list-inside text-muted-foreground space-y-2">
               <li>Outstanding Student Branch Awards</li>
               <li>Successful technical conferences and workshops</li>
-              <li>Community service initiatives</li>
+              {/* <li>Community service initiatives</li> */}
               <li>Industry partnerships and sponsorships</li>
               <li>Student leadership development programs</li>
             </ul>
