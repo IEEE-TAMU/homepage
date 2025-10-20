@@ -45,97 +45,67 @@ export default function SponsorshipPage() {
             meaningful impact on STEM education.
           </p>
         </div>
+        {/* Sponsorship Benefit Cards */}
         <div className="grid md:grid-cols-3 gap-8">
-          <Card className="text-center">
-            <CardHeader>
-              <BuildingOffice2Icon className="h-12 w-12 text-primary mx-auto mb-4" />
-              <CardTitle>Talent Pipeline</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">
-                Access to top engineering talent through career fairs,
-                networking events, and direct recruitment opportunities.
-              </p>
-              <ul className="text-sm text-left space-y-2">
-                <li className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-4 w-4 text-primary" />
-                  <span>Resume database access</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-4 w-4 text-primary" />
-                  <span>Exclusive recruiting events</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-4 w-4 text-primary" />
-                  <span>Internship partnerships</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-4 w-4 text-primary" />
-                  <span>Direct access to 500+ students</span>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-          <Card className="text-center">
-            <CardHeader>
-              <MegaphoneIcon className="h-12 w-12 text-primary mx-auto mb-4" />
-              <CardTitle>Brand Visibility</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">
-                Showcase your company to 500+ active IEEE TAMU members through
-                various marketing channels and events.
-              </p>
-              <ul className="text-sm text-left space-y-2">
-                <li className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-4 w-4 text-primary" />
-                  <span>Event sponsorship opportunities</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-4 w-4 text-primary" />
-                  <span>Newsletter and social media features</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-4 w-4 text-primary" />
-                  <span>Workshop co-hosting</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-4 w-4 text-primary" />
-                  <span>Logo placement at events</span>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-          <Card className="text-center">
-            <CardHeader>
-              <HeartIcon className="h-12 w-12 text-primary mx-auto mb-4" />
-              <CardTitle>Community Impact</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">
-                Support STEM education and community outreach programs that make
-                a lasting difference in engineering education.
-              </p>
-              <ul className="text-sm text-left space-y-2">
-                <li className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-4 w-4 text-primary" />
-                  <span>K-12 STEM outreach programs</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-4 w-4 text-primary" />
-                  <span>Scholarship programs</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-4 w-4 text-primary" />
-                  <span>Technical workshops</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-4 w-4 text-primary" />
-                  <span>Community service projects</span>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+          {[
+            {
+              icon: BuildingOffice2Icon,
+              title: 'Talent Pipeline',
+              description:
+                'Access to top engineering talent through career fairs, networking events, and direct recruitment opportunities.',
+              items: [
+                'Resume database access',
+                'Exclusive recruiting events',
+                'Internship partnerships',
+                'Direct access to 500+ students',
+              ],
+            },
+            {
+              icon: MegaphoneIcon,
+              title: 'Brand Visibility',
+              description:
+                'Showcase your company to 500+ active IEEE TAMU members through various marketing channels and events.',
+              items: [
+                'Event sponsorship opportunities',
+                'Newsletter and social media features',
+                'Workshop co-hosting',
+                'Logo placement at events',
+              ],
+            },
+            {
+              icon: HeartIcon,
+              title: 'Community Impact',
+              description:
+                'Support STEM education and community outreach programs that make a lasting difference in engineering education.',
+              items: [
+                'K-12 STEM outreach programs',
+                'Scholarship programs',
+                'Technical workshops',
+                'Community service projects',
+              ],
+            },
+          ].map((benefit) => {
+            const Icon = benefit.icon;
+            return (
+              <Card key={benefit.title} className="text-center">
+                <CardHeader>
+                  <Icon className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <CardTitle>{benefit.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">{benefit.description}</p>
+                  <ul className="text-sm text-left space-y-2">
+                    {benefit.items.map((item) => (
+                      <li key={item} className="flex items-center space-x-2">
+                        <CheckCircleIcon className="h-4 w-4 text-primary" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </MainSection>
 
@@ -251,38 +221,40 @@ export default function SponsorshipPage() {
             Starting a partnership with IEEE TAMU is straightforward. Follow
             these steps to begin.
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
+            <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+              step: 1,
+              title: 'Contact Us',
+              description:
+                "Reach out to discuss your company's goals and how we can create a mutually beneficial partnership.",
+              },
+              {
+              step: 2,
+              title: 'Choose Package',
+              description:
+                'Select the sponsorship tier that best aligns with your budget and engagement objectives.',
+              },
+              {
+              step: 3,
+              title: 'Start Partnership',
+              description:
+                'Begin engaging with our community through events, workshops, and recruitment opportunities.',
+              },
+            ].map((item) => (
+              <div key={item.step} className="text-center">
               <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-primary">1</span>
+                <span className="text-2xl font-bold text-primary">
+                {item.step}
+                </span>
               </div>
-              <h3 className="font-semibold mb-3">Contact Us</h3>
+              <h3 className="font-semibold mb-3">{item.title}</h3>
               <p className="text-sm text-muted-foreground">
-                Reach out to discuss your company&apos;s goals and how we can
-                create a mutually beneficial partnership.
+                {item.description}
               </p>
-            </div>
-            <div className="text-center">
-              <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-primary">2</span>
               </div>
-              <h3 className="font-semibold mb-3">Choose Package</h3>
-              <p className="text-sm text-muted-foreground">
-                Select the sponsorship tier that best aligns with your budget
-                and engagement objectives.
-              </p>
+            ))}
             </div>
-            <div className="text-center">
-              <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-primary">3</span>
-              </div>
-              <h3 className="font-semibold mb-3">Start Partnership</h3>
-              <p className="text-sm text-muted-foreground">
-                Begin engaging with our community through events, workshops, and
-                recruitment opportunities.
-              </p>
-            </div>
-          </div>
         </div>
       </MainSection>
 
