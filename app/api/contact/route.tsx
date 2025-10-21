@@ -19,6 +19,8 @@ export async function POST(request: NextRequest) {
       host: process.env.SMTP_HOST!,
       port: Number.parseInt(process.env.SMTP_PORT!),
       secure: false, // true for 465, false for other ports
+      // TODO: store and use the kumo certificate for starttls
+      ignoreTLS: true, // INSECURE: this is only ok since the ieeetamu email relay runs on the same internal network
       // auth: {
       //   user: process.env.SMTP_USER || 'your-email@gmail.com',
       //   pass: process.env.SMTP_PASS || 'your-app-password',
