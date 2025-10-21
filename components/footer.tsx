@@ -46,7 +46,7 @@ export function Footer() {
               title="About Us"
               links={[
                 { href: '/about/history', label: 'History' },
-                { href: '/about/branches', label: 'Branches' },
+                // { href: '/about/branches', label: 'Branches' },
                 { href: '/about/officers', label: 'Officers' },
               ]}
             />
