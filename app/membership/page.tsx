@@ -86,7 +86,7 @@ export default function MembershipPage() {
               <div>
                 <h3 className="font-semibold mb-2">Global Network</h3>
                 <p className="text-muted-foreground text-sm">
-                  Connect with over 400,000 IEEE members worldwide and access
+                  Connect with over 500,000 IEEE members worldwide and access
                   exclusive career opportunities through the IEEE network.
                 </p>
               </div>
