@@ -16,6 +16,22 @@
           formatter = pkgs.nixfmt-tree;
           packages.default = config.packages.homepage;
           packages.homepage = pkgs.callPackage ./package.nix { };
+          packages.update-deps-hash = pkgs.writeShellApplication {
+            name = "update-deps-hash";
+            runtimeInputs = [ pkgs.prefetch-npm-deps ];
+            text = ''
+              # Get the npmDepsHash from package.nix
+              current_hash=$(grep "npmDepsHash" package.nix | sed 's/.*"\(.*\)".*/\1/')
+
+              # Get the new hash using prefetch-npm-deps
+              new_hash=$(prefetch-npm-deps package-lock.json)
+
+              # Update the hash in package.nix using | as delimiter to avoid conflicts with /
+              sed -i "s|npmDepsHash = \"$current_hash\"|npmDepsHash = \"$new_hash\"|" package.nix
+
+              echo "Updated npmDepsHash from $current_hash to $new_hash"
+            '';
+          };
           packages.docker = pkgs.dockerTools.streamLayeredImage {
             config =
               let
