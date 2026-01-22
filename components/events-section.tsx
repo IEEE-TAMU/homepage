@@ -1,5 +1,6 @@
 'use client';
 
+import Linkify from 'linkify-react';
 import { useCallback, useEffect, useState } from 'react';
 
 import { MainSection } from '@/components/sections';
@@ -86,6 +87,17 @@ export function EventsSection() {
     return eventDate <= oneWeekFromNow;
   };
 
+  const linkifyOptions = {
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    format: {
+      url: (value: string) => {
+        return value.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+      }
+    },
+    className: 'text-primary hover:text-primary/80 underline',
+  };
+
   const Header = () => {
     return (
       <div className="text-center mb-12">
@@ -163,7 +175,9 @@ export function EventsSection() {
                 </div>
                 <CardTitle className="text-lg">{event.title}</CardTitle>
                 <CardDescription className={'' /* no line-clamp */}>
-                  {event.description}
+                  <Linkify options={linkifyOptions}>
+                    {event.description}
+                  </Linkify>
                 </CardDescription>
               </CardHeader>
               <div className="flex-grow" />

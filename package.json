@@ -20,6 +20,7 @@
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
+    "linkify-react": "^4.3.2",
     "next": "16.0.10",
     "next-sitemap": "^4.2.3",
     "node-ical": "^0.22.0",
