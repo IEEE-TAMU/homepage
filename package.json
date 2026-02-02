@@ -23,7 +23,7 @@
     "linkify-react": "^4.3.2",
     "next": "16.1.6",
     "next-sitemap": "^4.2.3",
-    "node-ical": "^0.24.0",
+    "node-ical": "^0.22.0",
     "nodemailer": "^7.0.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
