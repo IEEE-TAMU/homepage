@@ -140,7 +140,7 @@ export default function AboutPage() {
             <h3 className="text-xl font-semibold mb-6">By the Numbers</h3>
             <div className="grid grid-cols-2 gap-6">
               {[
-                { value: '500+', label: 'Active Members' },
+                { value: '700+', label: 'Active Members' },
                 { value: '50+', label: 'Events Per Year' },
                 // { value: '20+', label: 'Industry Partners' }, // replace with something else
                 { value: '115+', label: 'Years Active' },
