@@ -8,7 +8,7 @@ buildNpmPackage {
 
   src = ./.;
   # needs to be updated everytime you update npm dependencies
-  npmDepsHash = "sha256-V5PmTsV1s7m9AdrmFk118qnyguVNX+lCSHKuKIrGp0U=";
+  npmDepsHash = "sha256-zSuy0N1IsipI1V8LWUYjXLlYf/n5lbp2NyZviEcgVrM=";
 
   # install fonts
   preBuild = ''
