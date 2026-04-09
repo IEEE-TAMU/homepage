@@ -16,13 +16,6 @@
           formatter = pkgs.nixfmt-tree;
           packages.default = config.packages.homepage;
           packages.homepage = pkgs.callPackage ./package.nix { };
-          packages.update-deps-hash = pkgs.writeShellApplication {
-            name = "update-deps-hash";
-            runtimeInputs = [ pkgs.nix-update ];
-            text = ''
-              nix-update homepage --version=skip --flake
-            '';
-          };
           packages.docker = pkgs.dockerTools.streamLayeredImage {
             config =
               let

@@ -1,14 +1,34 @@
 {
+  lib,
   buildNpmPackage,
+  importNpmLock,
   google-fonts,
 }:
-buildNpmPackage {
+buildNpmPackage (finalAttrs: {
   pname = "homepage";
   version = "0.1.0";
 
-  src = ./.;
-  # needs to be updated everytime you update npm dependencies
-  npmDepsHash = "sha256-zSuy0N1IsipI1V8LWUYjXLlYf/n5lbp2NyZviEcgVrM=";
+  src = lib.fileset.toSource {
+    root = ./.;
+    fileset = lib.fileset.intersection (lib.fileset.fromSource (lib.sources.cleanSource ./.)) (
+      lib.fileset.unions [
+        ./app
+        ./components
+        ./lib
+        ./public
+        ./package.json
+        ./package-lock.json
+        ./next.config.ts
+        ./next-sitemap.config.js
+        ./postcss.config.mjs
+        ./tsconfig.json
+        ./components.json
+      ]
+    );
+  };
+
+  npmDeps = importNpmLock { npmRoot = finalAttrs.src; };
+  npmConfigHook = importNpmLock.npmConfigHook;
 
   # install fonts
   preBuild = ''
@@ -29,4 +49,4 @@ buildNpmPackage {
 
     runHook postInstall
   '';
-}
+})
