@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { MainSection } from '@/components/sections';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function FAQPage() {
@@ -102,12 +103,9 @@ export default function FAQPage() {
               Can&apos;t find what you&apos;re looking for? We&apos;re here to
               help!
             </p>
-            <Link
-              href="/connect#send-message"
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
-            >
-              Contact Us
-            </Link>
+            <Button asChild>
+              <Link href="/connect#send-message">Contact Us</Link>
+            </Button>
           </div>
         </div>
       </MainSection>

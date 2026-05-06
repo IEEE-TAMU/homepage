@@ -12,7 +12,7 @@ const BranchOpener = ({ branch }: { branch: Branch }) => {
     <div className="mb-12 max-w-4xl mx-auto">
       <div className="flex items-start justify-between mb-4">
         <Button asChild variant="ghost" aria-label="Back to branches">
-          <Link href="/about/branches">
+          <Link href="/about/_branches">
             <ArrowLeftIcon className="size-4" />
             <span>Back to branches</span>
           </Link>

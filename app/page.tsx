@@ -41,11 +41,7 @@ export default function Homepage() {
         }
         actions={
           <>
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90"
-              asChild
-            >
+            <Button size="lg" asChild>
               <Link href="/membership">
                 <UsersIcon className="mr-2 h-5 w-5" />
                 Become a Member
@@ -194,7 +190,7 @@ export default function Homepage() {
                 <Button
                   className={
                     card.buttonVariant === 'default'
-                      ? 'bg-primary hover:bg-primary/90 mt-auto'
+                      ? 'mt-auto'
                       : 'mt-auto bg-transparent'
                   }
                   variant={card.buttonVariant}
@@ -223,11 +219,7 @@ export default function Homepage() {
             developing technical skills, and making an impact in your community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90"
-              asChild
-            >
+            <Button size="lg" asChild>
               <Link href="/membership">
                 <UsersIcon className="mr-2 h-5 w-5" />
                 Join IEEE TAMU

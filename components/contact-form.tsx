@@ -155,7 +155,7 @@ export function ContactForm() {
           </div>
           <Button
             type="submit"
-            className="w-full bg-primary hover:bg-primary/90"
+            className="w-full"
             disabled={isSubmitting}
           >
             {isSubmitting ? 'Sending...' : 'Send Message'}

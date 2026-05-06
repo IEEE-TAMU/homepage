@@ -15,16 +15,30 @@ function FooterColumn({
     <div>
       <h3 className="font-semibold mb-2">{title}</h3>
       <ul className="space-y-2 text-sm">
-        {links.map((link) => (
-          <li key={link.href + link.label}>
-            <Link
-              href={link.href}
-              className="text-muted-foreground hover:text-primary"
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
+        {links.map((link) => {
+          const isExternal = link.href.startsWith('http');
+          return (
+            <li key={link.href + link.label}>
+              {isExternal ? (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  href={link.href}
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  {link.label}
+                </Link>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
@@ -80,11 +94,11 @@ export function Footer() {
       </footer>
       <div className="border-t mt-4 py-4 text-center text-sm text-muted-foreground">
         <p>
-          &copy; 2025 IEEE Texas A&M University Student Branch. All rights
+          &copy; 2026 IEEE Texas A&M University Student Branch. All rights
           reserved.{' '}
           <a
             href="mailto:webmaster@ieeetamu.org?subject=Website%20Feedback"
-            className="text-primary underline"
+            className="text-primary hover:underline"
           >
             Feedback
           </a>

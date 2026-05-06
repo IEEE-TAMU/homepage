@@ -40,7 +40,7 @@ export default function BranchesPage() {
                   {branch.description}
                 </p>
                 <Button asChild className="w-full mt-auto">
-                  <Link href={`/about/branches/${branch.slug}`}>
+                  <Link href={`/about/_branches/${branch.slug}`}>
                     Learn More
                   </Link>
                 </Button>
@@ -49,46 +49,7 @@ export default function BranchesPage() {
           ))}
         </div>
 
-        {/* <div className="bg-card p-8 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4">How Branches Work</h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="font-semibold mb-3">Specialized Focus</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Each branch has a specific area of expertise and
-                    responsibility, allowing us to provide comprehensive
-                    services to our members and the broader community.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-3">
-                    Collaborative Environment
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    While branches operate somewhat independently, they work
-                    together to achieve IEEE TAMU&apos;s overall mission and
-                    support each other&apos;s initiatives.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-3">
-                    Leadership Opportunities
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    Branch leadership positions provide valuable experience in
-                    project management, team coordination, and professional
-                    development.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-3">Member Involvement</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Members can join multiple branches based on their interests
-                    and contribute to various initiatives throughout the year.
-                  </p>
-                </div>
-              </div>
-            </div> */}
+
       </div>
     </MainSection>
   );

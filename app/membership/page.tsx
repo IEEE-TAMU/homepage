@@ -8,6 +8,7 @@ import {
   UserIcon,
   UsersIcon,
 } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 import { MainSection } from '@/components/sections';
 import { Badge } from '@/components/ui/badge';
@@ -31,11 +32,7 @@ export default function MembershipPage() {
             networking, and technical excellence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90"
-              asChild
-            >
+            <Button size="lg" asChild>
               <a
                 href={EXTERNAL_LINKS.IEEE_TAMU_MEMBERSHIP_REGISTER}
                 target="_blank"
@@ -176,10 +173,7 @@ export default function MembershipPage() {
                   </div>
                 ))}
               </div>
-              <Button
-                className="w-full bg-primary hover:bg-primary/90 mt-auto"
-                asChild
-              >
+              <Button className="w-full mt-auto" asChild>
                 <a
                   href={EXTERNAL_LINKS.IEEE_MEMBERSHIP_JOIN}
                   target="_blank"
@@ -290,11 +284,7 @@ export default function MembershipPage() {
             ))}
           </div>
           <div className="mt-12">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 mr-4"
-              asChild
-            >
+            <Button size="lg" className="mr-4" asChild>
               <a
                 href={EXTERNAL_LINKS.IEEE_TAMU_MEMBERSHIP_REGISTER}
                 target="_blank"
@@ -304,7 +294,7 @@ export default function MembershipPage() {
               </a>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <a href="/connect">Have Questions? Contact Us</a>
+              <Link href="/connect">Have Questions? Contact Us</Link>
             </Button>
           </div>
         </div>

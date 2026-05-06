@@ -29,13 +29,17 @@ export default function SponsorshipPage() {
             leading companies in shaping the future of technology.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button size="lg">
-              <BuildingOffice2Icon className="mr-2 h-5 w-5" />
-              Become a Sponsor
+            <Button size="lg" asChild>
+              <a href="mailto:sponsorship@ieeetamu.org">
+                <BuildingOffice2Icon className="mr-2 h-5 w-5" />
+                Become a Sponsor
+              </a>
             </Button>
-            <Button size="lg" variant="outline">
-              <EnvelopeIcon className="mr-2 h-5 w-5" />
-              Request Partnership Info
+            <Button size="lg" variant="outline" asChild>
+              <a href="mailto:sponsorship@ieeetamu.org">
+                <EnvelopeIcon className="mr-2 h-5 w-5" />
+                Request Partnership Info
+              </a>
             </Button>
           </div>
           <h2 className="text-3xl font-bold mb-4">
@@ -267,24 +271,22 @@ export default function SponsorshipPage() {
             <span className="text-primary">Texas A&M University</span>.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="default">
-              <BuildingOffice2Icon className="mr-2 h-5 w-5" />
-              Become a Sponsor
+            <Button size="lg" asChild>
+              <a href="mailto:sponsorship@ieeetamu.org">
+                <BuildingOffice2Icon className="mr-2 h-5 w-5" />
+                Become a Sponsor
+              </a>
             </Button>
-            {/* <Button size="lg" variant="outline">
-                <Phone className="mr-2 h-5 w-5" />
-                Schedule a Call
-              </Button> */}
           </div>
           <div className="mt-8 text-sm text-muted-foreground">
             <p>
               Contact us at{' '}
-              <Link
+              <a
                 href="mailto:sponsorship@ieeetamu.org"
                 className="text-primary hover:underline"
               >
                 sponsorship@ieeetamu.org
-              </Link>
+              </a>
             </p>
           </div>
         </MainSection>
