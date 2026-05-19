@@ -18,10 +18,10 @@ export default function TecPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                The Technical Education Committee (TEC) is dedicated to
-                enhancing the academic success and technical proficiency of IEEE
-                TAMU members. We provide educational support, tutoring services,
-                and skill-building opportunities that complement the formal
+                The Technical Committee is dedicated to enhancing the academic
+                success and technical proficiency of IEEE TAMU members. We
+                provide educational support, tutoring services, and
+                skill-building opportunities that complement the formal
                 engineering curriculum.
               </p>
               <p className="text-muted-foreground">

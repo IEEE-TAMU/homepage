@@ -13,7 +13,8 @@
     "format": "prettier --write .",
     "photos:upload": "node scripts/upload-photos-to-r2.mjs",
     "photos:download": "node scripts/download-photos-from-r2.mjs",
-    "photos:sync": "node scripts/sync-photos.mjs"
+    "photos:sync": "node scripts/sync-photos.mjs",
+    "test": "npx tsx test/*.test.ts"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

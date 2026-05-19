@@ -23,24 +23,24 @@ const rawBranches: Record<string, BranchInput> = {
       'The Executive Board oversees the overall direction and operations of IEEE TAMU.',
     officers: [
       {
-        name: 'Oliver Jansen',
+        name: 'Alan Jaf',
         position: 'President',
+        linkedin: 'alanjaf',
+      },
+      {
+        name: 'Josh Rayo',
+        position: 'Vice President',
+        linkedin: 'josh-rayo-a5880b29b',
+      },
+      {
+        name: 'Oliver Jansen',
+        position: 'Secretary',
         linkedin: 'oliver-jansen',
       },
       {
-        name: 'Seth Mayhue',
-        position: 'Vice President',
-        linkedin: 'seth-mayhue-740201301',
-      },
-      {
-        name: 'Arju Kafle',
-        position: 'Secretary',
-        linkedin: 'arju-kafle',
-      },
-      {
-        name: 'Nafi Baksh',
+        name: 'Andy Luu',
         position: 'Treasurer',
-        linkedin: 'nafi-baksh-71a285275',
+        linkedin: 'andy-luu-777449337',
       },
     ],
   },
@@ -50,14 +50,23 @@ const rawBranches: Record<string, BranchInput> = {
       'The Undersecretary Team manages internal affairs, member engagement, and chapter administration.',
     officers: [
       {
+        name: 'Seth Mayhue',
+        position: 'External Relations',
+        linkedin: 'seth-mayhue-740201301',
+      },
+      {
         name: 'Caleb Norton',
         position: 'Webmaster',
         linkedin: 'calebnorton',
       },
       {
-        name: 'Githin Johny',
-        position: 'Historian',
-        linkedin: 'githin-johny',
+        name: 'Jadon Lee',
+        position: 'JR Webmaster',
+        linkedin: 'jadonl',
+      },
+      {
+        name: 'Sree Davuluri',
+        position: 'Flex',
       },
     ],
   },
@@ -67,24 +76,22 @@ const rawBranches: Record<string, BranchInput> = {
       'The Activities Committee organizes hands-on workshops and technical activities for members.',
     officers: [
       {
-        name: 'Josh Rayo',
-        position: 'Activities Co-Chair',
-        linkedin: 'josh-rayo-a5880b29b',
-      },
-      {
-        name: 'Andy Luu',
-        position: 'Activities Co-Chair',
-        linkedin: 'andy-luu-777449337',
-      },
-      {
-        name: 'Parthiban Nagesh',
-        position: 'Activities Officer',
-        linkedin: 'parthiban-nagesh',
-      },
-      {
         name: 'Tony Doan',
-        position: 'Activities Officer',
+        position: 'Activities Chair',
         linkedin: 'tonydoanuts',
+      },
+      {
+        name: 'Branden Zhu',
+        position: 'Activities Officer',
+        linkedin: 'ziqian-zhu-a77096339',
+      },
+      {
+        name: 'Joaquin Welch',
+        position: 'Activities Officer',
+      },
+      {
+        name: 'Micah Clarke',
+        position: 'Activities Officer',
       },
     ],
   },
@@ -94,51 +101,22 @@ const rawBranches: Record<string, BranchInput> = {
       'The Corporate Relations Committee manages partnerships and outreach to industry sponsors.',
     officers: [
       {
-        name: 'Anushka Kalkar',
+        name: 'Faizan Ehtisham',
         position: 'Corporate Chair',
+      },
+      {
+        name: 'Anushka Kalkar',
+        position: 'Corporate Officer',
         linkedin: 'anushka-kalkar-7a3502288',
       },
       {
-        name: 'Emaad Karim',
+        name: 'Joseph Yilmaz',
         position: 'Corporate Officer',
-        linkedin: 'emaad-karim',
-      },
-      {
-        name: 'Karla Sanchez',
-        position: 'Corporate Officer',
-        linkedin: 'karla-sanchez01',
       },
       {
         name: 'Riya Shah',
         position: 'Corporate Officer',
         linkedin: 'riyashah06',
-      },
-    ],
-  },
-  events: {
-    name: 'Events Committee',
-    description:
-      'The Events Committee plans and executes major events such as career fairs and guest lectures.',
-    officers: [
-      {
-        name: 'Alan Jaf',
-        position: 'Events Chair',
-        linkedin: 'alanjaf',
-      },
-      {
-        name: 'Jadon Lee',
-        position: 'Events Officer',
-        linkedin: 'jadonl',
-      },
-      {
-        name: 'Tanmai Buyyanapragada',
-        position: 'Events Officer',
-        linkedin: 'tanmaibuyyana',
-      },
-      {
-        name: 'Pallavi Gokul',
-        position: 'Events Officer',
-        linkedin: 'pallavi-gokul-13a76122b',
       },
     ],
   },
@@ -148,50 +126,53 @@ const rawBranches: Record<string, BranchInput> = {
       'The Public Relations Committee handles marketing, branding, and communications for the chapter.',
     officers: [
       {
-        name: 'Annie Li',
+        name: 'Arju Kafle',
         position: 'PR Chair',
-        linkedin: 'liannie3',
+        linkedin: 'arju-kafle',
       },
       {
-        name: "Caden D'Souza",
-        position: 'PR Officer',
-        linkedin: 'caden-d-souza-5162b22b9',
-      },
-      {
-        name: 'Adhithi Venkatraghavan',
+        name: 'Kenneth Lundquist',
         position: 'PR Officer',
       },
       {
-        name: 'Xinyan Su',
+        name: 'Ibrahim Ahmad',
         position: 'PR Officer',
-        linkedin: 'xinyan-su-317757265',
+      },
+      {
+        name: 'Olivia Goralski',
+        position: 'PR Officer',
       },
     ],
   },
   tec: {
-    name: 'Technical Education Committee (TEC)',
+    name: 'Technical Committee',
     description:
-      'The Technical Education Committee develops educational content, tutorials, and resources for members.',
+      'The Technical Committee develops educational content, tutorials, and resources for members.',
     officers: [
       {
-        name: 'Jyoti Verma',
-        position: 'TEC Chair',
-        linkedin: 'jyotiverma607',
+        name: 'Caden McKenzie',
+        position: 'Technical Chair',
       },
       {
         name: 'Catherine Boyle',
-        position: 'TEC Officer',
+        position: 'Technical Officer',
         linkedin: 'catherine-boyle-5003a12b0',
       },
       {
-        name: 'Abhitej Devireddy',
-        position: 'TEC Officer',
-        linkedin: 'abhitej-devireddy-648864275',
+        name: 'Joseph Lin',
+        position: 'Technical Officer',
       },
       {
-        name: 'Branden Zhu',
-        position: 'TEC Officer',
-        linkedin: 'ziqian-zhu-a77096339',
+        name: 'Fatima Iftekhar',
+        position: 'Technical Officer',
+      },
+      {
+        name: 'Nikhil Patel',
+        position: 'Project Lead',
+      },
+      {
+        name: 'Saketh Desu',
+        position: 'Project Lead',
       },
     ],
   },
@@ -222,8 +203,10 @@ const Branches: Record<string, Branch> = Object.fromEntries(
   ])
 );
 
+const linkedinUrl = (slug: string) => `https://www.linkedin.com/in/${slug}`;
+
 const officerId = (officer: Officer) =>
   officer.name.toLowerCase().replace(/\s+/g, '-');
 
-export { Branches, officerId };
+export { Branches, officerId, linkedinUrl };
 export type { Branch, Officer };

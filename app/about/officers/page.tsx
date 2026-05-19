@@ -5,7 +5,7 @@ import type { SVGProps } from 'react';
 import { MainSection } from '@/components/sections';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-import { Branches, officerId } from '@/lib/branches';
+import { Branches, officerId, linkedinUrl } from '@/lib/branches';
 import type { Officer } from '@/lib/branches';
 
 const Officers = Object.fromEntries(
@@ -40,7 +40,7 @@ function OfficerCard({ officer }: { officer: Officer }) {
     <Card id={officerId(officer)} className="scroll-mt-36 relative">
       {officer.linkedin && (
         <Link
-          href={`https://www.linkedin.com/in/${officer.linkedin}`}
+          href={linkedinUrl(officer.linkedin)}
           target="_blank"
           rel="noopener noreferrer"
           className="absolute top-3 right-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-muted-foreground transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -84,7 +84,7 @@ function OfficerCard({ officer }: { officer: Officer }) {
 export default function OfficersPage() {
   const sectionTitles: Record<string, string> = {
     'e-board': 'Executive Board',
-    tec: 'Technical Education Committee',
+    tec: 'Technical Committee',
   };
 
   const titleize = (key: string) =>
