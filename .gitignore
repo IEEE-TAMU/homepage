@@ -57,3 +57,6 @@ robots.txt
 *.ttf
 *.woff
 *.woff2
+
+# officer photos
+public/officer_photos/

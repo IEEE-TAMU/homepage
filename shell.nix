@@ -4,6 +4,7 @@
 pkgs.mkShellNoCC {
   packages = [
     pkgs.nodejs
+    pkgs.imagemagick
   ];
 
   shellHook = ''

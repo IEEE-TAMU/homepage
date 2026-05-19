@@ -198,10 +198,15 @@ const rawBranches: Record<string, BranchInput> = {
 };
 
 const officerPhotoUrl = (officer: OfficerInput) => {
-  return (
-    officer.photoUrl ??
-    `https://officer-photos.ieeetamu.org/${officer.name.toLowerCase().replace(/[^a-z0-9]/g, '_')}.jpg`
-  );
+  if (officer.photoUrl) return officer.photoUrl;
+
+  const filename = officer.name.toLowerCase().replace(/[^a-z0-9]/g, '_');
+
+  if (process.env.NODE_ENV === 'development') {
+    return `/officer_photos/${filename}.jpg`;
+  }
+
+  return `https://officer-photos.ieeetamu.org/${filename}.jpg`;
 };
 
 const Branches: Record<string, Branch> = Object.fromEntries(
