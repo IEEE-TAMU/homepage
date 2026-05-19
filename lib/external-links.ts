@@ -15,7 +15,6 @@ export const EXTERNAL_LINKS = {
 
   // Calendar links
   IEEE_CALENDAR_ICS: 'https://portal.ieeetamu.org/api/v1/calendar',
-  // IEEE_CALENDAR_ICS: 'http://localhost:4000/api/v1/calendar',
   IEEE_CALENDAR_GOOGLE: 'https://link.ieeetamu.org/calendar',
 } as const;
 

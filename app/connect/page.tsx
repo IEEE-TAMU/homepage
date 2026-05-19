@@ -77,13 +77,13 @@ export default function ConnectPage() {
                   className="w-full mt-auto bg-transparent"
                   asChild
                 >
-                  <a
+                  <Link
                     href={EXTERNAL_LINKS.DISCORD}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     Join Discord
-                  </a>
+                  </Link>
                 </Button>
               ),
             },
@@ -101,13 +101,13 @@ export default function ConnectPage() {
                   className="w-full mt-auto bg-transparent"
                   asChild
                 >
-                  <a
+                  <Link
                     href={EXTERNAL_LINKS.IEEE_CALENDAR_GOOGLE}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     Subscribe to Calendar
-                  </a>
+                  </Link>
                 </Button>
               ),
             },
@@ -123,13 +123,13 @@ export default function ConnectPage() {
                   className="w-full mt-auto bg-transparent"
                   asChild
                 >
-                  <a
+                  <Link
                     href={EXTERNAL_LINKS.INSTAGRAM}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     Follow @ieee_tamu
-                  </a>
+                  </Link>
                 </Button>
               ),
             },
@@ -226,36 +226,34 @@ export default function ConnectPage() {
                 <h4 className="font-semibold mb-4">Follow Us</h4>
                 <div className="flex flex-wrap gap-3">
                   <Button variant="outline" size="sm" asChild>
-                    <a
+                    <Link
                       href={EXTERNAL_LINKS.LINKEDIN}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       LinkedIn
-                    </a>
+                    </Link>
                   </Button>
                   <Button variant="outline" size="sm" asChild>
-                    <a
+                    <Link
                       href={EXTERNAL_LINKS.INSTAGRAM}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       Instagram
-                    </a>
+                    </Link>
                   </Button>
                   <Button variant="outline" size="sm" asChild>
-                    <a
+                    <Link
                       href={EXTERNAL_LINKS.DISCORD}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       Discord
-                    </a>
+                    </Link>
                   </Button>
                 </div>
               </div>
-
-
             </div>
           </div>
 
@@ -265,8 +263,6 @@ export default function ConnectPage() {
           </div>
         </div>
       </MainSection>
-
-
     </div>
   );
 }

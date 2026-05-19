@@ -88,9 +88,9 @@ export function Navigation() {
                 key={item.href}
                 href={item.href}
                 className={`text-sm font-medium transition-colors ${
-                  (pathname === item.href || pathname.startsWith(item.href + '/'))
-                  ? 'text-primary'
-                  : 'hover:text-primary'
+                  pathname === item.href || pathname.startsWith(item.href + '/')
+                    ? 'text-primary'
+                    : 'hover:text-primary'
                 }`}
               >
                 {item.label}
@@ -157,7 +157,8 @@ export function Navigation() {
                   aria-current={pathname === item.href ? 'page' : undefined}
                   className={`block text-right text-lg font-medium transition-colors py-4 px-4 rounded-lg hover:bg-muted border border-transparent focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-background
                     ${
-                      (pathname === item.href || pathname.startsWith(item.href + '/'))
+                      pathname === item.href ||
+                      pathname.startsWith(item.href + '/')
                         ? 'text-primary bg-primary/10'
                         : 'hover:text-primary'
                     }

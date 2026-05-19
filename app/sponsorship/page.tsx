@@ -30,16 +30,16 @@ export default function SponsorshipPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button size="lg" asChild>
-              <a href="mailto:sponsorship@ieeetamu.org">
+              <Link href="mailto:sponsorship@ieeetamu.org">
                 <BuildingOffice2Icon className="mr-2 h-5 w-5" />
                 Become a Sponsor
-              </a>
+              </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <a href="mailto:sponsorship@ieeetamu.org">
+              <Link href="mailto:sponsorship@ieeetamu.org">
                 <EnvelopeIcon className="mr-2 h-5 w-5" />
                 Request Partnership Info
-              </a>
+              </Link>
             </Button>
           </div>
           <h2 className="text-3xl font-bold mb-4">
@@ -272,21 +272,21 @@ export default function SponsorshipPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
-              <a href="mailto:sponsorship@ieeetamu.org">
+              <Link href="mailto:sponsorship@ieeetamu.org">
                 <BuildingOffice2Icon className="mr-2 h-5 w-5" />
                 Become a Sponsor
-              </a>
+              </Link>
             </Button>
           </div>
           <div className="mt-8 text-sm text-muted-foreground">
             <p>
               Contact us at{' '}
-              <a
+              <Link
                 href="mailto:sponsorship@ieeetamu.org"
                 className="text-primary hover:underline"
               >
                 sponsorship@ieeetamu.org
-              </a>
+              </Link>
             </p>
           </div>
         </MainSection>

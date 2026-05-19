@@ -93,7 +93,7 @@ export function EventsSection() {
     format: {
       url: (value: string) => {
         return value.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
-      }
+      },
     },
     className: 'text-primary hover:text-primary/80 underline',
   };

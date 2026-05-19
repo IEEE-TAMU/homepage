@@ -48,8 +48,6 @@ export default function BranchesPage() {
             </Card>
           ))}
         </div>
-
-
       </div>
     </MainSection>
   );

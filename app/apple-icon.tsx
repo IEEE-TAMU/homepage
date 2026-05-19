@@ -13,26 +13,24 @@ export const contentType = 'image/png';
 export default async function Icon() {
   const icon = await readFile(join(process.cwd(), 'app', 'icon.svg'));
   return new ImageResponse(
-    (
-      // embed the svg in an image response
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'transparent',
-        }}
-      >
-        <img
-          src={`data:image/svg+xml;base64,${Buffer.from(icon).toString('base64')}`}
-          width={size.width}
-          height={size.height}
-          alt="App Icon"
-        />
-      </div>
-    ),
+    // embed the svg in an image response
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'transparent',
+      }}
+    >
+      <img
+        src={`data:image/svg+xml;base64,${Buffer.from(icon).toString('base64')}`}
+        width={size.width}
+        height={size.height}
+        alt="App Icon"
+      />
+    </div>,
     // ImageResponse options
     {
       // For convenience, we can re-use the exported icons size metadata

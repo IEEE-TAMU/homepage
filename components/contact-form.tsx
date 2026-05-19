@@ -153,11 +153,7 @@ export function ContactForm() {
               />
             </label>
           </div>
-          <Button
-            type="submit"
-            className="w-full"
-            disabled={isSubmitting}
-          >
+          <Button type="submit" className="w-full" disabled={isSubmitting}>
             {isSubmitting ? 'Sending...' : 'Send Message'}
           </Button>
         </form>

@@ -31,14 +31,14 @@ export default async function EventsPage() {
             <CalendarDaysIcon className="h-4 w-4" />
             <span>
               Events updated in real-time from our{' '}
-              <a
+              <Link
                 href={EXTERNAL_LINKS.IEEE_CALENDAR_GOOGLE}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-primary"
               >
                 Calendar
-              </a>
+              </Link>
             </span>
           </div>
         </div>
