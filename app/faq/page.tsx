@@ -1,25 +1,18 @@
 import Link from 'next/link';
 
 import { MainSection } from '@/components/sections';
+import { PageHero } from '@/components/page-hero';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function FAQPage() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <MainSection>
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Find quick answers to common questions about IEEE TAMU.
-          </p>
-        </div>
-      </MainSection>
+    <div>
+      <PageHero
+        title="Frequently Asked Questions"
+        subtitle="Find quick answers to common questions about IEEE TAMU."
+      />
 
-      {/* FAQ Section */}
       <MainSection>
         <div className="max-w-3xl mx-auto">
           <div className="space-y-6">
@@ -33,8 +26,8 @@ export default function FAQPage() {
                 <p className="text-muted-foreground">
                   You can join by visiting our membership page and choosing
                   between local chapter membership ($15/year) or full IEEE
-                  global membership ($32/year). Both options give you access to
-                  our events and community.
+                  global membership ($32/year). Both options give you access
+                  to our events and community.
                 </p>
               </CardContent>
             </Card>
@@ -94,7 +87,6 @@ export default function FAQPage() {
             </Card>
           </div>
 
-          {/* Contact CTA */}
           <div className="mt-12 text-center">
             <h3 className="text-xl font-semibold mb-4">
               Still have questions?
