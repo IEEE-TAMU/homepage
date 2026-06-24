@@ -12,7 +12,11 @@ interface GradientPanelProps {
  * Highlighted surface with the brand's soft primary→accent gradient.
  * Used for "By the Numbers", "What You Get", and bottom CTAs.
  */
-export function GradientPanel({ title, children, className }: GradientPanelProps) {
+export function GradientPanel({
+  title,
+  children,
+  className,
+}: GradientPanelProps) {
   return (
     <div
       className={cn(

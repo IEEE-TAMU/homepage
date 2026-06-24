@@ -9,9 +9,9 @@ import Link from 'next/link';
 
 import { EventsSection } from '@/components/events-section';
 import { FeatureCard } from '@/components/feature-card';
-import { MainSection } from '@/components/sections';
 import { PageHero } from '@/components/page-hero';
 import { SectionHeader } from '@/components/section-header';
+import { MainSection } from '@/components/sections';
 
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 

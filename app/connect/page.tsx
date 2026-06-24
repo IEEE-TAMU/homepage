@@ -12,8 +12,8 @@ import Link from 'next/link';
 import { CommunityCard } from '@/components/community-card';
 import { ContactForm } from '@/components/contact-form';
 import { ContactInfoRow } from '@/components/contact-info-row';
-import { MainSection } from '@/components/sections';
 import { PageHero } from '@/components/page-hero';
+import { MainSection } from '@/components/sections';
 import { Button } from '@/components/ui/button';
 
 import { EXTERNAL_LINKS } from '@/lib/external-links';
@@ -28,7 +28,9 @@ export default function ConnectPage() {
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <CommunityCard
-            icon={<ChatBubbleLeftRightIcon className="h-8 w-8 text-accent-foreground" />}
+            icon={
+              <ChatBubbleLeftRightIcon className="h-8 w-8 text-accent-foreground" />
+            }
             title="Discord Community"
             description="Join our active Discord server for real-time discussions, study groups, project collaboration, and community support."
             tone="accent"
@@ -49,7 +51,9 @@ export default function ConnectPage() {
             }
           />
           <CommunityCard
-            icon={<CalendarDaysIcon className="h-8 w-8 text-accent-foreground" />}
+            icon={
+              <CalendarDaysIcon className="h-8 w-8 text-accent-foreground" />
+            }
             title="Calendar"
             description="Subscribe to our Google Calendar to never miss an event. Get automatic notifications for workshops, meetings, and socials."
             tone="accent"
@@ -110,16 +114,10 @@ export default function ConnectPage() {
             </p>
             <div className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
-                <ContactInfoRow
-                  icon={<EnvelopeIcon />}
-                  title="Email"
-                >
+                <ContactInfoRow icon={<EnvelopeIcon />} title="Email">
                   contact@ieeetamu.org
                 </ContactInfoRow>
-                <ContactInfoRow
-                  icon={<MapPinIcon />}
-                  title="Location"
-                >
+                <ContactInfoRow icon={<MapPinIcon />} title="Location">
                   Wisenbaker Engineering Building
                   <br />
                   Room 206
@@ -138,10 +136,7 @@ export default function ConnectPage() {
                   <br />
                   College Station, TX 77843-3128
                 </ContactInfoRow>
-                <ContactInfoRow
-                  icon={<TruckIcon />}
-                  title="Mailing (packages)"
-                >
+                <ContactInfoRow icon={<TruckIcon />} title="Mailing (packages)">
                   Attn: IEEE TAMU
                   <br />
                   Texas A&M University

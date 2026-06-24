@@ -39,19 +39,9 @@ export function FeatureRow({
         className="flex-shrink-0"
       />
       <div>
-        <h3
-          className={cn(
-            'font-semibold mb-2',
-            titleClassName
-          )}
-        >
-          {title}
-        </h3>
+        <h3 className={cn('font-semibold mb-2', titleClassName)}>{title}</h3>
         <p
-          className={cn(
-            'text-muted-foreground text-sm',
-            descriptionClassName
-          )}
+          className={cn('text-muted-foreground text-sm', descriptionClassName)}
         >
           {description}
         </p>

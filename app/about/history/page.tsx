@@ -1,5 +1,5 @@
-import { MainSection } from '@/components/sections';
 import { PageHero } from '@/components/page-hero';
+import { MainSection } from '@/components/sections';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function HistoryPage() {
@@ -22,15 +22,15 @@ export default function HistoryPage() {
                 Institute of Electrical Engineers at Texas A&M College.
               </p>
               <p className="text-muted-foreground mb-4">
-                In 1948, it became a joint student branch at Texas A&M College for
-                the Institute of Radio Engineers and American Institute of
+                In 1948, it became a joint student branch at Texas A&M College
+                for the Institute of Radio Engineers and American Institute of
                 Electrical Engineers.
               </p>
               <p className="text-muted-foreground">
-                Finally, in 1963, it evolved into the Institute of Electrical and
-                Electronics Engineers (IEEE) at Texas A&M University, continuing
-                our mission of bringing together engineering students passionate
-                about technology and professional development.
+                Finally, in 1963, it evolved into the Institute of Electrical
+                and Electronics Engineers (IEEE) at Texas A&M University,
+                continuing our mission of bringing together engineering students
+                passionate about technology and professional development.
               </p>
             </CardContent>
           </Card>
@@ -46,9 +46,9 @@ export default function HistoryPage() {
                 student branches in the region.
               </p>
               <p className="text-muted-foreground">
-                We&apos;ve expanded our activities to include technical workshops,
-                networking events, community service projects, and partnerships
-                with industry leaders.
+                We&apos;ve expanded our activities to include technical
+                workshops, networking events, community service projects, and
+                partnerships with industry leaders.
               </p>
             </CardContent>
           </Card>
@@ -77,8 +77,8 @@ export default function HistoryPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                As we continue to grow and evolve, IEEE TAMU remains committed to
-                our mission of advancing technology for humanity through
+                As we continue to grow and evolve, IEEE TAMU remains committed
+                to our mission of advancing technology for humanity through
                 professional development, community engagement, and innovation.
               </p>
             </CardContent>

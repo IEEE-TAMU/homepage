@@ -40,10 +40,7 @@ export function StepList({
     return (
       <div className={cn('space-y-4', className)}>
         {steps.map((step, i) => (
-          <div
-            key={i}
-            className="flex items-start space-x-4"
-          >
+          <div key={i} className="flex items-start space-x-4">
             <IconBubble
               icon={
                 <span className="text-sm font-semibold">
@@ -67,9 +64,7 @@ export function StepList({
   }
 
   return (
-    <div
-      className={cn('grid md:grid-cols-3 gap-8', className)}
-    >
+    <div className={cn('grid md:grid-cols-3 gap-8', className)}>
       {steps.map((step, i) => (
         <div key={i} className="text-center">
           <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">

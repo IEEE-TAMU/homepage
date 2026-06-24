@@ -527,7 +527,9 @@ export function getBranchContent(slug: string): BranchContent | undefined {
   return BRANCH_CONTENT[slug];
 }
 
-export function hasBranchContent(slug: string): slug is keyof typeof BRANCH_CONTENT {
+export function hasBranchContent(
+  slug: string
+): slug is keyof typeof BRANCH_CONTENT {
   return slug in BRANCH_CONTENT;
 }
 

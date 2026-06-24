@@ -7,13 +7,13 @@ import {
 import Link from 'next/link';
 
 import { FeatureCard } from '@/components/feature-card';
-import { MainSection } from '@/components/sections';
 import { PageHero } from '@/components/page-hero';
+import { PriceCard } from '@/components/price-card';
 import { SectionHeader } from '@/components/section-header';
+import { MainSection } from '@/components/sections';
 import { SponsorsCarousel } from '@/components/sponsors-carousel';
 import { StepList } from '@/components/step-list';
 import { Button } from '@/components/ui/button';
-import { PriceCard } from '@/components/price-card';
 
 export default function SponsorshipPage() {
   return (
@@ -220,7 +220,10 @@ export default function SponsorshipPage() {
         </div>
       </MainSection>
 
-      <MainSection tone="gradient" contentClassName="max-w-3xl mx-auto text-center">
+      <MainSection
+        tone="gradient"
+        contentClassName="max-w-3xl mx-auto text-center"
+      >
         <h2 className="text-3xl font-bold mb-6">Ready to Partner With Us?</h2>
         <p className="text-muted-foreground mb-8">
           Let&apos;s discuss how your company can benefit from partnering with

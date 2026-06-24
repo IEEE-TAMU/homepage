@@ -33,20 +33,20 @@ export function CheckList({
   className,
 }: CheckListProps) {
   const content = items.map((item, i) => (
-    <div
-      key={i}
-      className={cn(
-        'flex items-center space-x-3',
-        className
-      )}
-    >
+    <div key={i} className={cn('flex items-center space-x-3', className)}>
       <CheckCircleIcon className={cn(iconSizeMap[size], 'text-primary')} />
       <span className="text-sm">{item}</span>
     </div>
   ));
 
   if (as === 'ul') {
-    return <ul className="space-y-3">{content.map((c, i) => <li key={i}>{c}</li>)}</ul>;
+    return (
+      <ul className="space-y-3">
+        {content.map((c, i) => (
+          <li key={i}>{c}</li>
+        ))}
+      </ul>
+    );
   }
 
   return <div className="space-y-3">{content}</div>;

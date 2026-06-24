@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import { MainSection } from '@/components/sections';
 import { PageHero } from '@/components/page-hero';
+import { MainSection } from '@/components/sections';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
