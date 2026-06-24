@@ -1,9 +1,9 @@
 import React from 'react';
 
+import { CheckList } from '@/components/check-list';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckList } from '@/components/check-list';
 
 import { cn } from '@/lib/utils';
 
@@ -65,7 +65,12 @@ export function PriceCard({
       ) : null}
       <CardHeader className="text-center">
         <CardTitle className="text-2xl">{name}</CardTitle>
-        <div className={cn('text-3xl font-bold mt-4 whitespace-nowrap', priceClass)}>
+        <div
+          className={cn(
+            'text-3xl font-bold mt-4 whitespace-nowrap',
+            priceClass
+          )}
+        >
           {price}
         </div>
         {description ? (

@@ -1,6 +1,6 @@
 import { OfficerCard } from '@/components/officer-card';
-import { MainSection } from '@/components/sections';
 import { PageHero } from '@/components/page-hero';
+import { MainSection } from '@/components/sections';
 
 import { Branches } from '@/lib/branches';
 

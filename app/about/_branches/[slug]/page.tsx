@@ -3,8 +3,8 @@ import { notFound } from 'next/navigation';
 import { BranchPage } from '@/components/branches';
 import { MainSection } from '@/components/sections';
 
-import { Branches } from '@/lib/branches';
 import { getBranchContent } from '@/lib/branch-content';
+import { Branches } from '@/lib/branches';
 
 export function generateStaticParams() {
   return Object.keys(Branches)

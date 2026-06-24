@@ -5,9 +5,9 @@ import React from 'react';
 import { IconBubble } from '@/components/icon-bubble';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-import { cn } from '@/lib/utils';
 import type { Officer } from '@/lib/branches';
-import { officerId, linkedinUrl } from '@/lib/branches';
+import { linkedinUrl, officerId } from '@/lib/branches';
+import { cn } from '@/lib/utils';
 
 const initialsOf = (name: string) =>
   name

@@ -11,12 +11,12 @@ import Link from 'next/link';
 import { CheckList } from '@/components/check-list';
 import { FeatureRow } from '@/components/feature-row';
 import { GradientPanel } from '@/components/gradient-panel';
-import { MainSection } from '@/components/sections';
 import { PageHero } from '@/components/page-hero';
+import { PriceCard } from '@/components/price-card';
 import { SectionHeader } from '@/components/section-header';
+import { MainSection } from '@/components/sections';
 import { StepList } from '@/components/step-list';
 import { Button } from '@/components/ui/button';
-import { PriceCard } from '@/components/price-card';
 
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import { MainSection } from '@/components/sections';
 import { PageHero } from '@/components/page-hero';
+import { MainSection } from '@/components/sections';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -26,8 +26,8 @@ export default function FAQPage() {
                 <p className="text-muted-foreground">
                   You can join by visiting our membership page and choosing
                   between local chapter membership ($15/year) or full IEEE
-                  global membership ($32/year). Both options give you access
-                  to our events and community.
+                  global membership ($32/year). Both options give you access to
+                  our events and community.
                 </p>
               </CardContent>
             </Card>

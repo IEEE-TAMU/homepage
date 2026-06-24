@@ -10,9 +10,9 @@ import {
 import Link from 'next/link';
 
 import { FeatureCard } from '@/components/feature-card';
+import { SectionHeader } from '@/components/section-header';
 import { HeroSection } from '@/components/sections';
 import { MainSection } from '@/components/sections';
-import { SectionHeader } from '@/components/section-header';
 import { SponsorsCarousel } from '@/components/sponsors-carousel';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -199,9 +199,7 @@ export default function Homepage() {
             </Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <Link href="/connect#send-message">
-              Have Questions? Contact Us
-            </Link>
+            <Link href="/connect#send-message">Have Questions? Contact Us</Link>
           </Button>
         </div>
       </MainSection>

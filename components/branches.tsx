@@ -2,17 +2,17 @@ import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
 import { BorderedQuote } from '@/components/bordered-quote';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { StepList } from '@/components/step-list';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-import { officerId } from '@/lib/branches';
-import type { Branch } from '@/lib/branches';
 import type {
   BranchContent,
   CategoryBlock,
   QuoteBlock,
   SignatureBlock,
 } from '@/lib/branch-content';
+import { officerId } from '@/lib/branches';
+import type { Branch } from '@/lib/branches';
 import {
   type SponsorTier,
   TIER_ORDER,
@@ -134,7 +134,11 @@ export function BranchPage({
             {content.about.paragraphs.map((p, i) => (
               <p
                 key={i}
-                className={i < content.about.paragraphs.length - 1 ? 'text-muted-foreground mb-4' : 'text-muted-foreground'}
+                className={
+                  i < content.about.paragraphs.length - 1
+                    ? 'text-muted-foreground mb-4'
+                    : 'text-muted-foreground'
+                }
               >
                 {p}
               </p>
@@ -145,7 +149,9 @@ export function BranchPage({
         {/* Categories card (2x2 grid) */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">{content.categories.title}</CardTitle>
+            <CardTitle className="text-2xl">
+              {content.categories.title}
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-2 gap-6">
@@ -194,7 +200,9 @@ export function BranchPage({
         {content.signature ? (
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">{content.signature.title}</CardTitle>
+              <CardTitle className="text-2xl">
+                {content.signature.title}
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
@@ -210,7 +218,9 @@ export function BranchPage({
         {content.process ? (
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">{content.process.title}</CardTitle>
+              <CardTitle className="text-2xl">
+                {content.process.title}
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <StepList
@@ -230,7 +240,9 @@ export function BranchPage({
         {content.extraCta ? (
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">{content.extraCta.title}</CardTitle>
+              <CardTitle className="text-2xl">
+                {content.extraCta.title}
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
@@ -254,7 +266,9 @@ export function BranchPage({
         {content.sponsors ? (
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">{content.sponsors.title}</CardTitle>
+              <CardTitle className="text-2xl">
+                {content.sponsors.title}
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">

@@ -7,9 +7,9 @@ import {
 import { FeatureCard } from '@/components/feature-card';
 import { FeatureRow } from '@/components/feature-row';
 import { GradientPanel } from '@/components/gradient-panel';
-import { MainSection } from '@/components/sections';
 import { PageHero } from '@/components/page-hero';
 import { SectionHeader } from '@/components/section-header';
+import { MainSection } from '@/components/sections';
 
 export default function AboutPage() {
   return (
