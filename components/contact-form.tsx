@@ -1,7 +1,7 @@
 'use client';
 
-import type React from 'react';
 import { useState } from 'react';
+import type React from 'react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -11,6 +11,19 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+
+type SubmitStatus = 'idle' | 'success' | 'error';
+
+const SUBJECT_OPTIONS = [
+  'General Inquiry',
+  'Membership Question',
+  'Sponsorship Interest',
+  'Event Information',
+  'Other',
+];
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -20,9 +33,7 @@ export function ContactForm() {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    'idle' | 'success' | 'error'
-  >('idle');
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -95,63 +106,55 @@ export function ContactForm() {
           onSubmit={handleSubmit}
           className="flex flex-col h-full space-y-4"
         >
-          <div>
-            <label className="text-sm font-medium mb-2 block">
-              Name
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-input rounded-md bg-background"
-                placeholder="Your full name"
-                required
-              />
-            </label>
+          <div className="space-y-2">
+            <Label htmlFor="contact-name">Name</Label>
+            <Input
+              id="contact-name"
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your full name"
+              required
+            />
           </div>
-          <div>
-            <label className="text-sm font-medium mb-2 block">
-              Email
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-input rounded-md bg-background"
-                placeholder="your.email@company.org"
-                required
-              />
-            </label>
+          <div className="space-y-2">
+            <Label htmlFor="contact-email">Email</Label>
+            <Input
+              id="contact-email"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="your.email@company.org"
+              required
+            />
           </div>
-          <div>
-            <label className="text-sm font-medium mb-2 block">
-              Subject
-              <select
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-input rounded-md bg-background"
-              >
-                <option>General Inquiry</option>
-                <option>Membership Question</option>
-                <option>Sponsorship Interest</option>
-                <option>Event Information</option>
-                <option>Other</option>
-              </select>
-            </label>
+          <div className="space-y-2">
+            <Label htmlFor="contact-subject">Subject</Label>
+            <select
+              id="contact-subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              className="h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none selection:bg-primary selection:text-primary-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm dark:bg-input/30"
+            >
+              {SUBJECT_OPTIONS.map((opt) => (
+                <option key={opt}>{opt}</option>
+              ))}
+            </select>
           </div>
-          <div className="flex-1 flex flex-col">
-            <label className="text-sm font-medium mb-2 flex-1 flex flex-col">
-              Message
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-input rounded-md bg-background flex-1 min-h-24"
-                placeholder="Tell us how we can help..."
-                required
-              />
-            </label>
+          <div className="flex-1 flex flex-col space-y-2">
+            <Label htmlFor="contact-message">Message</Label>
+            <Textarea
+              id="contact-message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Tell us how we can help..."
+              className="flex-1 min-h-24"
+              required
+            />
           </div>
           <Button type="submit" className="w-full" disabled={isSubmitting}>
             {isSubmitting ? 'Sending...' : 'Send Message'}
