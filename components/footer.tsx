@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { BrandMark } from '@/components/brandmark';
 
+import { CONTACT_EMAILS } from '@/lib/constants';
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 
 function FooterColumn({
@@ -97,7 +98,7 @@ export function Footer() {
           &copy; 2026 IEEE Texas A&M University Student Branch. All rights
           reserved.{' '}
           <a
-            href="mailto:webmaster@ieeetamu.org?subject=Website%20Feedback"
+            href={`mailto:${CONTACT_EMAILS.webmaster}?subject=Website%20Feedback`}
             className="text-primary hover:underline"
           >
             Feedback

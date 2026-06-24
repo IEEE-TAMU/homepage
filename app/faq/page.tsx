@@ -5,6 +5,8 @@ import { MainSection } from '@/components/sections';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
+import { MEMBERSHIP_PRICING } from '@/lib/constants';
+
 export default function FAQPage() {
   return (
     <div>
@@ -25,9 +27,10 @@ export default function FAQPage() {
               <CardContent>
                 <p className="text-muted-foreground">
                   You can join by visiting our membership page and choosing
-                  between local chapter membership ($15/year) or full IEEE
-                  global membership ($32/year). Both options give you access to
-                  our events and community.
+                  between local chapter membership (
+                  {MEMBERSHIP_PRICING.local.formatted}) or full IEEE global
+                  membership ({MEMBERSHIP_PRICING.global.formatted}). Both
+                  options give you access to our events and community.
                 </p>
               </CardContent>
             </Card>

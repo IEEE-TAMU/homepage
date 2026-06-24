@@ -16,6 +16,7 @@ import { PageHero } from '@/components/page-hero';
 import { MainSection } from '@/components/sections';
 import { Button } from '@/components/ui/button';
 
+import { CONTACT_EMAILS } from '@/lib/constants';
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 
 export default function ConnectPage() {
@@ -115,7 +116,7 @@ export default function ConnectPage() {
             <div className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <ContactInfoRow icon={<EnvelopeIcon />} title="Email">
-                  contact@ieeetamu.org
+                  {CONTACT_EMAILS.general}
                 </ContactInfoRow>
                 <ContactInfoRow icon={<MapPinIcon />} title="Location">
                   Wisenbaker Engineering Building

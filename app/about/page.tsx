@@ -11,6 +11,8 @@ import { PageHero } from '@/components/page-hero';
 import { SectionHeader } from '@/components/section-header';
 import { MainSection } from '@/components/sections';
 
+import { SITE_STATS } from '@/lib/constants';
+
 export default function AboutPage() {
   return (
     <div>
@@ -90,9 +92,9 @@ export default function AboutPage() {
           <GradientPanel title="By the Numbers">
             <div className="grid grid-cols-2 gap-6">
               {[
-                { value: '700+', label: 'Active Members' },
-                { value: '50+', label: 'Events Per Year' },
-                { value: '115+', label: 'Years Active' },
+                { value: SITE_STATS.activeMembers, label: 'Active Members' },
+                { value: SITE_STATS.eventsPerYear, label: 'Events Per Year' },
+                { value: SITE_STATS.yearsActive, label: 'Years Active' },
               ].map(({ value, label }) => (
                 <div className="text-center" key={label}>
                   <div className="text-3xl font-bold text-primary mb-2">
