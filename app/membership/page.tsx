@@ -20,8 +20,12 @@ import { Button } from '@/components/ui/button';
 
 import { MEMBERSHIP_PRICING, SITE_STATS } from '@/lib/constants';
 import { EXTERNAL_LINKS } from '@/lib/external-links';
+import { formatMemberCount, getMemberStats } from '@/lib/member-stats';
 
-export default function MembershipPage() {
+export default async function MembershipPage() {
+  const { count } = await getMemberStats();
+  const memberCountLabel = formatMemberCount(count);
+
   return (
     <div>
       <MainSection>
@@ -87,10 +91,9 @@ export default function MembershipPage() {
               title="Local Community"
               description={
                 <>
-                  Join a vibrant community of {SITE_STATS.studentMembers}{' '}
-                  engineering students at{' '}
-                  <span className="text-primary">Texas A&M</span> with shared
-                  interests and goals.
+                  Join a vibrant community of {memberCountLabel} engineering
+                  students at <span className="text-primary">Texas A&M</span>{' '}
+                  with shared interests and goals.
                 </>
               }
             />
