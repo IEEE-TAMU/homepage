@@ -8,19 +8,24 @@
 /**
  * Headline statistics shown across the site.
  * All values are pre-formatted for display.
+ *
+ * `paidMemberCount` is sourced dynamically from the portal API (see
+ * `lib/member-stats.ts`); it is not duplicated here.
  */
 export const SITE_STATS = {
-  /** Active IEEE TAMU members. Shown on the home "By the Numbers" panel. */
-  activeMembers: '700+',
   /** Events hosted each year. */
   eventsPerYear: '50+',
   /** Years IEEE TAMU has been active (founded 1909). */
   yearsActive: '115+',
-  /** Active student members used in marketing copy on the home and membership pages. */
-  studentMembers: '500+',
   /** Global IEEE membership count used in the membership value-prop. */
   ieeeGlobalMembers: '500,000',
 } as const;
+
+/**
+ * The year we ask the portal for in `lib/member-stats.ts`.
+ * Bump this at the start of each academic year to pull the freshest count.
+ */
+export const CURRENT_MEMBER_STATS_YEAR = 2025;
 
 /**
  * Annual USD pricing for the two membership tiers offered to students.

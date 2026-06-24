@@ -15,10 +15,14 @@ import { SponsorsCarousel } from '@/components/sponsors-carousel';
 import { StepList } from '@/components/step-list';
 import { Button } from '@/components/ui/button';
 
-import { CONTACT_EMAILS, SITE_STATS } from '@/lib/constants';
+import { CONTACT_EMAILS } from '@/lib/constants';
+import { formatMemberCount, getMemberStats } from '@/lib/member-stats';
 import { SPONSORSHIP_TIERS } from '@/lib/sponsors';
 
-export default function SponsorshipPage() {
+export default async function SponsorshipPage() {
+  const { count } = await getMemberStats();
+  const memberCountLabel = formatMemberCount(count);
+
   return (
     <div>
       <MainSection>
@@ -71,7 +75,7 @@ export default function SponsorshipPage() {
                   'Resume database access',
                   'Exclusive recruiting events',
                   'Internship partnerships',
-                  `Direct access to ${SITE_STATS.studentMembers} students`,
+                  `Direct access to ${memberCountLabel} active students`,
                 ].map((item) => (
                   <li key={item} className="flex items-center space-x-2">
                     <CheckCircleItem />
@@ -85,7 +89,7 @@ export default function SponsorshipPage() {
             icon={<MegaphoneIcon className="h-12 w-12 text-primary" />}
             iconStyle="plain"
             title="Brand Visibility"
-            description={`Showcase your company to ${SITE_STATS.studentMembers} active IEEE TAMU members through various marketing channels and events.`}
+            description={`Showcase your company to ${memberCountLabel} active IEEE TAMU members through various marketing channels and events.`}
             cta={
               <ul className="text-sm text-left space-y-2">
                 {[

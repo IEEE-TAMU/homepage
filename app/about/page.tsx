@@ -12,8 +12,12 @@ import { SectionHeader } from '@/components/section-header';
 import { MainSection } from '@/components/sections';
 
 import { SITE_STATS } from '@/lib/constants';
+import { formatMemberCount, getMemberStats } from '@/lib/member-stats';
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const { count } = await getMemberStats();
+  const activeMembersLabel = formatMemberCount(count);
+
   return (
     <div>
       <PageHero
@@ -92,7 +96,7 @@ export default function AboutPage() {
           <GradientPanel title="By the Numbers">
             <div className="grid grid-cols-2 gap-6">
               {[
-                { value: SITE_STATS.activeMembers, label: 'Active Members' },
+                { value: activeMembersLabel, label: 'Active Members' },
                 { value: SITE_STATS.eventsPerYear, label: 'Events Per Year' },
                 { value: SITE_STATS.yearsActive, label: 'Years Active' },
               ].map(({ value, label }) => (

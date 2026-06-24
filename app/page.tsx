@@ -17,9 +17,12 @@ import { SponsorsCarousel } from '@/components/sponsors-carousel';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
-import { SITE_STATS } from '@/lib/constants';
+import { formatMemberCount, getMemberStats } from '@/lib/member-stats';
 
-export default function Homepage() {
+export default async function Homepage() {
+  const { count } = await getMemberStats();
+  const memberCountLabel = formatMemberCount(count);
+
   return (
     <div>
       <HeroSection
@@ -127,7 +130,7 @@ export default function Homepage() {
             {
               icon: UsersIcon,
               title: 'Join Our Community',
-              description: `Become part of ${SITE_STATS.studentMembers} engineering students and connect with the global IEEE network.`,
+              description: `Join ${memberCountLabel} engineering students in our community and connect with the global IEEE network.`,
               buttonText: 'Join Now',
               buttonVariant: 'default' as const,
               href: '/membership',

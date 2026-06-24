@@ -16,6 +16,10 @@ export const EXTERNAL_LINKS = {
   // Calendar links
   IEEE_CALENDAR_ICS: 'https://portal.ieeetamu.org/api/v1/calendar',
   IEEE_CALENDAR_GOOGLE: 'https://link.ieeetamu.org/calendar',
+
+  // Stats endpoints
+  IEEE_TAMU_STATS_PAID_MEMBERS:
+    'https://portal.ieeetamu.org/api/v1/stats/paid-members',
 } as const;
 
 // Type for external links
