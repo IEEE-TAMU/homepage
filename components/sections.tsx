@@ -3,6 +3,8 @@ import React from 'react';
 
 type SectionWidth = 'sm' | 'md' | 'lg' | 'xl' | 'full';
 
+type SectionTone = 'default' | 'card' | 'gradient';
+
 interface MainSectionProps {
   children: React.ReactNode;
   className?: string;
@@ -21,6 +23,13 @@ interface MainSectionProps {
    */
   padding?: 'none' | 'compact' | 'comfortable';
   /**
+   * Background tone of the section.
+   * - default ~ transparent
+   * - card ~ `bg-card`
+   * - gradient ~ `bg-gradient-to-br from-primary/5 to-accent/5`
+   */
+  tone?: SectionTone;
+  /**
    * Additional classes for the inner width-constrained container.
    */
   contentClassName?: string;
@@ -34,12 +43,19 @@ const widthMap: Record<SectionWidth, string> = {
   full: 'max-w-none',
 };
 
+const toneMap: Record<SectionTone, string> = {
+  default: '',
+  card: 'bg-card',
+  gradient: 'bg-gradient-to-br from-primary/5 to-accent/5',
+};
+
 export const MainSection = ({
   children,
   className = '',
   id,
   width = 'xl',
   padding = 'comfortable',
+  tone = 'default',
   contentClassName = '',
 }: MainSectionProps) => {
   const vertical =
@@ -53,7 +69,7 @@ export const MainSection = ({
 
   return (
     <section
-      className={`${vertical} px-6 md:px-8 ${scrollMarginTop} ${className}`}
+      className={`${vertical} px-6 md:px-8 ${scrollMarginTop} ${toneMap[tone]} ${className}`}
       id={id}
     >
       <div className={`mx-auto w-full ${widthMap[width]} ${contentClassName}`}>
