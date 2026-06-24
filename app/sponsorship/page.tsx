@@ -15,6 +15,9 @@ import { SponsorsCarousel } from '@/components/sponsors-carousel';
 import { StepList } from '@/components/step-list';
 import { Button } from '@/components/ui/button';
 
+import { CONTACT_EMAILS, SITE_STATS } from '@/lib/constants';
+import { SPONSORSHIP_TIERS } from '@/lib/sponsors';
+
 export default function SponsorshipPage() {
   return (
     <div>
@@ -36,13 +39,13 @@ export default function SponsorshipPage() {
           actions={
             <>
               <Button size="lg" asChild>
-                <Link href="mailto:sponsorship@ieeetamu.org">
+                <Link href={`mailto:${CONTACT_EMAILS.sponsorship}`}>
                   <BuildingOffice2Icon className="mr-2 h-5 w-5" />
                   Become a Sponsor
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="mailto:sponsorship@ieeetamu.org">
+                <Link href={`mailto:${CONTACT_EMAILS.sponsorship}`}>
                   <EnvelopeIcon className="mr-2 h-5 w-5" />
                   Request Partnership Info
                 </Link>
@@ -68,7 +71,7 @@ export default function SponsorshipPage() {
                   'Resume database access',
                   'Exclusive recruiting events',
                   'Internship partnerships',
-                  'Direct access to 500+ students',
+                  `Direct access to ${SITE_STATS.studentMembers} students`,
                 ].map((item) => (
                   <li key={item} className="flex items-center space-x-2">
                     <CheckCircleItem />
@@ -82,7 +85,7 @@ export default function SponsorshipPage() {
             icon={<MegaphoneIcon className="h-12 w-12 text-primary" />}
             iconStyle="plain"
             title="Brand Visibility"
-            description="Showcase your company to 500+ active IEEE TAMU members through various marketing channels and events."
+            description={`Showcase your company to ${SITE_STATS.studentMembers} active IEEE TAMU members through various marketing channels and events.`}
             cta={
               <ul className="text-sm text-left space-y-2">
                 {[
@@ -129,54 +132,17 @@ export default function SponsorshipPage() {
           description="Choose the sponsorship level that aligns with your company's goals and budget."
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <PriceCard
-            name="Bronze Sponsor"
-            price="$500"
-            description="Essential partnership benefits"
-            priceTone="accent-foreground"
-            benefits={[
-              'Logo on event materials',
-              'Social media recognition',
-              'Newsletter mentions',
-              'Access to resume database',
-            ]}
-          />
-          <PriceCard
-            name="Silver Sponsor"
-            price="$1,000"
-            description="Enhanced visibility and engagement"
-            isPopular
-            priceTone="primary"
-            benefits={[
-              'All Bronze benefits',
-              'Workshop co-hosting opportunity',
-              'Recruiting table at career fair',
-              'Company presentation opportunity',
-              'Priority event invitations',
-            ]}
-          />
-          <PriceCard
-            name="Gold Sponsor"
-            price="$3,000"
-            description="Premium partnership experience"
-            priceTone="accent-foreground"
-            benefits={[
-              'All Silver benefits',
-              'Exclusive networking event',
-              'Custom workshop development',
-            ]}
-          />
-          <PriceCard
-            name="Platinum Sponsor"
-            price="$5,000"
-            description="Elite partnership with maximum impact"
-            priceTone="accent-foreground"
-            benefits={[
-              'All Gold benefits',
-              'Custom partnership opportunities',
-              'Maximum brand visibility',
-            ]}
-          />
+          {SPONSORSHIP_TIERS.map((tier) => (
+            <PriceCard
+              key={tier.tier}
+              name={tier.name}
+              price={tier.formatted}
+              description={tier.description}
+              isPopular={tier.isPopular}
+              priceTone={tier.isPopular ? 'primary' : 'accent-foreground'}
+              benefits={tier.benefits}
+            />
+          ))}
         </div>
       </MainSection>
 
@@ -232,7 +198,7 @@ export default function SponsorshipPage() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" asChild>
-            <Link href="mailto:sponsorship@ieeetamu.org">
+            <Link href={`mailto:${CONTACT_EMAILS.sponsorship}`}>
               <BuildingOffice2Icon className="mr-2 h-5 w-5" />
               Become a Sponsor
             </Link>
@@ -242,10 +208,10 @@ export default function SponsorshipPage() {
           <p>
             Contact us at{' '}
             <Link
-              href="mailto:sponsorship@ieeetamu.org"
+              href={`mailto:${CONTACT_EMAILS.sponsorship}`}
               className="text-primary hover:underline"
             >
-              sponsorship@ieeetamu.org
+              {CONTACT_EMAILS.sponsorship}
             </Link>
           </p>
         </div>

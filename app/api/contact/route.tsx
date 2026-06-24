@@ -1,6 +1,8 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+import { CONTACT_EMAILS } from '@/lib/constants';
+
 export async function POST(request: NextRequest) {
   try {
     const { name, email, subject, message } = await request.json();
@@ -30,7 +32,7 @@ export async function POST(request: NextRequest) {
     // Email content
     const mailOptions = {
       from: process.env.SMTP_USER || 'homepage@ieeetamu.org',
-      to: 'contact@ieeetamu.org', // IEEE TAMU contact email
+      to: CONTACT_EMAILS.general, // IEEE TAMU contact email
       subject: `IEEE TAMU Contact Form: ${subject}`,
       html: `
         <h3>New Contact Form Submission</h3>

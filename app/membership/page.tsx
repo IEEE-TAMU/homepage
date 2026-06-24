@@ -18,6 +18,7 @@ import { MainSection } from '@/components/sections';
 import { StepList } from '@/components/step-list';
 import { Button } from '@/components/ui/button';
 
+import { MEMBERSHIP_PRICING, SITE_STATS } from '@/lib/constants';
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 
 export default function MembershipPage() {
@@ -74,7 +75,7 @@ export default function MembershipPage() {
             <FeatureRow
               icon={<GlobeAltIcon />}
               title="Global Network"
-              description="Connect with over 500,000 IEEE members worldwide and access exclusive career opportunities through the IEEE network."
+              description={`Connect with over ${SITE_STATS.ieeeGlobalMembers} IEEE members worldwide and access exclusive career opportunities through the IEEE network.`}
             />
             <FeatureRow
               icon={<UserIcon />}
@@ -86,7 +87,8 @@ export default function MembershipPage() {
               title="Local Community"
               description={
                 <>
-                  Join a vibrant community of 500+ engineering students at{' '}
+                  Join a vibrant community of {SITE_STATS.studentMembers}{' '}
+                  engineering students at{' '}
                   <span className="text-primary">Texas A&M</span> with shared
                   interests and goals.
                 </>
@@ -118,7 +120,7 @@ export default function MembershipPage() {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <PriceCard
             name="IEEE Student Member"
-            price="$32/year"
+            price={MEMBERSHIP_PRICING.global.formatted}
             description="Full IEEE global membership benefits"
             benefits={[
               'All IEEE TAMU local benefits',
@@ -144,7 +146,7 @@ export default function MembershipPage() {
           />
           <PriceCard
             name="Local Chapter Member"
-            price="$15/year"
+            price={MEMBERSHIP_PRICING.local.formatted}
             description={
               <>
                 Access to <span className="text-primary">TAMU</span>-specific
@@ -196,9 +198,14 @@ export default function MembershipPage() {
                 description: (
                   <>
                     Decide between local chapter membership{' '}
-                    <span className="whitespace-nowrap">($15/year)</span> or
-                    full IEEE global membership{' '}
-                    <span className="whitespace-nowrap">($32/year)</span>.
+                    <span className="whitespace-nowrap">
+                      ({MEMBERSHIP_PRICING.local.formatted})
+                    </span>{' '}
+                    or full IEEE global membership{' '}
+                    <span className="whitespace-nowrap">
+                      ({MEMBERSHIP_PRICING.global.formatted})
+                    </span>
+                    .
                   </>
                 ),
               },

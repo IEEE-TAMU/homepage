@@ -3,6 +3,7 @@ import { PageHero } from '@/components/page-hero';
 import { MainSection } from '@/components/sections';
 
 import { Branches } from '@/lib/branches';
+import { CONTACT_EMAILS } from '@/lib/constants';
 
 const Officers = Object.fromEntries(
   Object.entries(Branches).map(([key, branch]) => [key, branch.officers])
@@ -52,7 +53,7 @@ export default function OfficersPage() {
               <div>
                 <h3 className="font-semibold mb-2">General Inquiries</h3>
                 <p className="text-sm text-muted-foreground">
-                  Email: contact@ieeetamu.org
+                  Email: {CONTACT_EMAILS.general}
                 </p>
               </div>
               <div>

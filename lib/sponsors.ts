@@ -7,12 +7,81 @@ export type Sponsor = {
   website: string;
 };
 
+export type SponsorTierConfig = {
+  tier: SponsorTier;
+  name: string;
+  price: number;
+  formatted: string;
+  description: string;
+  isPopular?: boolean;
+  benefits: string[];
+};
+
 // Tier ordering for sorting (highest to lowest)
 export const TIER_ORDER: SponsorTier[] = [
   'Platinum',
   'Gold',
   'Silver',
   'Bronze',
+];
+
+/**
+ * Sponsorship tier metadata, ordered low → high.
+ * Used by the /sponsorship page and any future selector.
+ */
+export const SPONSORSHIP_TIERS: SponsorTierConfig[] = [
+  {
+    tier: 'Bronze',
+    name: 'Bronze Sponsor',
+    price: 500,
+    formatted: '$500',
+    description: 'Essential partnership benefits',
+    benefits: [
+      'Logo on event materials',
+      'Social media recognition',
+      'Newsletter mentions',
+      'Access to resume database',
+    ],
+  },
+  {
+    tier: 'Silver',
+    name: 'Silver Sponsor',
+    price: 1000,
+    formatted: '$1,000',
+    description: 'Enhanced visibility and engagement',
+    isPopular: true,
+    benefits: [
+      'All Bronze benefits',
+      'Workshop co-hosting opportunity',
+      'Recruiting table at career fair',
+      'Company presentation opportunity',
+      'Priority event invitations',
+    ],
+  },
+  {
+    tier: 'Gold',
+    name: 'Gold Sponsor',
+    price: 3000,
+    formatted: '$3,000',
+    description: 'Premium partnership experience',
+    benefits: [
+      'All Silver benefits',
+      'Exclusive networking event',
+      'Custom workshop development',
+    ],
+  },
+  {
+    tier: 'Platinum',
+    name: 'Platinum Sponsor',
+    price: 5000,
+    formatted: '$5,000',
+    description: 'Elite partnership with maximum impact',
+    benefits: [
+      'All Gold benefits',
+      'Custom partnership opportunities',
+      'Maximum brand visibility',
+    ],
+  },
 ];
 
 // Sponsors data organized by tier
