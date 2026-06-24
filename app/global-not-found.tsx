@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import Link from 'next/link';
 
+import { PageHero } from '@/components/page-hero';
+import { Button } from '@/components/ui/button';
+
 import './globals.css';
 
 const inter = localFont({
@@ -17,12 +20,16 @@ export const metadata: Metadata = {
 export default function GlobalNotFound() {
   return (
     <html lang="en" className={inter.variable}>
-      <body>
-        <h1>404 - Page Not Found</h1>
-        <p>This page does not exist.</p>
-        <Link href="/" className="underline">
-          Return Home
-        </Link>
+      <body className="bg-background text-foreground antialiased">
+        <PageHero
+          title="404 - Page Not Found"
+          subtitle="The page you're looking for doesn't exist or has been moved."
+          actions={
+            <Button asChild>
+              <Link href="/">Return Home</Link>
+            </Button>
+          }
+        />
       </body>
     </html>
   );
