@@ -11,12 +11,13 @@ import { PageHero } from '@/components/page-hero';
 import { SectionHeader } from '@/components/section-header';
 import { MainSection } from '@/components/sections';
 
-import { SITE_STATS } from '@/lib/constants';
+import { SITE_STATS, getYearsActive } from '@/lib/constants';
 import { formatMemberCount, getMemberStats } from '@/lib/member-stats';
 
 export default async function AboutPage() {
   const { count } = await getMemberStats();
   const activeMembersLabel = formatMemberCount(count);
+  const yearsActiveLabel = getYearsActive();
 
   return (
     <div>
@@ -98,7 +99,7 @@ export default async function AboutPage() {
               {[
                 { value: activeMembersLabel, label: 'Active Members' },
                 { value: SITE_STATS.eventsPerYear, label: 'Events Per Year' },
-                { value: SITE_STATS.yearsActive, label: 'Years Active' },
+                { value: yearsActiveLabel, label: 'Years Active' },
               ].map(({ value, label }) => (
                 <div className="text-center" key={label}>
                   <div className="text-3xl font-bold text-primary mb-2">

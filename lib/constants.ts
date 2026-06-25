@@ -11,15 +11,29 @@
  *
  * `paidMemberCount` is sourced dynamically from the portal API (see
  * `lib/member-stats.ts`); it is not duplicated here.
+ *
+ * `yearsActive` is computed at request time from `FOUNDING_YEAR` (see below).
  */
 export const SITE_STATS = {
   /** Events hosted each year. */
   eventsPerYear: '50+',
-  /** Years IEEE TAMU has been active (founded 1909). */
-  yearsActive: '115+',
   /** Global IEEE membership count used in the membership value-prop. */
   ieeeGlobalMembers: '500,000',
 } as const;
+
+/**
+ * Year the IEEE TAMU student branch was founded. Used to compute the
+ * "Years Active" stat (currentYear - FOUNDING_YEAR).
+ */
+export const FOUNDING_YEAR = 1909;
+
+/**
+ * Number of years IEEE TAMU has been active, as a string.
+ * Resolved at request time so the value stays current as years pass.
+ */
+export function getYearsActive(): string {
+  return String(new Date().getFullYear() - FOUNDING_YEAR);
+}
 
 /**
  * The year we ask the portal for in `lib/member-stats.ts`.
