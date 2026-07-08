@@ -80,7 +80,9 @@ async function main() {
     return;
   }
 
-  console.log(`Found ${orphaned.length} photo(s) in R2 that do not exist locally:\n`);
+  console.log(
+    `Found ${orphaned.length} photo(s) in R2 that do not exist locally:\n`
+  );
   for (const file of orphaned) {
     console.log(`  - ${file}`);
   }
@@ -89,7 +91,10 @@ async function main() {
   const answer = await ask('Delete these photos from R2? (yes/no): ');
   rl.close();
 
-  if (answer.trim().toLowerCase() !== 'yes' && answer.trim().toLowerCase() !== 'y') {
+  if (
+    answer.trim().toLowerCase() !== 'yes' &&
+    answer.trim().toLowerCase() !== 'y'
+  ) {
     console.log('Cancelled. No photos were deleted.');
     return;
   }
@@ -97,9 +102,7 @@ async function main() {
   console.log(`\nDeleting ${orphaned.length} photo(s)...`);
   for (const file of orphaned) {
     console.log(`  Deleting ${file}...`);
-    await client.send(
-      new DeleteObjectCommand({ Bucket: BUCKET, Key: file })
-    );
+    await client.send(new DeleteObjectCommand({ Bucket: BUCKET, Key: file }));
   }
 
   console.log(`Done! Deleted ${orphaned.length} photo(s).`);
