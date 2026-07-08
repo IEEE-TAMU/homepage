@@ -5,6 +5,7 @@ pkgs.mkShellNoCC {
   packages = [
     pkgs.nodejs
     pkgs.imagemagick
+    pkgs.treefmt
   ];
 
   shellHook = ''

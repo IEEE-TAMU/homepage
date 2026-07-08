@@ -20,7 +20,7 @@
           homepage = pkgs.callPackage ./package.nix { };
         in
         {
-          formatter = pkgs.nixfmt-tree;
+          formatter = pkgs.nixfmt;
           devShells.default = import ./shell.nix { inherit pkgs; };
           packages = {
             default = homepage;
