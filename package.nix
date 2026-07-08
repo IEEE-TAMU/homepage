@@ -38,14 +38,14 @@ buildNpmPackage (finalAttrs: {
     }/share/fonts/truetype/Inter[opsz,wght].ttf" app/fonts/Inter.ttf
   '';
 
-  # move exported website to $out
+  # move exported website to $out/share/homepage
   installPhase = ''
     runHook preInstall
 
-    mkdir -p $out
-    cp -r .next/standalone $out/homepage
-    cp -r public $out/homepage/public
-    cp -r .next/static $out/homepage/.next/static
+    mkdir -p $out/share
+    cp -r .next/standalone $out/share/homepage
+    cp -r public $out/share/homepage/public
+    cp -r .next/static $out/share/homepage/.next/static
 
     runHook postInstall
   '';
