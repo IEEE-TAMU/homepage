@@ -31,7 +31,7 @@ export async function GET() {
       .map((event) => ({
         uid: event.uid,
         title: event.summary || '',
-        description: event.description || 'No description available',
+        description: event.description,
         start: event.start,
         end: event.end,
         location: event.location || 'Location TBD',

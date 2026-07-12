@@ -174,11 +174,13 @@ export function EventsSection() {
                   </span>
                 </div>
                 <CardTitle className="text-lg">{event.title}</CardTitle>
-                <CardDescription className={'' /* no line-clamp */}>
-                  <Linkify options={linkifyOptions}>
-                    {event.description}
-                  </Linkify>
-                </CardDescription>
+                {event.description && (
+                  <CardDescription className={'' /* no line-clamp */}>
+                    <Linkify options={linkifyOptions}>
+                      {event.description}
+                    </Linkify>
+                  </CardDescription>
+                )}
               </CardHeader>
               <div className="flex-grow" />
               <CardContent>
