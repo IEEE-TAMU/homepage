@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import { parseICS } from 'node-ical';
-import type { VEvent } from 'node-ical';
+import { type ParameterValue, type VEvent, parseICS } from 'node-ical';
 
 import { EXTERNAL_LINKS } from '@/lib/external-links';
 
@@ -15,30 +14,35 @@ interface CalendarEvent {
   rsvpUrl?: string;
 }
 
-// Cache the events for 5 minutes (300 seconds)
+function paramStr(val: ParameterValue | undefined, fallback = ''): string {
+  if (val == null) return fallback;
+  if (typeof val === 'string') return val;
+  return val.val;
+}
+
 export const revalidate = 300;
 
 export async function GET() {
   try {
     const response = await fetch(EXTERNAL_LINKS.IEEE_CALENDAR_ICS, {
-      next: { revalidate: 300 }, // Cache for 5 minutes
+      next: { revalidate: 300 },
     });
     const icalData = await response.text();
 
     const parsed = parseICS(icalData);
     const events: CalendarEvent[] = Object.values(parsed)
-      .filter((item): item is VEvent => item.type === 'VEVENT')
+      .filter(
+        (item): item is VEvent => item !== undefined && item.type === 'VEVENT'
+      )
       .map((event) => ({
         uid: event.uid,
-        title: event.summary || '',
-        description: event.description,
+        title: paramStr(event.summary),
+        description: paramStr(event.description),
         start: event.start,
-        end: event.end,
-        location: event.location || 'Location TBD',
-        type: categorizeEvent(event.summary || ''),
-        // rsvpUrl stored in custom field X-RSVP-URL
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        rsvpUrl: (event as any)['RSVP-URL'],
+        end: event.end ?? event.start,
+        location: paramStr(event.location, 'Location TBD'),
+        type: categorizeEvent(paramStr(event.summary)),
+        rsvpUrl: (event as Record<string, string>)['RSVP-URL'],
       }));
 
     // Filter for upcoming events only
