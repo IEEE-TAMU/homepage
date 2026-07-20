@@ -5,7 +5,6 @@ import {
   EnvelopeIcon,
   InboxStackIcon,
   MapPinIcon,
-  TruckIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
@@ -125,10 +124,7 @@ export default function ConnectPage() {
                   <br />
                   College Station, TX 77843
                 </ContactInfoRow>
-                <ContactInfoRow
-                  icon={<InboxStackIcon />}
-                  title="Mailing (letters)"
-                >
+                <ContactInfoRow icon={<InboxStackIcon />} title="Mailing">
                   Attn: IEEE TAMU
                   <br />
                   Texas A&M University
@@ -136,17 +132,6 @@ export default function ConnectPage() {
                   3128 TAMU
                   <br />
                   College Station, TX 77843-3128
-                </ContactInfoRow>
-                <ContactInfoRow icon={<TruckIcon />} title="Mailing (packages)">
-                  Attn: IEEE TAMU
-                  <br />
-                  Texas A&M University
-                  <br />
-                  188 Bizzell St
-                  <br />
-                  WEB 076
-                  <br />
-                  College Station, TX 77843
                 </ContactInfoRow>
               </div>
 
