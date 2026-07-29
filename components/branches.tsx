@@ -13,11 +13,7 @@ import type {
 } from '@/lib/branch-content';
 import { officerId } from '@/lib/branches';
 import type { Branch } from '@/lib/branches';
-import {
-  type SponsorTier,
-  TIER_ORDER,
-  getSponsorsByTier,
-} from '@/lib/sponsors';
+import { getAllSponsors } from '@/lib/sponsors';
 
 export const BranchOpener = ({ branch }: { branch: Branch }) => {
   return (
@@ -272,31 +268,17 @@ export function BranchPage({
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
-                {TIER_ORDER.map((tier) => {
-                  const sponsors = getSponsorsByTier(tier as SponsorTier);
-                  if (sponsors.length === 0) return null;
-                  return (
-                    <div
-                      key={tier}
-                      className="text-center p-4 bg-secondary/5 rounded-lg"
-                    >
-                      <h4 className="font-semibold mb-3">{tier} Sponsors</h4>
-                      <div className="space-y-2">
-                        {sponsors.map((sponsor) => (
-                          <Link
-                            key={sponsor.name}
-                            href={sponsor.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block text-sm text-muted-foreground hover:text-primary transition-colors"
-                          >
-                            {sponsor.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  );
-                })}
+                {getAllSponsors().map((sponsor) => (
+                  <Link
+                    key={sponsor.name}
+                    href={sponsor.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-center p-4 bg-secondary/5 rounded-lg hover:bg-secondary/10 transition-colors"
+                  >
+                    {sponsor.name}
+                  </Link>
+                ))}
               </div>
             </CardContent>
           </Card>

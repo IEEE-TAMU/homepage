@@ -1,17 +1,7 @@
 'use client';
 
-import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
-import { useRef } from 'react';
-
-import { Card, CardContent } from '@/components/ui/card';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
+import { useMemo } from 'react';
 
 import { getAllSponsors } from '@/lib/sponsors';
 
@@ -24,13 +14,12 @@ interface SponsorsCarouselProps {
 export function SponsorsCarousel({
   title = 'Our Sponsors',
   description = 'Thank you to our sponsors who make our events and programs possible.',
-  autoplayDelay = 2000,
+  autoplayDelay = 40000,
 }: SponsorsCarouselProps) {
-  const plugin = useRef(
-    Autoplay({ delay: autoplayDelay, stopOnInteraction: true })
-  );
-
   const sponsors = getAllSponsors();
+  const doubled = useMemo(() => [...sponsors, ...sponsors], [sponsors]);
+
+  if (sponsors.length === 0) return null;
 
   return (
     <div className="w-full">
@@ -38,53 +27,35 @@ export function SponsorsCarousel({
         <h2 className="text-3xl font-bold mb-4">{title}</h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">{description}</p>
       </div>
-      <Carousel
-        opts={{
-          align: 'start',
-          loop: true,
-        }}
-        plugins={[plugin.current]}
-        className="w-full max-w-5xl mx-auto"
-        onMouseEnter={plugin.current.stop}
-        onMouseLeave={plugin.current.reset}
-      >
-        <CarouselContent>
-          {sponsors.map((sponsor, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <a
-                  href={sponsor.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <Card className="border-2 hover:border-primary transition-colors cursor-pointer">
-                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                      <div className="text-center space-y-2 w-full">
-                        <div className="relative w-full h-32 mb-4">
-                          <Image
-                            src={`/sponsors/${sponsor.logo}`}
-                            alt={sponsor.name}
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            className="object-contain"
-                          />
-                        </div>
-                        <p className="text-sm font-semibold">{sponsor.name}</p>
-                        <p className="text-xs text-muted-foreground">
-                          {sponsor.tier} Sponsor
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </a>
-              </div>
-            </CarouselItem>
+
+      <div className="relative overflow-hidden py-4">
+        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-card to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-card to-transparent z-10" />
+        <div
+          className="flex gap-12 w-max hover:[animation-play-state:paused]"
+          style={{
+            animation: `scroll ${autoplayDelay}ms linear infinite`,
+          }}
+        >
+          {doubled.map((sponsor, index) => (
+            <a
+              key={`${index}`}
+              href={sponsor.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 relative w-44 h-24 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+            >
+              <Image
+                src={`/sponsors/${sponsor.logo}`}
+                alt={sponsor.name}
+                fill
+                sizes="176px"
+                className="object-contain"
+              />
+            </a>
           ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+        </div>
+      </div>
     </div>
   );
 }
