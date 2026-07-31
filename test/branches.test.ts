@@ -1,4 +1,4 @@
-import { Branches, linkedinUrl } from '../lib/branches';
+import { Branches } from '../lib/branches';
 
 const allOfficers = Object.values(Branches).flatMap(
   (branch) => branch.officers

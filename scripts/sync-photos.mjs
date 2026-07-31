@@ -4,7 +4,7 @@ import {
   S3Client,
 } from '@aws-sdk/client-s3';
 import { existsSync, readdirSync } from 'node:fs';
-import { extname, join } from 'node:path';
+import { extname } from 'node:path';
 import * as readline from 'node:readline';
 
 const BUCKET = 'officer-photos';
