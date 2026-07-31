@@ -112,7 +112,8 @@ export function FeatureCard({
 
   const cardClassName = cn(
     centered && 'text-center',
-    'hover:shadow-lg transition-shadow flex flex-col h-full',
+    href ? 'hover:shadow-lg transition-shadow' : '',
+    'flex flex-col h-full',
     className
   );
 
