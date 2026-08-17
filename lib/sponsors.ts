@@ -94,15 +94,9 @@ export const Sponsors: Record<string, Sponsor> = {
   },
   'lockheed-martin': {
     name: 'Lockheed Martin',
-    logo: 'lockheed.png',
+    logo: 'lockheed_martin.png',
     tier: 'Silver',
     website: 'https://www.lockheedmartin.com/',
-  },
-  sandia: {
-    name: 'Sandia National Laboratories',
-    logo: 'sandia.png',
-    tier: 'Platinum',
-    website: 'https://www.sandia.gov/',
   },
   'texas-instruments': {
     name: 'Texas Instruments',
@@ -115,6 +109,24 @@ export const Sponsors: Record<string, Sponsor> = {
     logo: 'dashiell.png',
     tier: 'Silver',
     website: 'https://www.dashiell.com/',
+  },
+  samsung: {
+    name: 'Samsung',
+    logo: 'samsung.png',
+    tier: 'Bronze',
+    website: 'https://www.samsung.com/',
+  },
+  exxonmobil: {
+    name: 'ExxonMobil',
+    logo: 'exxonmobil.png',
+    tier: 'Silver',
+    website: 'https://corporate.exxonmobil.com/',
+  },
+  marathon: {
+    name: 'Marathon Petroleum',
+    logo: 'marathon.png',
+    tier: 'Gold',
+    website: 'https://www.marathonpetroleum.com/',
   },
 };
 
