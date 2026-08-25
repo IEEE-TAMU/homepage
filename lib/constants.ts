@@ -39,7 +39,7 @@ export function getYearsActive(): string {
  * The year we ask the portal for in `lib/member-stats.ts`.
  * Bump this at the start of each academic year to pull the freshest count.
  */
-export const CURRENT_MEMBER_STATS_YEAR = 2025;
+export const CURRENT_MEMBER_STATS_YEAR = 2026;
 
 /**
  * Annual USD pricing for the two membership tiers offered to students.
