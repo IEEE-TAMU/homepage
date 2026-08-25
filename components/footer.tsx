@@ -59,11 +59,7 @@ export function Footer() {
             </div>
             <FooterColumn
               title="About Us"
-              links={[
-                { href: '/about/history', label: 'History' },
-                // { href: '/about/branches', label: 'Branches' },
-                { href: '/about/officers', label: 'Officers' },
-              ]}
+              links={[{ href: '/about/history', label: 'History' }]}
             />
             <FooterColumn
               title="Resources"
