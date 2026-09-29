@@ -1,7 +1,8 @@
-import { type NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse, after } from 'next/server';
 import nodemailer from 'nodemailer';
 
 import { CONTACT_EMAILS } from '@/lib/constants';
+import { notifyDiscord } from '@/lib/discord-notify';
 
 export async function POST(request: NextRequest) {
   try {
@@ -49,6 +50,10 @@ export async function POST(request: NextRequest) {
 
     // Send email
     await transporter.sendMail(mailOptions);
+
+    after(() =>
+      notifyDiscord(`New contact form email from ${name}: ${subject}`)
+    );
 
     return NextResponse.json({
       success: true,
