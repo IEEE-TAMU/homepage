@@ -10,9 +10,11 @@ import { GradientPanel } from '@/components/gradient-panel';
 import { PageHero } from '@/components/page-hero';
 import { SectionHeader } from '@/components/section-header';
 import { MainSection } from '@/components/sections';
+import { TeamPhoto } from '@/components/team-photo';
 
 import { SITE_STATS, getYearsActive } from '@/lib/constants';
 import { formatMemberCount, getMemberStats } from '@/lib/member-stats';
+import { OFFICERS, TEAM_PHOTO } from '@/lib/officers';
 
 export default async function AboutPage() {
   const { count } = await getMemberStats();
@@ -64,6 +66,14 @@ export default async function AboutPage() {
             titleSize="sm"
           />
         </div>
+      </MainSection>
+
+      <MainSection id="who-we-are">
+        <SectionHeader
+          title="Who We Are"
+          description="Meet the officers who plan our events, run our programs, and keep the branch going."
+        />
+        <TeamPhoto officers={OFFICERS} photo={TEAM_PHOTO} />
       </MainSection>
 
       <MainSection>
