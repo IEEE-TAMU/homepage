@@ -263,15 +263,20 @@ interface TeamPhotoProps {
 
 export function TeamPhoto({ officers, photo }: TeamPhotoProps) {
   const stageRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const outlineRefs = useRef(new Map<string, HTMLCanvasElement>());
   const clearTimer = useRef<number | undefined>(undefined);
 
   const [scene, setScene] = useState<Scene | null>(null);
   const [pointerInside, setPointerInside] = useState(false);
-  const [activeId, setActiveId] = useState<string | null>(null);
-  // The panel lags a beat behind `activeId` when it clears, so sliding the
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  // Clicking someone pins them until the next click anywhere else.
+  const [pinnedId, setPinnedId] = useState<string | null>(null);
+  // The panel lags a beat behind `hoveredId` when it clears, so sliding the
   // cursor across a gap between two people doesn't flash the empty state.
   const [panelId, setPanelId] = useState<string | null>(null);
+
+  const activeId = pinnedId ?? hoveredId;
 
   // Build the scene once the photo is close to scrolling into view.
   useEffect(() => {
@@ -296,6 +301,31 @@ export function TeamPhoto({ officers, photo }: TeamPhotoProps) {
   }, [officers, photo]);
 
   useEffect(() => () => window.clearTimeout(clearTimer.current), []);
+
+  // Any click outside the photo releases the pin. Clicks in the panel don't,
+  // so the bio can be selected or its links followed.
+  useEffect(() => {
+    if (!pinnedId) return;
+    const unpinOnOutsideClick = (event: PointerEvent) => {
+      const target = event.target as Node;
+      if (
+        stageRef.current?.contains(target) ||
+        panelRef.current?.contains(target)
+      ) {
+        return;
+      }
+      setPinnedId(null);
+    };
+    const unpinOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setPinnedId(null);
+    };
+    document.addEventListener('pointerdown', unpinOnOutsideClick);
+    document.addEventListener('keydown', unpinOnEscape);
+    return () => {
+      document.removeEventListener('pointerdown', unpinOnOutsideClick);
+      document.removeEventListener('keydown', unpinOnEscape);
+    };
+  }, [pinnedId]);
 
   // Flare the outline around whoever just became active.
   useLayoutEffect(() => {
@@ -328,8 +358,8 @@ export function TeamPhoto({ officers, photo }: TeamPhotoProps) {
     return () => cancelAnimationFrame(raf);
   }, [scene, activeId]);
 
-  const select = (id: string | null) => {
-    setActiveId(id);
+  const hover = (id: string | null) => {
+    setHoveredId(id);
     window.clearTimeout(clearTimer.current);
     if (id) {
       setPanelId(id);
@@ -338,7 +368,7 @@ export function TeamPhoto({ officers, photo }: TeamPhotoProps) {
     }
   };
 
-  const personAt = (event: React.PointerEvent<HTMLDivElement>) => {
+  const personAt = (event: React.MouseEvent<HTMLDivElement>) => {
     if (!scene) return null;
     const rect = event.currentTarget.getBoundingClientRect();
     const x = Math.floor(
@@ -353,31 +383,31 @@ export function TeamPhoto({ officers, photo }: TeamPhotoProps) {
   };
 
   const ready = scene !== null;
-  const greyed = ready && pointerInside;
-  const panelOfficer = officers.find((o) => o.id === panelId);
+  const greyed = ready && (pointerInside || pinnedId !== null);
+  const panelOfficer = officers.find((o) => o.id === (pinnedId ?? panelId));
 
   return (
     <div className="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:gap-10">
       <div
         ref={stageRef}
-        className="relative isolate overflow-hidden rounded-xl bg-muted select-none"
+        className={cn(
+          'relative isolate overflow-hidden rounded-xl bg-muted select-none',
+          hoveredId && 'cursor-pointer'
+        )}
         style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
         onPointerMove={(e) => {
           if (e.pointerType === 'touch') return;
           setPointerInside(true);
-          select(personAt(e));
+          hover(personAt(e));
         }}
         onPointerLeave={(e) => {
           if (e.pointerType === 'touch') return;
           setPointerInside(false);
-          select(null);
+          hover(null);
         }}
-        onPointerUp={(e) => {
-          if (e.pointerType !== 'touch') return;
-          const id = personAt(e);
-          setPointerInside(id !== null);
-          select(id);
-        }}
+        // Covers taps too: clicking a person pins them, clicking the
+        // background releases the pin.
+        onClick={(e) => setPinnedId(personAt(e))}
       >
         <Image
           src={photo.greyUrl}
@@ -474,6 +504,7 @@ export function TeamPhoto({ officers, photo }: TeamPhotoProps) {
                 key={person.officer.id}
                 type="button"
                 aria-label={person.officer.name}
+                aria-pressed={pinnedId === person.officer.id}
                 className="absolute z-[2200] pointer-events-none appearance-none bg-transparent outline-none"
                 style={{
                   left: percent(person.x, scene.width),
@@ -483,12 +514,18 @@ export function TeamPhoto({ officers, photo }: TeamPhotoProps) {
                 }}
                 onFocus={() => {
                   setPointerInside(true);
-                  select(person.officer.id);
+                  hover(person.officer.id);
                 }}
                 onBlur={(e) => {
                   if (stageRef.current?.contains(e.relatedTarget)) return;
                   setPointerInside(false);
-                  select(null);
+                  hover(null);
+                }}
+                onClick={(e) => {
+                  // Keyboard clicks have no coordinates, so keep the stage's
+                  // hit-test from treating this as a background click.
+                  e.stopPropagation();
+                  setPinnedId(person.officer.id);
                 }}
               />
             ))
@@ -496,6 +533,7 @@ export function TeamPhoto({ officers, photo }: TeamPhotoProps) {
       </div>
 
       <div
+        ref={panelRef}
         aria-live="polite"
         className="min-h-36 border-t-2 border-primary pt-6 lg:border-t-0 lg:border-l-2 lg:pt-1 lg:pl-8"
       >
@@ -522,7 +560,8 @@ export function TeamPhoto({ officers, photo }: TeamPhotoProps) {
           <div>
             <p className="text-lg text-pretty">
               <span className="pointer-coarse:hidden">
-                Hover over anyone in the photo to see who they are.
+                Hover over anyone in the photo to see who they are. Click to
+                keep them here.
               </span>
               <span className="hidden pointer-coarse:inline">
                 Tap anyone in the photo to see who they are.
